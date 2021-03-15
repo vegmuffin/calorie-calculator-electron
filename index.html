@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Calory calculator</title>
+        <link rel = "stylesheet" href = "css/calorycalc.css">
+        <script src="scripts/json-loader.js"></script>
+    </head>
+
+    <body onload="loadData()">
+        <div class="tab">
+            <button class="tablinks" onclick="switchTab(event, 'calorycalc')">Kalorijų skaičiuoklė</button>
+            <button class="tablinks" onclick="switchTab(event, 'recipes')">Receptai</button>
+        </div>
+
+        <div id="calorycalc" class="tabcontent">
+            <div id="calory0" class="row">
+
+                <div class="category-container">
+                    <label for="category-dropdown-0">Kategorija:</label>
+                    <select name="category-dropdown" id="category-dropdown-0" onchange="catDropdownSelect(0)">
+                        <option value=""></option>
+                    </select>
+                </div>
+
+                <div class="product-container">
+                    <label for="product-dropdown-0">Produktas:</label>
+                    <select name="product-dropdown" id="product-dropdown-0" disabled="true" onchange="prodDropdownSelect(0)">
+                        <option value=""></option>
+                    </select>
+                </div>
+
+                <div class="amount-container">
+                    <label for="amount-0">Kiekis (g):</label>
+                    <input id="amount-0" size="10" disabled="true" oninput="amountChange(0)"></input>
+                </div>
+
+                <div class="cal-container">
+                    <label for="cal-0">KCAL:</label>
+                    <b id="cal-0">-</b>
+                </div>
+
+                <div class="carb-container">
+                    <label for="carb-0">Anglv.:</label>
+                    <b id="carb-0">-</b>
+                </div>
+
+                <div class="prot-container">
+                    <label for="prot-0">Balt.:</label>
+                    <b id="prot-0">-</b>
+                </div>
+
+                <div class="fat-container">
+                    <label for="fat-0">Rieb.:</label>
+                    <b id="fat-0">-</b>
+                </div>
+
+                <div class="delete-row-container">
+                </div>
+            </div>
+
+            <div class="add-row-container" id="add-row-button">
+                <button class="add-row" id="calc-add-row" onclick="addRow()">
+                    <img src="imgs/plus_icon.png" class="addrow-img">
+                </button>
+            </div>
+            
+        </div>
+
+        <!-- TODO recipes functionality -->
+        <div id="recipes" class="tabcontent">
+
+        </div>
+        
+        <script src="scripts/tabs.js"></script>
+        <script src="scripts/calc-rows.js"></script>
+        <script src="scripts/helpers.js"></script>
+    </body>
+</html>

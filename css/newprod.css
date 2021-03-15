@@ -1,0 +1,199 @@
+* {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.np-dropdown-container {
+    padding: 5px 15px;
+    font-size: 18px;
+    display: table-cell;
+}
+
+.np-desc-container {
+    padding: 5px 15px;
+    font-size: 18px;
+}
+
+.np-row{
+    padding: 5px 15px;
+    height: 50px;
+}
+
+.np-product-container{
+    justify-content: middle;
+    width: 250px;
+    display: table-cell;
+    border: 1px solid #ccc;
+    height: 50px;
+    padding: 0px 12px;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+.np-kcal-container{
+    justify-content: middle;
+    width: 150px;
+    display: table-cell;
+    border: 1px solid #ccc;
+    height: 50px;
+    padding: 0px 12px;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+.np-carb-container{
+    justify-content: middle;
+    width: 150px;
+    display: table-cell;
+    border: 1px solid #ccc;
+    height: 50px;
+    padding: 0px 12px;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+.np-prot-container{
+    justify-content: middle;
+    width: 150px;
+    display: table-cell;
+    border: 1px solid #ccc;
+    height: 50px;
+    padding: 0px 12px;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+.np-fat-container{
+    justify-content: middle;
+    width: 150px;
+    display: table-cell;
+    border: 1px solid #ccc;
+    height: 50px;
+    padding: 0px 12px;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+.np-del-container{
+    justify-content: center;
+    width: 50px;
+    display: table-cell;
+    height: 50px;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+.np-addrow-container{
+    padding: 12px 12px;
+    display: table-cell;
+}
+
+.np-done-container{
+    padding: 12px 12px;
+    display: table-cell;
+}
+
+.np-buttons-container{
+    padding: 12px 12px;
+}
+
+.np-addrow{
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: #BDFFA4;
+    border: 2px solid grey;
+    border-radius: 4px;
+    display: block;
+}
+
+.np-addrow:hover{
+    background-color: #D9FFBF;
+}
+
+.np-addrow:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.np-addrow:active{
+    background-color: #85CC6F;
+}
+
+.np-done{
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: #BDFFA4;
+    border: 2px solid grey;
+    border-radius: 4px;
+    display: block;
+}
+
+.np-done:hover{
+    background-color: #D9FFBF;
+}
+
+.np-done:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.np-done:active{
+    background-color: #85CC6F;
+}
+
+.np-done:disabled{
+    background-color: #ccc;
+}
+
+.np-delrow{
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    background-color: #FF9E6E ;
+    border: 2px solid grey;
+    border-radius: 4px;
+}
+
+.np-delrow:active{
+    background-color: #FF603B;
+}
+
+.np-delrow:hover{
+    background-color: #FFBD89;
+}
+
+.np-delrow:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.addrow-img{
+    width: 115%;
+    height: 75%;
+    margin-left: -1px;
+    margin-bottom: -1px;
+}
+
+.delrow-img{
+    width: 115%;
+    height: 75%;
+    margin-left: -1px;
+    margin-bottom: -2px;
+}
+
+.done-img{
+    width: 110%;
+    height: 80%;
+    margin-left: -1px;
+    margin-bottom: -2px;
+}
+
+.np-newcat-container{
+    display: table-cell;
+    border: 2px solid #ccc;
+    padding: 5px 15px;
+    font-size: 18px;
+    border-radius: 4px;
+}

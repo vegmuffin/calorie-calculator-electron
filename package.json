@@ -1,0 +1,33 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "main": "scripts/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron scripts/main.js"
+  },
+  "author": "pauliusg",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "require": "^2.4.20",
+    "require.js": "^1.0.0"
+  },
+  "devDependencies": {
+    "electron": "^12.0.0",
+    "electron-packager": "^15.2.0"
+  },
+  "keywords": [],
+  "description": "",
+  "build": {
+    "extraResources": [
+      {
+        "from": "./src/extraResources/",
+        "to": ".",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
+  }
+}

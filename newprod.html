@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Nauji produktai</title>
+        <link rel = "stylesheet" href = "css/newprod.css">
+        <link rel = "stylesheet" href = "css/tooltips.css">
+        <script src="scripts/json-loader.js"></script>
+        <script src="scripts/newprod.js"></script>
+    </head>
+
+    <body onload="populateCategories();">
+        <div class = "np-dropdown-container">
+            <b><label for = "np-dropdown">Pasirinkite kategoriją: </label></b>
+            <select id = "np-dropdown" onchange="onDropdownSelect();">
+            </select>
+        </div>
+        <div class = "np-newcat-container">
+            <b><label for = "np-checkbox">Nauja kategorija: </label></b>
+            <input type="checkbox" id="np-checkbox" oninput="onCheckbox()">
+            <input id="np-newcat-input" disabled="true" oninput="onNewcatInput()">
+        </div>
+        <hr id = "np-hline"/>
+        <div class = "np-desc-container">
+            <b class = "np-desc">Įveskite naujų produktų į pasirinktą kategoriją:</b>
+        </div>
+
+        <div class = "np-row" id="np-0">
+            <div class = "np-product-container">
+                <label for = "np-product-0">Produktas: </label>
+                <input id = "np-product-0" oninput="onProdInput('np-product-0')"></input>
+            </div>
+
+            <div class = "np-kcal-container">
+                <label for = "np-kcal-0">KCAL/100g: </label>
+                <input id = "np-kcal-0" oninput="onIntInput('np-kcal-0')" size="5" disabled="true"></input>
+            </div>
+
+            <div class = "np-carb-container">
+                <label for = "np-carb-0">Anglv./100g: </label>
+                <input id = "np-carb-0" oninput="onIntInput('np-carb-0')" size="5" disabled="true"></input>
+            </div>
+
+            <div class = "np-prot-container">
+                <label for = "np-prot-0">Balt./100g: </label>
+                <input id = "np-prot-0" oninput="onIntInput('np-prot-0')" size="5" disabled="true"></input>
+            </div>
+
+            <div class = "np-fat-container">
+                <label for = "np-fat-0">Rieb./100g: </label>
+                <input id = "np-fat-0" oninput="onIntInput('np-fat-0')" size="5" disabled="true"></input>
+            </div>
+
+            <div class = "np-del-container">
+
+            </div>
+        </div>
+
+        <div class = "np-buttons-container" id = "np-btns">
+            <div class = "np-addrow-container">
+                <button class = "np-addrow" id = "np-addrow-btn" onclick="addRow()">
+                    <img src = "imgs/plus_icon.png" class = "addrow-img">
+                </button>
+            </div>
+            <div class = "np-done-container">
+                <button class = "np-done" id = "np-done-btn" onclick="done('np')" disabled="true">
+                    <img src = "imgs/checkmark_icon.png" class = "done-img">
+                </button>
+            </div>
+        </div>
+
+        <script src="scripts/helpers.js"></script>
+    </body>
+</html>

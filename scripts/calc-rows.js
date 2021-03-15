@@ -19,8 +19,10 @@ function addRow()
     // Add dropdown itself
     var catDropdown = document.createElement("select")
     catDropdown.setAttribute("name", "category-dropdown");
-    catDropdown.setAttribute("id", "category-dropdown-" + curRowStr);
+    cdId = "category-dropdown-" + curRowStr;
+    catDropdown.setAttribute("id", cdId);
     catDropdown.setAttribute("onchange", "catDropdownSelect(" + curRow + ")");
+    catDropdown.setAttribute("onclick", "highlightRow('" + cdId + "');");
 
     catDropdown.appendChild(createOption(""));
 
@@ -36,9 +38,11 @@ function addRow()
     var prodLabel = createLabel("product-dropdown-" + curRowStr, "Produktas: ")
     var prodDropdown = document.createElement("select");
     prodDropdown.setAttribute("name", "product-dropdown");
-    prodDropdown.setAttribute("id", "product-dropdown-" + curRowStr);
+    pdId = "product-dropdown-" + curRowStr;
+    prodDropdown.setAttribute("id", pdId);
     prodDropdown.setAttribute("disabled", "true");
     prodDropdown.setAttribute("onchange", "prodDropdownSelect(" + curRowStr + ")");
+    prodDropdown.setAttribute("onclick", "highlightRow('" + pdId + "');");
 
     // Add the first empty dropdown option
     prodDropdown.appendChild(createOption(""));
@@ -49,10 +53,12 @@ function addRow()
     var amountContainer = createContainer("amount-container");
     var amountLabel = createLabel("amount-" + curRowStr, "Kiekis (g): ");
     var input = document.createElement("input");
-    input.setAttribute("id", "amount-" + curRowStr);
+    iId = "amount-" + curRowStr;
+    input.setAttribute("id", iId);
     input.setAttribute("size", "10");
     input.setAttribute("disabled", "true");
     input.setAttribute("oninput", "amountChange(" + curRowStr + ")");
+    input.setAttribute("onclick", "highlightRow('" + iId + "');");
     mainDiv = treeAdd(mainDiv, amountContainer, amountLabel, input);
 
     // CALORIES
@@ -218,6 +224,62 @@ function getProdData(row)
     var catValue = document.getElementById("category-dropdown-" + row).value;
     var prodValue = document.getElementById("product-dropdown-" + row).value;
     return jsonData[catValue][prodValue];
+}
+
+function highlightRow(id)
+{
+    let selected = document.getElementById(id);
+    let splitId = id.split("-");
+    let row = splitId[splitId.length-1];
+
+    if(!selected.parentElement.getAttribute("class").includes("highlighted"))
+    {
+        // get parent
+        let par = selected.parentElement.parentElement;
+
+        highlightElement(par.getElementsByClassName("category-container")[0]);
+        highlightElement(par.getElementsByClassName("product-container")[0]);
+        highlightElement(par.getElementsByClassName("amount-container")[0]);
+        highlightElement(par.getElementsByClassName("cal-container")[0]);
+        highlightElement(par.getElementsByClassName("carb-container")[0]);
+        highlightElement(par.getElementsByClassName("prot-container")[0]);
+        highlightElement(par.getElementsByClassName("fat-container")[0]);
+    }
+
+    // remove highlight from others if needed
+    let rows = document.getElementsByClassName("row");
+    for(let r of rows)
+    {
+        let rId = r.getAttribute("id");
+        if(rId.includes(row))
+        {
+            continue;
+        }
+
+        let rDivs = r.getElementsByTagName("div");
+        let highlightedRow = false;
+        for(let d of rDivs)
+        {
+            let dClass = d.getAttribute("class");
+            if(dClass.includes("container") && dClass.includes("highlighted"))
+            {
+                let newClass = dClass.split(" ")[0];
+                d.setAttribute("class", newClass);
+                highlightedRow = true;
+            }
+        }
+        if(highlightedRow)
+        {
+            break;
+        }
+    }
+}
+
+function highlightElement(el)
+{
+    let elClass = el.getAttribute("class");
+    let newClass = elClass + " highlighted";
+    el.setAttribute("class", newClass);
 }
 
 ipcRendererCc.on("sync-data", function(event, data) {

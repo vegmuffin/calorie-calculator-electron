@@ -85,6 +85,8 @@ function newProductsWindow()
         protocol: 'file',
         slashes: true
     }));
+
+    // nc_win.toggleDevTools();
 }
 
 app.on('ready', () => {

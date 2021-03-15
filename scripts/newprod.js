@@ -61,6 +61,7 @@ function createInput(containerClass, id, labelText)
         console.log("oninput: " + "onProdInput('" + id + "')");
         input.setAttribute("oninput", "onProdInput('" + id + "');");
     }
+    input.setAttribute("onclick", "highlightRow('" + nc_curRow.toString() + "');");
     
     cont.appendChild(label);
     cont.appendChild(input);
@@ -80,7 +81,8 @@ function onProdInput(id)
 {
     let inputField = document.getElementById(id);
 
-    let intFields = getNumberFields("np", id.slice(-1));
+    let splitId = id.split("-");
+    let intFields = getNumberFields("np", splitId[splitId.length-1]);
 
     if(inputField.value != "")
     {
@@ -260,6 +262,58 @@ function onCheckbox()
     }
 
     doneCheck("np", nc_curRow);
+}
+
+function highlightRow(rowNo)
+{
+    let row = document.getElementById("np-" + rowNo);
+    let rDivs = row.getElementsByTagName("div");
+    for(let d of rDivs)
+    {
+        let dClass = d.getAttribute("class");
+        if(dClass.includes("highlighted"))
+        {
+            // already highlighted
+            return;
+        }
+        else if(!dClass.includes("del"))
+        {
+            let newClass = dClass + " highlighted";
+            d.setAttribute("class", newClass);
+        }
+    }
+
+    let otherRows = document.getElementsByClassName("np-row");
+    for(let r of otherRows)
+    {
+        if(r.getAttribute("id").includes(rowNo))
+        {
+            continue;
+        }
+        let rDivs = r.getElementsByTagName("div");
+        let highlighted = false;
+        for(let d of rDivs)
+        {
+            let dClass = d.getAttribute("class");
+            if(dClass.includes("highlighted"))
+            {
+                // this row was previously highlighted
+                highlighted = true;
+                let splitClass = dClass.split(" ");
+                d.setAttribute("class", splitClass[0]);
+            }
+            else
+            {
+                // it's not this row
+                break;
+            }
+        }
+        if(highlighted)
+        {
+            // took care of the highlighted section
+            return;
+        }
+    }
 }
 
 function doneCheck(prefix, rowCount)

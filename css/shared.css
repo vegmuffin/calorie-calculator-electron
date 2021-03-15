@@ -22,3 +22,7 @@
     background-color: #ff7f7f;
     position: relative;
 }
+
+.highlighted{
+    background-color: #EBECF0;
+}

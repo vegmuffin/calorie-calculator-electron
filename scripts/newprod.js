@@ -436,23 +436,23 @@ function done(prefix)
             let cClass = c.getAttribute("class");
 
             // Handle new prod name
-            if(cClass == prefix + "-product-container")
+            if(cClass.includes(prefix + "-product-container"))
             {
                 prodName = c.getElementsByTagName("input")[0].value;
             }
-            else if(cClass == prefix + "-kcal-container")
+            else if(cClass.includes(prefix + "-kcal-container"))
             {
                 kcal = parseInt(c.getElementsByTagName("input")[0].value);
             }
-            else if(cClass == prefix + "-carb-container")
+            else if(cClass.includes(prefix + "-carb-container"))
             {
                 carb = parseInt(c.getElementsByTagName("input")[0].value);
             }
-            else if(cClass == prefix + "-prot-container")
+            else if(cClass.includes(prefix + "-prot-container"))
             {
                 prot = parseInt(c.getElementsByTagName("input")[0].value);
             }
-            else if(cClass == prefix + "-fat-container")
+            else if(cClass.includes(prefix + "-fat-container"))
             {
                 fat = parseInt(c.getElementsByTagName("input")[0].value);
             }
@@ -470,7 +470,6 @@ function done(prefix)
     // update main data
     let fs = require("fs");
     let jf = p.join(p.dirname(__dirname), './app/src/extraResources/', 'data.json');
-    console.log(jf);
     fs.writeFileSync(jf, JSON.stringify(jsonData));
 
     ipcRendererNp.send("new-data", jsonData);
@@ -486,4 +485,10 @@ ipcRendererNp.on("finalize-data", function(event, data) {
     {
         cDropdown.appendChild(createOption(cat));
     }
+});
+
+ipcRendererNp.on("sync-data", function(event, data) {
+    jsonData = data;
+
+    doneCheck();
 });

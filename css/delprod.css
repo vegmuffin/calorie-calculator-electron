@@ -1,0 +1,88 @@
+* {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.select-container{
+    display: table-cell;
+    padding: 5px 15px;
+    vertical-align: middle;
+}
+
+.delete-all-container{
+    display: table-cell;
+    padding: 5px 15px;
+    border: 2px solid #515656;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.del-btn-container{
+    display: table-cell;
+    padding-left: 30px;
+    vertical-align: middle;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+#content{
+    padding: 5px 15px;
+}
+
+.row{
+    padding: 5px 0px;
+    height: 50px;
+}
+
+.product-container{
+    display: table-cell;
+    padding: 5px 10px;
+    border: 1px solid #515656;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    height: 30px;
+    width: 120px;
+    vertical-align: middle;
+}
+
+.checkbox-container{
+    display: table-cell;
+    padding: 5px 10px;
+    border: 1px solid #515656;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.del-btn{
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    background-color: #FF9E6E ;
+    border: 2px solid grey;
+    border-radius: 4px;
+}
+
+.del-btn:active{
+    background-color: #FF603B;
+}
+
+.del-btn:hover{
+    background-color: #FFBD89;
+}
+
+.del-btn:disabled{
+    background-color: #ccc;
+}
+
+.del-btn:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.trash-img{
+    width: 100%;
+    height: 100%;
+}

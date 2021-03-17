@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Ištrinti produktus</title>
+        <link rel = "stylesheet" href = "css/delprod.css">
+    </head>
+
+    <body onload="onLoad();">
+        <div id="header">
+            <div class="select-container">
+                <label for="cat-dropdown"><b>Kategorija: </b></label>
+                <select id="cat-dropdown" onchange="onDropdownSelect();"></select>
+            </div>
+            <div class="delete-all-container">
+                <label for="del-all-checkbox">Ištrinti kategoriją: </label>
+                <input type="checkbox" id="del-all-checkbox" oninput="onDeleteAllCheck();" disabled="true">
+            </div>
+            <div class="del-btn-container">
+                <button class="del-btn" id="dbtn" onclick="completeDelete();" disabled="true">
+                    <img src="imgs/trash_icon.png" class="trash-img">
+                </button>
+            </div>
+        </div>
+
+        <hr id = "hline">
+
+        <div id="content">
+        </div>
+
+        <script src="scripts/delprod.js"></script>
+        <script src="scripts/helpers.js"></script>
+    </body>
+</html>

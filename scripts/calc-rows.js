@@ -18,7 +18,6 @@ function addRow()
 
     // Add dropdown itself
     var catDropdown = document.createElement("select")
-    catDropdown.setAttribute("name", "category-dropdown");
     cdId = "category-dropdown-" + curRowStr;
     catDropdown.setAttribute("id", cdId);
     catDropdown.setAttribute("onchange", "catDropdownSelect(" + curRow + ")");
@@ -37,7 +36,6 @@ function addRow()
     var prodContainer = createContainer("product-container")
     var prodLabel = createLabel("product-dropdown-" + curRowStr, "Produktas: ")
     var prodDropdown = document.createElement("select");
-    prodDropdown.setAttribute("name", "product-dropdown");
     pdId = "product-dropdown-" + curRowStr;
     prodDropdown.setAttribute("id", pdId);
     prodDropdown.setAttribute("disabled", "true");
@@ -299,8 +297,9 @@ ipcRendererCc.on("sync-data", function(event, data) {
         {
             let cClass = c.getAttribute("class");
             
-            if(cClass == "category-container")
+            if(cClass.includes("category-container"))
             {
+
                 cDropdown = c.getElementsByTagName("select")[0];
                 let curValue = cDropdown.value;
 
@@ -314,7 +313,7 @@ ipcRendererCc.on("sync-data", function(event, data) {
                 cDropdown.value = curValue;
                 continue;
             }
-            else if(cClass == "product-container")
+            else if(cClass.includes("product-container"))
             {
                 let pDropdown = c.getElementsByTagName("select")[0];
 
@@ -330,7 +329,6 @@ ipcRendererCc.on("sync-data", function(event, data) {
                     }
 
                     pDropdown.value = curValue;
-                    continue;
                 }
             }
         }

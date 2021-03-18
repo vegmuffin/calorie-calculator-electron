@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Produkto naujinimas</title>
+        <link rel = "stylesheet" href = "../css/updprod.css">
+        <link rel = "stylesheet" href = "../css/shared.css">
+    </head>
+
+    <body onload="getData();">
+        <div id="header">
+            <div class="cat-container">
+                <label for="cat-dropdown"><b>Kategorija: </b></label>
+                <select id="cat-dropdown" onchange="onCategorySelect();"></select>
+            </div>
+            <div class="prod-container">
+                <label for="prod-dropdown"><b>Produktas: </b></label>
+                <select id="prod-dropdown" onchange="onProductSelect();" disabled="true"></select>
+            </div>
+            <div class="upd-btn-container">
+                <button class="upd-btn" id="ubtn" onclick="update();" disabled="true">
+                    <img src="../imgs/checkmark_icon.png" class="checkmark-img">
+                </button>
+            </div>
+        </div>
+
+        <hr id = "hline">
+
+        <div id="content">
+
+        </div>
+
+        <script src="../scripts/updprod.js"></script>
+        <script src="../scripts/helpers.js"></script>
+    </body>
+</html>

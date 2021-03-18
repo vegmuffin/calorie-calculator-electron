@@ -4,7 +4,7 @@ const p = require('path');
 
 var jsonData;
 
-const jsonFile = p.join(p.dirname(__dirname), './app/src/extraResources', 'data.json');
+const jsonFile = p.join(p.dirname(__dirname), './src/extraResources', 'data.json');
 
 function loadData()
 {

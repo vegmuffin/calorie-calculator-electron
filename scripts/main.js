@@ -5,6 +5,7 @@ const path = require('path');
 let win;
 let np_win;
 let dp_win;
+let up_win;
 
 var jsonData;
 
@@ -24,7 +25,7 @@ function createWindow()
     });
 
     win.loadURL(url.format({
-        pathname: path.join(__dirname, '../index.html'),
+        pathname: path.join(__dirname, '../templates/index.html'),
         protocol: 'file',
         slashes: true
     }));
@@ -101,6 +102,14 @@ function setMainMenu()
                     {
                         newDeleteWindow();
                     }
+                },
+                {
+                    label: "Naujinti produktą",
+                    accelerator: "CmdOrCtrl+U",
+                    click()
+                    {
+                        newUpdateWindow();
+                    }
                 }
             ]
         }
@@ -116,7 +125,7 @@ function newProductsWindow()
     {
         let winBounds = BrowserWindow.getFocusedWindow().getBounds();
         np_win = new BrowserWindow({
-            width: 1100, 
+            width: 600, 
             height: 500,
             backgroundColor: '#FFF',
             webPreferences: {
@@ -129,7 +138,7 @@ function newProductsWindow()
         });
 
         np_win.loadURL(url.format({
-            pathname: path.join(__dirname, '../newprod.html'),
+            pathname: path.join(__dirname, '../templates/newprod.html'),
             protocol: 'file',
             slashes: true
         }));
@@ -165,7 +174,7 @@ function newDeleteWindow()
         });
 
         dp_win.loadURL(url.format({
-            pathname: path.join(__dirname, '../delprod.html'),
+            pathname: path.join(__dirname, '../templates/delprod.html'),
             protocol: 'file',
             slashes: true
         }));
@@ -179,6 +188,42 @@ function newDeleteWindow()
     else
     {
         dp_win.focus();
+    }
+}
+
+function newUpdateWindow()
+{
+    if(!up_win)
+    {
+        let winBounds = BrowserWindow.getFocusedWindow().getBounds();
+        up_win = new BrowserWindow({
+            width: 700,
+            height: 300,
+            backgroundColor: '#FFF',
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+            },
+            x: winBounds["x"] + 50,
+            y: winBounds["y"] + 50,
+            resizable: false
+        });
+
+        up_win.loadURL(url.format({
+            pathname: path.join(__dirname, '../templates/updprod.html'),
+            protocol: 'file',
+            slashes: true
+        }));
+
+        up_win.on('closed', function() {
+            up_win = null;
+        });
+
+        // up_win.toggleDevTools();
+    }
+    else
+    {
+        up_win.focus();
     }
 }
 
@@ -206,6 +251,12 @@ ipcMain.on("new-data", function(event, data) {
     {
         dp_win.webContents.send("sync-data", data);
     }
+
+    // SYNC WITH UPDATE WINDOW IF IT EXISTS
+    if(up_win)
+    {
+        up_win.webContents.send("sync-data", data);
+    }
     
     np_win.close();
 });
@@ -221,6 +272,33 @@ ipcMain.on("delete-data", function(event, data) {
     {
         np_win.webContents.send("sync-data", data);
     }
+
+    // SYNC WITH UPDATE PRODUCT WINDOW IF IT EXISTS
+    if(up_win)
+    {
+        up_win.webContents.send("sync-data", data);
+    }
     
     dp_win.close();
+});
+
+ipcMain.on("update-data", function(event, data) {
+    jsonData = data;
+
+    // SYNC WITH MAIN WINDOW
+    win.webContents.send("sync-data", data);
+
+    // SYNC WITH NEW PRODUCT WINDOW IF IT EXISTS
+    if(np_win)
+    {
+        np_win.webContents.send("sync-data", data);
+    }
+
+    // SYNC WITH DELETE PRODUCT WINDOW IF IT EXISTS
+    if(dp_win)
+    {
+        dp_win.webContents.send("sync-data", data);
+    }
+    
+    up_win.close();
 });

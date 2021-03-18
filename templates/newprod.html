@@ -3,10 +3,10 @@
     <head>
         <meta charset = "UTF-8">
         <title>Nauji produktai</title>
-        <link rel = "stylesheet" href = "css/newprod.css">
-        <link rel = "stylesheet" href = "css/shared.css">
-        <script src="scripts/json-loader.js"></script>
-        <script src="scripts/newprod.js"></script>
+        <link rel = "stylesheet" href = "../css/newprod.css">
+        <link rel = "stylesheet" href = "../css/shared.css">
+        <script src="../scripts/json-loader.js"></script>
+        <script src="../scripts/newprod.js"></script>
     </head>
 
     <body onload="populateCategories();">
@@ -59,16 +59,16 @@
         <div class = "np-buttons-container" id = "np-btns">
             <div class = "np-addrow-container">
                 <button class = "np-addrow" id = "np-addrow-btn" onclick="addRow();">
-                    <img src = "imgs/plus_icon.png" class = "addrow-img">
+                    <img src = "../imgs/plus_icon.png" class = "addrow-img">
                 </button>
             </div>
             <div class = "np-done-container">
                 <button class = "np-done" id = "np-done-btn" onclick="done('np');" disabled="true">
-                    <img src = "imgs/checkmark_icon.png" class = "done-img">
+                    <img src = "../imgs/checkmark_icon.png" class = "done-img">
                 </button>
             </div>
         </div>
 
-        <script src="scripts/helpers.js"></script>
+        <script src="../scripts/helpers.js"></script>
     </body>
 </html>

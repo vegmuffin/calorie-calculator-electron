@@ -22,13 +22,13 @@ function onDropdownSelect()
             productRow(parentEl, rowNo, prod);
             rowNo++;
         }
-        enableDelete();
-        enableDelAllCb();
+        enableDisableElement("dbtn", false);
+        enableDisableElement("del-all-checkbox", false);
     }
     else
     {
-        disableDelete();
-        disableDelAllCb();
+        enableDisableElement("dbtn", true);
+        enableDisableElement("del-all-checkbox", true);
     }
 }
 
@@ -69,7 +69,7 @@ function onCheck(rowNo)
     let cb = document.getElementById("cb-" + rowNo);
     if(cb.checked)
     {
-        enableDelete();
+        enableDisableElement("dbtn", false);
     }
     else
     {
@@ -78,11 +78,11 @@ function onCheck(rowNo)
         {
             if(c.checked)
             {
-                enableDelete();
+                enableDisableElement("dbtn", false);
                 return;
             }
         }
-        disableDelete();
+        enableDisableElement("dbtn", true);
     }
 }
 
@@ -106,46 +106,6 @@ function onDeleteAllCheck()
             c.removeAttribute("disabled");
             c.checked = false;
         }
-    }
-}
-
-function disableDelete()
-{
-    let btn = document.getElementById("dbtn");
-
-    if(!btn.hasAttribute("disabled"))
-    {
-        btn.setAttribute("disabled", "true");
-    }
-}
-
-function disableDelAllCb()
-{
-    let cb = document.getElementById("del-all-checkbox");
-
-    if(!cb.hasAttribute("disabled"))
-    {
-        cb.setAttribute("disabled", true);
-    }
-}
-
-function enableDelete()
-{
-    let btn = document.getElementById("dbtn");
-
-    if(btn.hasAttribute("disabled"))
-    {
-        btn.removeAttribute("disabled");
-    }
-}
-
-function enableDelAllCb()
-{
-    let cb = document.getElementById("del-all-checkbox");
-
-    if(cb.hasAttribute("disabled"))
-    {
-        cb.removeAttribute("disabled");
     }
 }
 
@@ -177,7 +137,7 @@ function completeDelete()
     // update main data
     let fs = require("fs");
     let p = require("path");
-    let jf = p.join(p.dirname(__dirname), './app/src/extraResources', 'data.json');
+    let jf = p.join(p.dirname(__dirname), './src/extraResources', 'data.json');
     fs.writeFileSync(jf, JSON.stringify(jsonData));
 
     ipcRendererDp.send("delete-data", jsonData);

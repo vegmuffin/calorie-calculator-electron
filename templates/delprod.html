@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Ištrinti produktus</title>
+        <link rel = "stylesheet" href = "../css/delprod.css">
+        <link rel = "stylesheet" href = "../css/shared.css">
+    </head>
+
+    <body onload="onLoad();">
+        <div id="header">
+            <div class="category-container-parent">
+                <label for="category-container-0" class="weird-labels"><b>Kategorija: &nbsp;</b></label>
+                <div class="dropdown-container" id="category-container-0">
+                    <input id="category-dropdown-0" onfocus="onDropdownClick('category-dropdown-0')" oninput="dropdownFilter('category-dropdown-0')" size="20" onfocusout="onDropdownFocusOut('0', 'category')"
+                    placeholder="Ieškoti..." class="searchable-input">
+                    <div class="options" id="category-options-0">
+
+                    </div>
+                </div>
+            </div>
+            <div class="delete-all-container">
+                <label for="del-all-checkbox">Ištrinti kategoriją: </label>
+                <input type="checkbox" id="del-all-checkbox" oninput="onDeleteAllCheck();" disabled="true">
+            </div>
+            <div class="del-btn-container">
+                <button class="del-btn" id="dbtn" onclick="completeDelete();" disabled="true">
+                    <img src="../imgs/trash_icon.png" class="trash-img">
+                </button>
+            </div>
+        </div>
+
+        <hr id = "hline">
+
+        <div id="content">
+        </div>
+
+        <script src="../scripts/delprod.js"></script>
+        <script src="../scripts/helpers.js"></script>
+    </body>
+</html>

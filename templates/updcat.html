@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Naujinti kategoriją</title>
+        <link rel = "stylesheet" href = "../css/updcat.css">
+        <link rel = "stylesheet" href = "../css/shared.css">
+        <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+    </head>
+
+    <body onload="onLoad();">
+        <div class="category-container-parent">
+            <label for="category-container-0" class="weird-labels"><b>Kategorija: &nbsp;</b></label>
+            <div class="dropdown-container" id="category-container-0">
+                <input id="category-dropdown-0" onfocus="onDropdownClick('category-dropdown-0')" oninput="dropdownFilter('category-dropdown-0')" size="20" onfocusout="onDropdownFocusOut('0', 'category')"
+                placeholder="Ieškoti..." class="searchable-input">
+                <div class="options" id="category-options-0">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="newname-container-parent">
+            <div class="newname-input-container">
+                <label for="newname-input"><b>Naujas pavadinimas: &nbsp;</b></label>
+                <input id="newname-input" oninput="doneCheck();" placeholder="Pavadinimas" disabled="true">
+            </div>
+            <div class="icon-container">
+                <!-- TODO emojis n stuff -->
+                <div class="emoji-container" id="em">
+                    <emoji-picker class="light">
+                    </emoji-picker>
+                </div>
+                <div class="emoji-button-container">
+                    <label for="ebtn"><b>Emoji: &nbsp;</b></label>
+                    <button class="emoji-btn" id="ebtn" onclick="emojiPress();" onfocusout="onEmojiFocusOut();">
+                        <!--<img src="../imgs/add_emoji.png" class="emo-img">-->
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="done-btn-container">
+            <button class="done-btn" id="ubtn" onclick="complete();" disabled="true">
+                <img src="../imgs/checkmark_icon.png" class="upd-img">
+            </button>
+        </div>
+
+        <script src="../scripts/updcat.js"></script>
+        <script src="../scripts/helpers.js"></script>
+    </body>
+</html>

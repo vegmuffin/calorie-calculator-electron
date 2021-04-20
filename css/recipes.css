@@ -1,0 +1,249 @@
+#recipe-header{
+    padding: 8px 8px;
+    border-radius: 6px;
+    border: 2px solid #515656;
+}
+
+.recipe-checkbox{
+    bottom: 1px;
+    vertical-align: middle;
+}
+
+#filter-checkboxes{
+    padding: 8px 0;
+}
+
+.recipe-cb-container{
+    display: inline-block;
+    padding: 8px 8px;
+}
+
+.a-recipe-container{
+    margin: 4px 0;
+}
+
+.recipecont-nondisplay{
+    display: none !important;
+}
+
+.a-recipe-header{
+    background: linear-gradient(to bottom, #73A063 0%, #BAD8AF 50%);
+    vertical-align: middle;
+    border-radius: 4px;
+    border: 1px solid #515656;
+    padding: 10px 10px;
+}
+
+.deletion-header{
+    background: linear-gradient(to bottom, rgb(192, 72, 72) 0%, rgb(255, 153, 146) 50%) !important;
+}
+
+.a-recipe-footer{
+    display: block;
+}
+
+.footer-nodisplay{
+    display: none !important;
+}
+
+.a-recipe-expand-container{
+    float: right;
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.a-recipe-expand-button{
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 0 0;
+    transform: rotate(-90deg);
+    margin-top: -2px;
+}
+
+.expanded{
+    transform: rotate(0deg) !important;
+    margin-top: 0 !important;
+}
+
+.expand-img{
+    width: 100%;
+    height: 100%;
+}
+
+.recipe-desc{
+    width: 100%;
+    padding: 8px 8px;
+    margin: 8px 8px;
+    min-width: 500px;
+    outline: 1px solid black;
+    outline-style: dashed;
+}
+
+.recipe-desc:focus{
+    outline: 1px solid black;
+    outline-style: dashed;
+}
+
+.edit-img{
+    width: 150%;
+    height: 100%;
+    margin-left: -3px;
+}
+
+.done-img{
+    width: 100%;
+    height: 80%;
+}
+
+.edit-btn.editable{
+    width: 30px;
+    height: inherit;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    vertical-align: top;
+    margin-left: 20px;
+    margin-top: -6px;
+}
+
+.edit-btn.done{
+    margin-left: 5px;
+    margin-top: -6px;
+    width: 35px;
+    height: 35px;
+    border: 2px solid grey;
+    border-radius: 4px;
+    vertical-align: top;
+    background-color: #BAD8AF;
+}
+
+.edit-btn.done:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.edit-btn.done:hover{
+    background-color: #D9FFBF;
+}
+
+.edit-btn.done:disabled{
+    background-color: #ccc;
+}
+
+.edit-btn.done:active{
+    background-color: #85CC6F;
+}
+
+.recipe-desc{
+    max-width: 500px;
+    display: inline-block;
+}
+
+.save-btn-div{
+    width: 100%;
+    height: 35px;
+    overflow: hidden;
+}
+
+.save-btn{
+    background-image: url("../imgs/save.png");
+    background-repeat: no-repeat;
+    background-position-x: 7px;
+    background-position-y: 6px;
+    background-size: 20px 20px;
+    float: right;
+    width: 105px;
+    height: 35px;
+    margin-bottom: 10px;
+    background-color: #BAD8AF;
+    border: 2px solid grey;
+    border-radius: 4px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 70px;
+}
+
+.save-btn:focus{
+    outline: none;
+    box-shadow: none;
+}  
+
+.save-btn:hover{
+    background-color: #D9FFBF;
+}
+
+.save-btn:active{
+    background-color: #85CC6F;
+}
+
+.save-btn:disabled{
+    background-color: #ccc;
+}
+
+.unsaved{
+    color: rgb(129, 52, 52);
+    margin-left: 10px;
+}
+
+.saved{
+
+}
+
+.edit-container{
+    display: inline-block;
+    margin-top: -5px;
+}
+
+.recipe-name-container-edit{
+    display: table-cell;
+    border: 2px solid black;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 3px 3px;
+    border-style: dashed;
+    height: 25px;
+}
+
+.recipe-category-container-edit{
+    display: table-cell;
+    border: 2px solid black;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 3px 3px;
+    border-style: dashed;
+    height: 25px;
+}
+
+.editable-recipes:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.deletion-mark-container{
+    float: right;
+    width: 100%;
+    margin-bottom: 10px;
+    display: table;
+    margin-right: 70px;
+}
+
+.deletion-mark-label{
+    display: table-cell;
+    float: right;
+    color:rgb(192, 72, 72);
+}
+
+.deletion-mark-checkbox{
+    display: table-cell;
+    float: right;
+}

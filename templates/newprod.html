@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Nauji produktai</title>
+        <link rel = "stylesheet" href = "../css/newprod.css">
+        <link rel = "stylesheet" href = "../css/shared.css">
+        <script src="../scripts/newprod.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+    </head>
+
+    <body onload="populateCategories();">
+        <div class="category-container-parent">
+            <label for="category-container-0" class="weird-labels"><b>Pasirinkite kategoriją: &nbsp;</b></label>
+            <div class="dropdown-container" id="category-container-0">
+                <input id="category-dropdown-0" onfocus="onDropdownClick('category-dropdown-0')" oninput="dropdownFilter('category-dropdown-0')" size="20" onfocusout="onDropdownFocusOut('0', 'category')"
+                placeholder="Ieškoti..." class="searchable-input">
+                <div class="options" id="category-options-0">
+
+                </div>
+            </div>
+            <b class="cat-emoji" id="emoji-0"></b>
+        </div>
+        <div class = "np-newcat-container">
+            <b><label for = "np-checkbox">Nauja kategorija: </label></b>
+            <input type="checkbox" id="np-checkbox" oninput="onCheckbox()">
+            <input id="np-newcat-input" disabled="true" oninput="onNewcatInput()">
+            <div class="icon-container">
+                <div class="emoji-container" id="em">
+                    <emoji-picker class="light">
+                    </emoji-picker>
+                </div>
+                <div class="emoji-button-container-newprod">
+                    <label for="ebtn"><b>Emoji: </b></label>
+                    <button class="emoji-btn-newprod" id="ebtn" onclick="emojiPress();" onfocusout="onEmojiFocusOut();" disabled="true">
+                        😊
+                    </button>
+                </div>
+            </div>
+        </div>
+        <hr id = "np-hline"/>
+        <div class = "np-desc-container">
+            <b class = "np-desc">Įveskite naujų produktų į pasirinktą kategoriją (makronutrientų vertės 100 gramų):</b>
+        </div>
+
+        <div id="description">
+            <span id="desc-prod" class="desc-inline">Produktas</span>
+            <span id="desc-carbs" class="desc-inline">Anglv.</span>
+            <span id="desc-fats" class="desc-inline">Rieb.</span>
+            <span id="desc-prot" class="desc-inline">Balt.</span>
+            <span id="desc-cals" class="desc-inline">KCAL</span>
+            <span id="desc-skaid" class="desc-inline">Skaid.</span>
+        </div>
+
+        <div class = "np-row" id="np-0">
+            <div class = "np-product-container">
+                <input id = "np-product-0" oninput="onProdInput('np-product-0');" onfocus="highlightRow('0');" size="25"></input>
+            </div>
+            
+            <div class = "np-carb-container">
+                <input id = "np-carb-0" oninput="onIntInput('np-carb-0');" size="7" disabled="true" onfocus="highlightRow('0');"></input>
+            </div>
+            
+            <div class = "np-fat-container">
+                <input id = "np-fat-0" oninput="onIntInput('np-fat-0');" size="7" disabled="true" onfocus="highlightRow('0');"></input>
+            </div>
+            
+            <div class = "np-prot-container">
+                <input id = "np-prot-0" oninput="onIntInput('np-prot-0');" size="7" disabled="true" onfocus="highlightRow('0');"></input>
+            </div>
+            
+            <div class = "np-kcal-container">
+                <input id = "np-kcal-0" oninput="onIntInput('np-kcal-0');" size="7" disabled="true" onfocus="highlightRow('0');"></input>
+            </div>
+
+            <div class = "np-skaid-container">
+                <input id = "np-skaid-0" oninput="onIntInput('np-skaid-0');" size="7" disabled="true" onfocus="highlightRow('0');"></input>
+            </div>
+            
+            <div class = "np-del-container">
+                
+            </div>
+        </div>
+
+        <div class = "np-buttons-container" id = "np-btns">
+            <div class = "np-addrow-container">
+                <button class = "np-addrow" id = "np-addrow-btn" onclick="addRow();">
+                    <img src = "../imgs/plus_icon.png" class = "addrow-img">
+                </button>
+            </div>
+            <div class = "np-done-container">
+                <button class = "np-done" id = "np-done-btn" onclick="done('np');" disabled="true">
+                    <img src = "../imgs/checkmark_icon.png" class = "done-img">
+                </button>
+            </div>
+        </div>
+
+        <script src="../scripts/helpers.js"></script>
+    </body>
+</html>

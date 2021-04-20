@@ -1,0 +1,130 @@
+.tooltip .tooltip-text {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 6px 10px;
+    position: absolute;
+    z-index: 3;
+    left: 102.5%;
+    bottom: 20%;
+    display: block;
+    font-size: 12px;
+    width: 60px;
+    overflow: visible;
+}
+
+.tooltip:hover .tooltip-text{
+    visibility: visible;
+}
+
+.tooltip{
+    background-color: #ff7f7f !important;
+    position: relative;
+}
+
+.highlighted{
+    background-color: #BAD8AF;
+}
+
+.dropdown-btn{
+    background-color: #787878;
+    color: #fff;
+    text-align: left;
+    height: 22px;
+    width: 100%;
+    font-size: 12px;
+    display: none;
+    border: none;
+    z-index: inherit;
+    padding-left: 30px;
+    background-image: none;
+    background-position: 0 0;
+}
+
+.selected-btn{
+    background-image: url("../imgs/selected.png");
+    background-repeat: no-repeat;
+    background-position-x: 7px;
+    background-position-y: 4px;
+    background-size: 14px 14px;
+}
+
+.dropdown-btn:hover{
+    background-color: #73A063;
+}
+
+.dropdown-container{
+    width: 154px;
+    display: table-cell;
+    position: relative;
+}
+
+.options{
+    position: absolute;
+    width: 100%;
+    overflow: scroll;
+    z-index: 1;
+    border-radius: 6px;
+}
+
+.selected-input + .options{
+    z-index: 2;
+    max-height: 154px;
+}
+
+.dropdown-btn:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.dropdown-btn:active{
+    background-color: rgb(207, 207, 207);
+}
+
+.weird-labels{
+    display: table-cell;
+}
+
+.emoji-container{
+    display: none;
+}
+
+.emo-img{
+    width: 80%;
+    height: 80%;
+    padding-top: 5px;
+}
+
+.emoji-btn{
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 0 0;
+}
+
+.emoji-displayed{
+    display: block;
+}
+
+.emoji-button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    padding: 10px 10px;
+}
+
+.macros{
+    text-align: center;
+}
+
+.description{
+    display: flex;
+}

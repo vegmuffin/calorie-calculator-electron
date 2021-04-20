@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Calorie calculator</title>
+        <link rel = "stylesheet" href = "../css/calorycalc.css">
+        <link rel = "stylesheet" href = "../css/shared.css">
+        <link rel = "stylesheet" href = "../css/recipes.css">
+        <script src="../scripts/json-loader.js"></script>
+    </head>
+
+    <body onload="loadData();">
+        <div class="tab">
+            <button class="tablinks" onclick="switchTab(event, 'calorycalc')">Kalorijų skaičiuoklė</button>
+            <button class="tablinks" onclick="switchTab(event, 'recipes-parentparent')">Receptai</button>
+        </div>
+
+        <div id="calorycalc" class="tabcontent">
+            <div class="description">
+                <span class="desc-inline desc-cat">Kategorijos</span>
+                <span class="desc-inline desc-prod">Produktai</span>
+                <span class="desc-inline desc-amount">Kiekis (g)</span>
+                <span class="desc-inline desc-carbs">Anglv.</span>
+                <span class="desc-inline desc-fats">Rieb.</span>
+                <span class="desc-inline desc-prot">Balt.</span>
+                <span class="desc-inline desc-cals">KCAL</span>
+                <span class="desc-inline desc-skaid">Skaid.</span>
+            </div>
+            <div id="calory0" class="row">
+
+                <div class="category-container-parent">
+                    <div class="dropdown-container" id="category-container-0">
+                        <input id="category-dropdown-0" onfocus="onDropdownClick('category-dropdown-0')" oninput="dropdownFilter('category-dropdown-0')" size="25" onfocusout="onDropdownFocusOut('0', 'category')"
+                        placeholder="Ieškoti..." class="searchable-input">
+                        <div class="options" id="category-options-0">
+
+                        </div>
+                    </div>
+                    <b class="cat-emoji" id="emoji-0"></b>
+                </div>
+
+                <div class="product-container-parent">
+                    <div class="dropdown-container" id="product-container-0">
+                        <input id="product-dropdown-0" onfocus="onDropdownClick('product-dropdown-0')" oninput="dropdownFilter('product-dropdown-0')" size="25" onfocusout="onDropdownFocusOut('0', 'product')"
+                        placeholder="Ieškoti..." disabled="true" class="searchable-input">
+                        <div class="options" id="product-options-0">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="amount-container-parent">
+                    <input class="amount-input" id="amount-0" size="7" disabled="true" oninput="amountChange(0)" onfocus="highlightRow('amount-0');"></input>
+                </div>
+
+                <div class="carb-container-parent macros">
+                    <b id="carb-0">-</b>
+                </div>
+
+                <div class="fat-container-parent macros">
+                    <b id="fat-0">-</b>
+                </div>
+
+                <div class="prot-container-parent macros">
+                    <b id="prot-0">-</b>
+                </div>
+
+                <div class="cal-container-parent macros">
+                    <b id="cal-0">-</b>
+                </div>
+
+                <div class="skaid-container-parent macros">
+                    <b id="skaid-0">-</b>
+                </div>
+
+                <div class="delete-row-container">
+                </div>
+            </div>
+
+            <div class="add-row-container" id="add-row-button">
+                <button class="add-row" id="calc-add-row" onclick="addRow();">
+                    <img src="../imgs/plus_icon.png" class="addrow-img">
+                </button>
+            </div>
+
+            <div class="totals">
+                <div class="totals-title">
+                    <span>Viso:</span>
+                </div>
+                <div class="totals-carbs-cont">
+                    <span id="totals-carb">0</span>
+                </div>
+                <div class="totals-fats-cont">
+                    <span id="totals-fat">0</span>
+                </div>
+                <div class="totals-prot-cont">
+                    <span id="totals-prot">0</span>
+                </div>
+                <div class="totals-cal-cont">
+                    <span id="totals-cal">0</span>
+                </div>
+                <div class="totals-skaid-cont">
+                    <span id="totals-skaid">0</span>
+                </div>
+            </div>
+
+            <div id="addrecipe-container">
+                <button id="addrecipe-button" onclick="addRecipe();">Receptas...</button>
+            </div>
+            
+        </div>
+
+        <!-- TODO recipes functionality -->
+        <div id="recipes-parentparent" class="tabcontent">
+            <div id="recipe-header">
+                <b id="filter-recipes">Filtruokite receptus:</b>
+                <div id="filter-checkboxes">
+
+                </div>
+            </div>
+            <div id="recipe-content">
+
+            </div> 
+        </div>
+        
+        <script src="../scripts/tabs.js"></script>
+        <script src="../scripts/calc-rows.js"></script>
+        <script src="../scripts/recipes.js"></script>
+        <script src="../scripts/helpers.js"></script>
+    </body>
+</html>

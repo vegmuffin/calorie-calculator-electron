@@ -1,34 +1,50 @@
 const ipcRendererDp = require('electron').ipcRenderer;
 
 var jsonData;
+var emojiData;
+
+var curCatVal = "";
 
 function onLoad()
 {
     ipcRendererDp.send("retrieve-data");
+    ipcRendererDp.send("retrieve-emoji-data");
 }
 
-function onDropdownSelect()
+function onDropdownClick(id)
 {
-    clear();
-
-    let value = document.getElementById("cat-dropdown").value;
-
-    if(value != "")
+    let inputField = document.getElementById(id);
+    inputField.select();
+    let cls = inputField.getAttribute("class");
+    if(!cls.includes("selected-input"))
     {
-        let parentEl = document.getElementById("content");
-        let rowNo = 0;
-        for(let prod in jsonData[value])
-        {
-            productRow(parentEl, rowNo, prod);
-            rowNo++;
-        }
-        enableDisableElement("dbtn", false);
-        enableDisableElement("del-all-checkbox", false);
+        cls += " selected-input";
+        inputField.setAttribute("class", cls);
     }
-    else
+    dropdownFilter(id);
+}
+
+function onCatClick(id)
+{
+    let splitId = onCatDropdownButtonClick(id);
+    if(splitId)
     {
-        enableDisableElement("dbtn", true);
-        enableDisableElement("del-all-checkbox", true);
+        curCatVal = splitId[0];
+        
+        clear();
+        let parentEl = document.getElementById("content");
+        let prodArray = [];
+        for(let prod in jsonData[curCatVal])
+        {
+            prodArray.push(prod);
+        }
+        prodArray.sort();
+
+        for(let i = 0; i < prodArray.length; ++i)
+        {
+            productRow(parentEl, i, prodArray[i]);
+        }
+        enableDisableElement("del-all-checkbox", false);
     }
 }
 
@@ -55,6 +71,7 @@ function productRow(parentEl, rowNo, value)
 
     row.append(prodCont);
     row.append(cbCont);
+
     parentEl.append(row);
 }
 
@@ -98,6 +115,7 @@ function onDeleteAllCheck()
             c.checked = true;
             c.setAttribute("disabled", "true");
         }
+        enableDisableElement("dbtn", false);
     }
     else
     {
@@ -106,16 +124,16 @@ function onDeleteAllCheck()
             c.removeAttribute("disabled");
             c.checked = false;
         }
+        enableDisableElement("dbtn", true);
     }
 }
 
 function completeDelete()
 {
-    let cat = document.getElementById("cat-dropdown");
-
     if(document.getElementById("del-all-checkbox").checked)
     {
-        delete jsonData[cat.value];
+        delete jsonData[curCatVal];
+        delete emojiData[curCatVal];
     }
     else
     {
@@ -129,7 +147,7 @@ function completeDelete()
             {
                 let prodCont = r.getElementsByClassName("product-container")[0];
                 let prod = prodCont.getElementsByTagName("b")[0];
-                delete jsonData[cat.value][prod.innerHTML];
+                delete jsonData[curCatVal][prod.innerHTML];
             }
         }
     }
@@ -138,44 +156,76 @@ function completeDelete()
     let fs = require("fs");
     let p = require("path");
     let jf = p.join(p.dirname(__dirname), './src/extraResources', 'data.json');
+    let ejf = p.join(p.dirname(__dirname), './src/extraResources', 'emojis.json');
     fs.writeFileSync(jf, JSON.stringify(jsonData));
+    fs.writeFileSync(ejf, JSON.stringify(emojiData));
 
-    ipcRendererDp.send("delete-data", jsonData);
+    ipcRendererDp.send("delete-data", jsonData, emojiData);
 }
 
 ipcRendererDp.on("finalize-data", function(event, data)
 {
     jsonData = data;
 
-    let catDropdown = document.getElementById("cat-dropdown");
-    catDropdown.appendChild(createOption(""));
+    let opt = document.getElementById("category-options-0");
+    let counter = 0;
     for(let cat in data)
     {
-        let opt = createOption(cat);
-        catDropdown.appendChild(opt);
+        insertDropdownButton(opt, cat, "0", counter, "cat");
+        counter++;
     }
 });
 
-ipcRendererDp.on("sync-data", function(event, data)
+ipcRendererDp.on("emoji-data", function(event, eData)
 {
-    jsonData = data;
+    emojiData = eData;
+});
 
-    let dropdown = document.getElementById("cat-dropdown");
-    let curVal = dropdown.value;
+ipcRendererDp.on("sync-data", function(event, jData, eData)
+{
+    jsonData = jData;
+    emojiData = eData;
 
-    removeAllChildNodes(cat-dropdown);
+    let dropdown = document.getElementById("category-dropdown-0");
+    let options = document.getElementById("category-options-0");
+    dropdown.value = "";
 
-    dropdown.appendChild(createOption(""));
-    let newVal = "";
-    for(let cat of data)
+    let btns = options.getElementsByClassName("dropdown-btn selected-btn");
+    let currentlySelected = "";
+    if(btns.length > 0)
     {
-        dropdown.appendChild(createOption(cat));
-        if(curVal == cat)
-        {
-            newVal = cat;
-        }
+        currentlySelected = btns[0].innerHTML;
     }
-    dropdown.value = newVal;
 
-    onDropdownSelect();
+    removeAllChildNodes(options);
+
+    let counter = 0;
+    let id = "";
+    for(let cat in jsonData)
+    {
+        let tempId = insertDropdownButton(options, cat, "0", counter, "cat");
+        if(currentlySelected == cat)
+        {
+            id = tempId;
+        }
+        counter++;
+    }
+    dropdown.value = currentlySelected;
+    if(id != "")
+    {
+        clear();
+        let parentEl = document.getElementById("content");
+        let rowNo = 0;
+        for(let prod in jsonData[curCatVal])
+        {
+            productRow(parentEl, rowNo, prod);
+            rowNo++;
+        }
+        enableDisableElement("dbtn", true);
+        enableDisableElement("del-all-checkbox", false);
+    }
+    else
+    {
+        clear();
+    }
 });

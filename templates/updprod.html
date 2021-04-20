@@ -9,14 +9,29 @@
 
     <body onload="getData();">
         <div id="header">
-            <div class="cat-container">
-                <label for="cat-dropdown"><b>Kategorija: </b></label>
-                <select id="cat-dropdown" onchange="onCategorySelect();"></select>
+
+            <div class="category-container-parent">
+                <label for="category-container-0" class="weird-labels"><b>Kategorija: &nbsp;</b></label>
+                <div class="dropdown-container" id="category-container-0">
+                    <input id="category-dropdown-0" onfocus="onDropdownClick('category-dropdown-0')" oninput="dropdownFilter('category-dropdown-0')" size="20" onfocusout="onDropdownFocusOut('0', 'category')"
+                    placeholder="Ieškoti..." class="searchable-input">
+                    <div class="options" id="category-options-0">
+
+                    </div>
+                </div>
             </div>
-            <div class="prod-container">
-                <label for="prod-dropdown"><b>Produktas: </b></label>
-                <select id="prod-dropdown" onchange="onProductSelect();" disabled="true"></select>
+
+            <div class="product-container-parent">
+                <label for="product-container-0" class="weird-labels"><b>Produktas: &nbsp;</b></label>
+                <div class="dropdown-container" id="product-container-0">
+                    <input id="product-dropdown-0" onfocus="onDropdownClick('product-dropdown-0')" oninput="dropdownFilter('product-dropdown-0')" size="20" onfocusout="onDropdownFocusOut('0', 'product')"
+                    placeholder="Ieškoti..." disabled="true" class="searchable-input">
+                    <div class="options" id="product-options-0">
+
+                    </div>
+                </div>
             </div>
+
             <div class="upd-btn-container">
                 <button class="upd-btn" id="ubtn" onclick="update();" disabled="true">
                     <img src="../imgs/checkmark_icon.png" class="checkmark-img">
@@ -25,6 +40,19 @@
         </div>
 
         <hr id = "hline">
+
+        <div class = "up-desc-container">
+            <b class = "up-desc">Naujinkite produktą (makronutrientų vertės 100 gramų):</b>
+        </div>
+
+        <div id="description">
+            <span id="desc-prod" class="desc-inline">Produktas</span>
+            <span id="desc-carbs" class="desc-inline">Anglv.</span>
+            <span id="desc-fats" class="desc-inline">Rieb.</span>
+            <span id="desc-prot" class="desc-inline">Balt.</span>
+            <span id="desc-cals" class="desc-inline">KCAL</span>
+            <span id="desc-skaid" class="desc-inline">Skaid.</span>
+        </div>
 
         <div id="content">
 

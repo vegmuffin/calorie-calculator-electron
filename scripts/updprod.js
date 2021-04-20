@@ -4,83 +4,74 @@ var jsonData;
 var curCatVal = ""
 var curProdVal = ""
 
+var illegalFields = ["", "."]
+
 function getData()
 {
     ipcRendererUp.send("retrieve-data");
 }
 
-function onCategorySelect()
+function onDropdownClick(id)
 {
-    let catDropdown = document.getElementById("cat-dropdown");
-
-    if(catDropdown.value != "")
+    let inputField = document.getElementById(id);
+    inputField.select();
+    let cls = inputField.getAttribute("class");
+    if(!cls.includes("selected-input"))
     {
-        enableDisableElement("prod-dropdown", false)
-        populateProducts(catDropdown.value);
+        cls += " selected-input";
+        inputField.setAttribute("class", cls);
     }
-    else
+    dropdownFilter(id);
+}
+
+function onCatClick(id)
+{
+    let splitId = onCatDropdownButtonClick(id);
+    if(splitId)
     {
-        removeAllChildNodes(document.getElementById("prod-dropdown"));
-        enableDisableElement("prod-dropdown", true);
+        populateProductDropdown(splitId);
+        curCatVal = splitId[0];
     }
 }
 
-function populateProducts(cat)
+function onProdClick(id)
 {
-    if(curCatVal == cat)
+    let splitId = onProdDropdownButtonClick(id);
+    if(splitId)
     {
-        return;
-    }
-    else
-    {
-        curCatVal = cat;
-        curProdVal = "";
-    }
+        let content = document.getElementById("content");
+        removeAllChildNodes(content);
 
-    let prodDropdown = document.getElementById("prod-dropdown");
-    removeAllChildNodes(prodDropdown);
-    prodDropdown.appendChild(createOption(""));
+        curProdVal = splitId[0];
+        
+        let row = createContainer("row");
 
-    for(let prod in jsonData[cat])
-    {
-        prodDropdown.appendChild(createOption(prod));
-    }
-}
-
-function onProductSelect()
-{
-    console.log(jsonData[curCatVal]);
-    let prodDropdown = document.getElementById("prod-dropdown");
-    if(prodDropdown.value == curProdVal)
-    {
-        return;
-    }
-    else
-    {
-        curProdVal = prodDropdown.value;
-    }
-
-    let row = createContainer("row");
-
-    let prd = ""
-    let keys = Object.keys(jsonData[curCatVal]);
-    for(let i = 0; i < keys.length; ++i)
-    {
-        if(curProdVal == keys[i])
+        let prd = ""
+        let keys = Object.keys(jsonData[curCatVal]);
+        for(let i = 0; i < keys.length; ++i)
         {
-            prd = keys[i];
-            break;
+            if(curProdVal == keys[i])
+            {
+                prd = keys[i];
+                break;
+            }
         }
+        row.appendChild(createInput("up-prod-container", "prd", prd))
+        row.appendChild(createInput("up-carb-container", "carb", jsonData[curCatVal][curProdVal]["carb"]))
+        row.appendChild(createInput("up-fat-container", "fat", jsonData[curCatVal][curProdVal]["fat"]))
+        row.appendChild(createInput("up-prot-container", "prot", jsonData[curCatVal][curProdVal]["prot"]))
+        row.appendChild(createInput("up-kcal-container", "kcal", jsonData[curCatVal][curProdVal]["cal"]))
+        row.appendChild(createInput("up-skaid-container", "skaid", jsonData[curCatVal][curProdVal]["skaid"]))
+
+        // updating a product name would be a huge headache
+        setTimeout(function() {
+            document.getElementById("prd").setAttribute("disabled", "true");
+        }, 1);
+
+        content.appendChild(row);
+
+        canUpdate();
     }
-    row.appendChild(createInput("up-prod-container", "prd", "Produktas: ", prd))
-    row.appendChild(createInput("up-kcal-container", "kcal", "KCAL/100g: ", jsonData[curCatVal][curProdVal]["cal"]))
-    row.appendChild(createInput("up-carb-container", "carb", "Anglv./100g: ", jsonData[curCatVal][curProdVal]["carb"]))
-    row.appendChild(createInput("up-prot-container", "prot", "Balt./100g: ", jsonData[curCatVal][curProdVal]["prot"]))
-    row.appendChild(createInput("up-fat-container", "fat", "Rieb./100g: ", jsonData[curCatVal][curProdVal]["fat"]))
-
-    document.getElementById("content").appendChild(row);
-
-    canUpdate();
 }
 
 function onProdInput(id)
@@ -135,7 +126,17 @@ function canUpdate()
         {
             if(input.value == "")
             {
-                able = false;
+                if(input.className.includes("intfield"))
+                {
+                    if(illegalFields.includes(input.value))
+                    {
+                        able = false;
+                    }
+                }
+                else
+                {
+                    able = false;
+                }
             }
 
             // product field
@@ -178,12 +179,14 @@ function update()
     let carb = document.getElementById("carb").value;
     let prot = document.getElementById("prot").value;
     let fat = document.getElementById("fat").value;
+    let skaid = document.getElementById("skaid").value;
 
     let prodObj = {
-        "cal": parseInt(cal),
-        "carb": parseInt(carb),
-        "prot": parseInt(prot),
-        "fat": parseInt(fat)
+        "cal": parseFloat(cal),
+        "carb": parseFloat(carb),
+        "prot": parseFloat(prot),
+        "fat": parseFloat(fat),
+        "skaid": parseFloat(skaid)
     }
 
     jsonData[curCatVal][prod] = prodObj;
@@ -200,12 +203,13 @@ function update()
 ipcRendererUp.on("finalize-data", function(event, data) {
     jsonData = data;
 
-    let cDropdown = document.getElementById("cat-dropdown");
-    cDropdown.appendChild(createOption(""));
+    let cDropdown = document.getElementById("category-options-0");
 
-    for(cat in jsonData)
+    let counter = 0;
+    for(let cat in jsonData)
     {
-        cDropdown.appendChild(createOption(cat));
+        insertDropdownButton(cDropdown, cat, "0", counter, "cat");
+        counter++;
     }
 });
 
@@ -219,16 +223,23 @@ ipcRendererUp.on("sync-data", function(event, data) {
     curProdVal = "";
 
     // TODO -> populate with different values
-    let catDropdown = document.getElementById("cat-dropdown");
-    let prodDropdown = document.getElementById("prod-dropdown");
-    removeAllChildNodes(prodDropdown);
-    removeAllChildNodes(catDropdown);
+    let catOptions = document.getElementById("category-options-0");
+    let prodOptions = document.getElementById("product-options-0");
+    removeAllChildNodes(prodOptions);
+    removeAllChildNodes(catOptions);
 
-    catDropdown.appendChild(createOption(""));
+    let counter = 0;
     for(let cat in data)
     {
-        catDropdown.appendChild(createOption(cat));
+        insertDropdownButton(catOptions, cat, "0", counter, "cat");
+        counter++;
     }
 
     enableDisableElement("ubtn", "true");
+
+    let cId = "category-dropdown-0";
+    let pId = "product-dropdown-0";
+    document.getElementById(pId).value = "";
+    document.getElementById(cId).value = "";
+    enableDisableElement(pId, true);
 });

@@ -2,10 +2,12 @@
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.np-dropdown-container {
+.category-container-parent {
     padding: 5px 15px;
     font-size: 18px;
     display: table-cell;
+    min-width: 410px;
+    max-width: 410px;
 }
 
 .np-desc-container {
@@ -20,7 +22,7 @@
 
 .np-product-container{
     justify-content: middle;
-    width: 250px;
+    width: 200px;
     display: table-cell;
     border: 1px solid #515656;
     height: 50px;
@@ -32,7 +34,7 @@
 
 .np-kcal-container{
     justify-content: middle;
-    width: 150px;
+    width: 70px;
     display: table-cell;
     border: 1px solid #515656;
     height: 50px;
@@ -40,9 +42,21 @@
     vertical-align: middle;
 }
 
+.np-skaid-container{
+    justify-content: middle;
+    width: 70px;
+    display: table-cell;
+    border: 1px solid #515656;
+    height: 50px;
+    padding: 0px 12px;
+    vertical-align: middle;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
 .np-carb-container{
     justify-content: middle;
-    width: 150px;
+    width: 70px;
     display: table-cell;
     border: 1px solid #515656;
     height: 50px;
@@ -52,7 +66,7 @@
 
 .np-prot-container{
     justify-content: middle;
-    width: 150px;
+    width: 70px;
     display: table-cell;
     border: 1px solid #515656;
     height: 50px;
@@ -62,14 +76,12 @@
 
 .np-fat-container{
     justify-content: middle;
-    width: 150px;
+    width: 70px;
     display: table-cell;
     border: 1px solid #515656;
     height: 50px;
     padding: 0px 12px;
     vertical-align: middle;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
 }
 
 .np-del-container{
@@ -195,4 +207,76 @@
     padding: 5px 15px;
     font-size: 18px;
     border-radius: 4px;
+    width: 470px;
+}
+
+.emoji-button-container-newprod{
+    display: inline-block;
+    width: 100px;
+    padding: 0px 10px;
+}
+
+.emoji-btn-newprod{
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 18px;
+    height: 25px;
+    width: 25px;
+}
+
+.icon-container{
+    display: inline-block;
+}
+
+emoji-picker{
+    position: absolute;
+    right: 285px;
+    width: 300px;
+    height: 300px;
+}
+
+.cat-emoji{
+    display: table-cell;
+    padding: 0px 17px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.desc-inline{
+    font-weight: bold;
+    width: 100%;
+    display: inline-block;
+    padding: 0 12px;
+}
+
+#desc-prod{
+    width: 210px;
+}
+
+#desc-carbs{
+    width: 70px;
+}
+
+#desc-fats{
+    width: 70px;
+}
+
+#desc-prot{
+    width: 60px;
+}
+
+#desc-cals{
+    width: 70px;
+}
+
+#desc-skaid{
+    width: 50px;
+}
+
+#description{
+    padding: 0 14px;
 }

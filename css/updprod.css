@@ -2,13 +2,13 @@
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.cat-container{
+.category-container-parent{
     display: table-cell;
     padding: 5px 15px;
     vertical-align: middle;
 }
 
-.prod-container{
+.product-container-parent{
     display: table-cell;
     padding-left: 15px;
     padding-right: 15px;
@@ -41,12 +41,12 @@
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
     height: 50px;
-    width: 250px;
+    width: 200px;
     vertical-align: middle;
 }
 
 .up-kcal-container{
-    width: 100px;
+    width: 70px;
     display: table-cell;
     border: 1px solid #515656;
     height: 50px;
@@ -54,8 +54,19 @@
     vertical-align: middle;
 }
 
+.up-skaid-container{
+    width: 70px;
+    display: table-cell;
+    border: 1px solid #515656;
+    height: 50px;
+    padding: 0px 12px;
+    vertical-align: middle;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
 .up-carb-container{
-    width: 100px;
+    width: 70px;
     display: table-cell;
     border: 1px solid #515656;
     height: 50px;
@@ -64,7 +75,7 @@
 }
 
 .up-prot-container{
-    width: 100px;
+    width: 70px;
     display: table-cell;
     border: 1px solid #515656;
     height: 50px;
@@ -76,10 +87,8 @@
     display: table-cell;
     padding: 5px 10px;
     border: 1px solid #515656;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
     height: 50px;
-    width: 100px;
+    width: 70px;
     vertical-align: middle;
 }
 
@@ -115,4 +124,43 @@
     height: 80%;
     margin-left: -1px;
     margin-bottom: -2px;
+}
+
+.desc-inline{
+    font-weight: bold;
+    width: 100%;
+    display: inline-block;
+    padding: 0 12px;
+}
+
+#desc-prod{
+    width: 205px;
+}
+
+#desc-carbs{
+    width: 70px;
+}
+
+#desc-fats{
+    width: 65px;
+}
+
+#desc-prot{
+    width: 65px;
+}
+
+#desc-cals{
+    width: 65px;
+}
+
+#desc-skaid{
+    width: 60px;
+}
+
+#description{
+    padding: 0 14px;
+}
+
+.up-desc-container{
+    padding: 12px 12px;
 }

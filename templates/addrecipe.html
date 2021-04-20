@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Pridėti receptą</title>
+        <link rel = "stylesheet" href = "../css/addrecipe.css">
+        <link rel = "stylesheet" href = "../css/shared.css">
+    </head>
+
+    <body onload="onLoad();">
+        <div id="recipe-name-container">
+            <label for="recipe-name-input"><b>Pavadinimas: &nbsp;</b></label>
+            <input id="recipe-name-input" placeholder="Įveskite pavadinimą..." size="25" oninput="doneCheck();">
+        </div>
+        <div id="category-selection-parent">
+            <label for="category-container-0" class="weird-labels"><b>Recepto kategorija: &nbsp;</b></label>
+            <div class="dropdown-container" id="category-container-0">
+                <input id="category-dropdown-0" onfocus="onDropdownClick('category-dropdown-0')" oninput="dropdownFilterAlt('category-dropdown-0')" size="25" onfocusout="onDropdownFocusOut('0', 'category')"
+                placeholder="Ieškoti..." class="searchable-input">
+                <div class="options" id="category-options-0">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="upd-btn-container">
+            <button class="upd-btn" id="ubtn" onclick="done();" disabled="true">
+                <img src="../imgs/checkmark_icon.png" class="checkmark-img">
+            </button>
+        </div>
+
+        <div id="recipe-description-container">
+            <label for="recipe-description" class="weird-labels"><b>Įveskite recepto aprašymą: &nbsp;</b></label>
+            <textarea id="recipe-description"></textarea>
+        </div>
+
+        <script src="../scripts/addrecipe.js"></script>
+        <script src="../scripts/helpers.js"></script>
+    </body>
+</html>

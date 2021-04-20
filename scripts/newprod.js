@@ -3,8 +3,12 @@ const ipcRendererNp = require('electron').ipcRenderer;
 const remote = require('electron').remote;
 
 var jsonData;
+var emojiData;
+
 var currentCat = "";
 var checkboxValue = false;
+
+var illegalFields = ["", "."]
 
 function addRow()
 {
@@ -15,11 +19,12 @@ function addRow()
     mainDiv.setAttribute("id", "np-" + nc_curRowStr);
     mainDiv.setAttribute("class", "np-row");
 
-    mainDiv.appendChild(createInput("np-product-container", "np-product-" + nc_curRowStr, "Produktas: ", ""));
-    mainDiv.appendChild(createInput("np-kcal-container", "np-kcal-" + nc_curRowStr, "KCAL/100g: ", ""));
-    mainDiv.appendChild(createInput("np-carb-container", "np-carb-" + nc_curRowStr, "Anglv./100g: ", ""));
-    mainDiv.appendChild(createInput("np-prot-container", "np-prot-" + nc_curRowStr, "Balt./100g: ", ""));
-    mainDiv.appendChild(createInput("np-fat-container", "np-fat-" + nc_curRowStr, "Rieb./100g: ", ""));
+    mainDiv.appendChild(createInput("np-product-container", "np-product-" + nc_curRowStr, ""));
+    mainDiv.appendChild(createInput("np-carb-container", "np-carb-" + nc_curRowStr, ""));
+    mainDiv.appendChild(createInput("np-fat-container", "np-fat-" + nc_curRowStr, ""));
+    mainDiv.appendChild(createInput("np-prot-container", "np-prot-" + nc_curRowStr, ""));
+    mainDiv.appendChild(createInput("np-kcal-container", "np-kcal-" + nc_curRowStr, ""));
+    mainDiv.appendChild(createInput("np-skaid-container", "np-skaid-" + nc_curRowStr, ""));
 
     var delContainer = createContainer("np-del-container");
     var delBtn = document.createElement("button");
@@ -48,6 +53,19 @@ function onIntInput(id)
     checkInputValidity(inputField);
 
     doneCheck("np", nc_curRow);
+}
+
+function onDropdownClick(id)
+{
+    let inputField = document.getElementById(id);
+    inputField.select();
+    let cls = inputField.getAttribute("class");
+    if(!cls.includes("selected-input"))
+    {
+        cls += " selected-input";
+        inputField.setAttribute("class", cls);
+    }
+    dropdownFilter(id);
 }
 
 function onProdInput(id)
@@ -126,14 +144,21 @@ function delRow(row)
 function populateCategories()
 {
     ipcRendererNp.send("retrieve-data");
+    ipcRendererNp.send("retrieve-emoji-data");
 }
 
-
-function onDropdownSelect()
+function onCatClick(id)
 {
-    currentCat = document.getElementById("np-dropdown").value;
+    let splitId = onCatDropdownButtonClick(id);
+    if(splitId)
+    {
+        currentCat = splitId[0];
 
-    doneCheck("np", nc_curRow);
+        let e = document.getElementById("emoji-0");
+        e.innerHTML = emojiData[currentCat];
+
+        doneCheck("np", nc_curRow);
+    }
 }
 
 function containsProduct(prod, category)
@@ -175,6 +200,7 @@ function getNumberFields(prefix, row)
     fields.push(document.getElementById(prefix + "-carb-" + row));
     fields.push(document.getElementById(prefix + "-prot-" + row));
     fields.push(document.getElementById(prefix + "-fat-" + row));
+    fields.push(document.getElementById(prefix + "-skaid-" + row));
     return fields;
 }
 
@@ -183,7 +209,7 @@ function onCheckbox()
     let checkbox = document.getElementById("np-checkbox");
     checkboxValue = checkbox.checked;
 
-    let dropdown = document.getElementById("np-dropdown");
+    let dropdown = document.getElementById("category-dropdown-0");
     let newcatInput = document.getElementById("np-newcat-input");
 
     if(checkboxValue)
@@ -191,12 +217,23 @@ function onCheckbox()
         dropdown.setAttribute("disabled", "true");
         newcatInput.removeAttribute("disabled");
         currentCat = newcatInput.value;
+        enableDisableElement("ebtn", false);
     }
     else
     {
         dropdown.removeAttribute("disabled");
         newcatInput.setAttribute("disabled", "true");
-        currentCat = dropdown.value;
+        let opt = document.getElementById("category-options-0");
+        let btns = opt.getElementsByClassName("dropdown-btn selected-btn");
+        if(btns.length > 0)
+        {
+            currentCat = btns[0].innerHTML;
+        }
+        else
+        {
+            currentCat = "";
+        }
+        enableDisableElement("ebtn", true);
     }
 
     doneCheck("np", nc_curRow);
@@ -296,12 +333,9 @@ function canSubmit(prefix, rowCount)
             returnValue = false;
         }
     }
-    else
-    {
-        if(document.getElementById(prefix + "-dropdown").value == "")
-        {
-            returnValue = false;
-        }
+    else if(currentCat == "")
+    {   
+        returnValue = false;
     }
 
     for(let i = 0; i <= rowCount; ++i)
@@ -312,6 +346,7 @@ function canSubmit(prefix, rowCount)
         let carbField = document.getElementById(prefix + "-carb-" + iterStr);
         let protField = document.getElementById(prefix + "-prot-" + iterStr);
         let fatField = document.getElementById(prefix + "-fat-" + iterStr);
+        let skaidField = document.getElementById(prefix + "-skaid-" + iterStr);
 
 
         if(prodField.value != "")
@@ -337,7 +372,9 @@ function canSubmit(prefix, rowCount)
             returnValue = false;
         }
 
-        if(kcalField.value == "" || carbField.value == "" || protField.value == "" || fatField.value == "")
+        if(illegalFields.includes(kcalField.value) || illegalFields.includes(carbField.value) || 
+           illegalFields.includes(protField.value) || illegalFields.includes(fatField.value) || 
+           illegalFields.includes(skaidField.value))
         {
             returnValue = false;
         }
@@ -353,10 +390,18 @@ function done(prefix)
 
     let rows = document.getElementsByClassName(prefix + "-row");
 
+    let fs = require("fs");
+    let p = require("path");
+    let ejf = p.join(p.dirname(__dirname), './src/extraResources', 'emojis.json');
+
     // Create new category
     if(checkboxValue)
     {
         jsonData[currentCat] = {};
+
+        let newEmoji = document.getElementById("ebtn").innerHTML;
+        emojiData[currentCat] = newEmoji;
+        fs.writeFileSync(ejf, JSON.stringify(emojiData));
     }
 
     for(r of rows)
@@ -368,6 +413,7 @@ function done(prefix)
         let carb = 0;
         let prot = 0;
         let fat = 0;
+        let skaid = 0;
 
         for(c of conts)
         {
@@ -394,39 +440,88 @@ function done(prefix)
             {
                 fat = parseInt(c.getElementsByTagName("input")[0].value);
             }
+            else if(cClass.includes(prefix + "-skaid-container"))
+            {
+                skaid = parseInt(c.getElementsByTagName("input")[0].value);
+            }
         }
 
         let dict = {
             "cal": kcal,
             "carb": carb,
             "prot": prot,
-            "fat": fat
+            "fat": fat,
+            "skaid": skaid
         }
         jsonData[currentCat][prodName] = dict;
     }
 
     // update main data
-    let fs = require("fs");
     let jf = p.join(p.dirname(__dirname), './src/extraResources/', 'data.json');
     fs.writeFileSync(jf, JSON.stringify(jsonData));
 
-    ipcRendererNp.send("new-data", jsonData);
+    ipcRendererNp.send("new-data", jsonData, emojiData);
 }
 
-ipcRendererNp.on("finalize-data", function(event, data) {
-    jsonData = data;
+ipcRendererNp.on("finalize-data", function(event, jData) {
+    jsonData = jData;
     
-    let cDropdown = document.getElementById("np-dropdown");
-    cDropdown.appendChild(createOption(""));
+    let options = document.getElementById("category-options-0");
 
-    for(cat in jsonData)
+    let counter = 0;
+    for(let cat in jsonData)
     {
-        cDropdown.appendChild(createOption(cat));
+        insertDropdownButton(options, cat, "0", counter, "cat");
+        counter++;
     }
+
+    document.querySelector('emoji-picker')
+        .addEventListener('emoji-click', event => onEmojiSelect(event.detail)); 
 });
 
-ipcRendererNp.on("sync-data", function(event, data) {
-    jsonData = data;
+ipcRendererNp.on("emoji-data", function(event, eData) {
+    emojiData = eData;
+});
 
-    doneCheck();
+ipcRendererNp.on("sync-data", function(event, jData, eData) {
+    jsonData = jData;
+    emojiData = eData;
+
+    let options = document.getElementById("category-options-0");
+    let btns = options.getElementsByClassName("dropdown-btn selected-btn");
+    let currentlySelected = "";
+    if(btns.length > 0)
+    {
+        currentlySelected = btns[0].innerHTML;
+    }
+    removeAllChildNodes(options);
+
+    let id = "";
+    let counter = 0;
+    for(let cat in jsonData)
+    {
+        let tempId = insertDropdownButton(options, cat, "0", counter, "cat");
+        if(cat == currentlySelected)
+        {
+            id = tempId;
+        }
+    }
+
+    if(!(currentCat in jsonData))
+    {
+        document.getElementById("category-dropdown-0").value = "";
+        let e = document.getElementById("emoji-0");
+        e.innerHTML = "";
+    }
+
+    if(id != "" && currentlySelected != "")
+    {
+        let e = document.getElementById("emoji-0");
+        e.innerHTML = emojiData[currentCat];
+        onCatClick(id);
+    }
+    else
+    {
+        doneCheck();
+    }
 });

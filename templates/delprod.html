@@ -4,13 +4,20 @@
         <meta charset = "UTF-8">
         <title>Ištrinti produktus</title>
         <link rel = "stylesheet" href = "../css/delprod.css">
+        <link rel = "stylesheet" href = "../css/shared.css">
     </head>
 
     <body onload="onLoad();">
         <div id="header">
-            <div class="select-container">
-                <label for="cat-dropdown"><b>Kategorija: </b></label>
-                <select id="cat-dropdown" onchange="onDropdownSelect();"></select>
+            <div class="category-container-parent">
+                <label for="category-container-0" class="weird-labels"><b>Kategorija: &nbsp;</b></label>
+                <div class="dropdown-container" id="category-container-0">
+                    <input id="category-dropdown-0" onfocus="onDropdownClick('category-dropdown-0')" oninput="dropdownFilter('category-dropdown-0')" size="20" onfocusout="onDropdownFocusOut('0', 'category')"
+                    placeholder="Ieškoti..." class="searchable-input">
+                    <div class="options" id="category-options-0">
+
+                    </div>
+                </div>
             </div>
             <div class="delete-all-container">
                 <label for="del-all-checkbox">Ištrinti kategoriją: </label>

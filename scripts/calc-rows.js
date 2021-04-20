@@ -12,84 +12,31 @@ function addRow()
     mainDiv.setAttribute("class", "row");
 
     // CATEGORY DROPDOWN
-    // Main structure
-    var catContainer = createContainer("category-container")
-    var catLabel = createLabel("category-dropdown-" + curRowStr, "Kategorija: ")
-
-    // Add dropdown itself
-    var catDropdown = document.createElement("select")
-    cdId = "category-dropdown-" + curRowStr;
-    catDropdown.setAttribute("id", cdId);
-    catDropdown.setAttribute("onchange", "catDropdownSelect(" + curRow + ")");
-    catDropdown.setAttribute("onclick", "highlightRow('" + cdId + "');");
-
-    catDropdown.appendChild(createOption(""));
-
-    // Populate with data
-    for(var cat in jsonData)
-    {
-        catDropdown.appendChild(createOption(cat));
-    }
-    mainDiv = treeAdd(mainDiv, catContainer, catLabel, catDropdown);
+    let sd = createSearchableDropdown(curRowStr, "category");
+    mainDiv.appendChild(sd);
 
     // PRODUCT DROPDOWN
-    var prodContainer = createContainer("product-container")
-    var prodLabel = createLabel("product-dropdown-" + curRowStr, "Produktas: ")
-    var prodDropdown = document.createElement("select");
-    pdId = "product-dropdown-" + curRowStr;
-    prodDropdown.setAttribute("id", pdId);
-    prodDropdown.setAttribute("disabled", "true");
-    prodDropdown.setAttribute("onchange", "prodDropdownSelect(" + curRowStr + ")");
-    prodDropdown.setAttribute("onclick", "highlightRow('" + pdId + "');");
-
-    // Add the first empty dropdown option
-    prodDropdown.appendChild(createOption(""));
-    
-    mainDiv = treeAdd(mainDiv, prodContainer, prodLabel, prodDropdown);
+    let pd = createSearchableDropdown(curRowStr, "product");
+    mainDiv.appendChild(pd);
 
     // AMOUNT INPUT
-    var amountContainer = createContainer("amount-container");
-    var amountLabel = createLabel("amount-" + curRowStr, "Kiekis (g): ");
+    var amountContainer = createContainer("amount-container-parent");
     var input = document.createElement("input");
-    iId = "amount-" + curRowStr;
+    let iId = "amount-" + curRowStr;
     input.setAttribute("id", iId);
-    input.setAttribute("size", "10");
+    input.setAttribute("size", "7");
     input.setAttribute("disabled", "true");
     input.setAttribute("oninput", "amountChange(" + curRowStr + ")");
     input.setAttribute("onclick", "highlightRow('" + iId + "');");
-    mainDiv = treeAdd(mainDiv, amountContainer, amountLabel, input);
 
-    // CALORIES
-    var calContainer = createContainer("cal-container");
-    var calLabel = createLabel("cal-" + curRowStr, "KCAL: ");
-    var calText = document.createElement("b");
-    calText.setAttribute("id", "cal-" + curRowStr);
-    calText.appendChild(document.createTextNode("-"))
-    mainDiv = treeAdd(mainDiv, calContainer, calLabel, calText);
+    mainDiv = treeAdd(mainDiv, amountContainer, input);
 
-    // CARBS
-    var carbContainer = createContainer("carb-container");
-    var carbLabel = createLabel("carb-" + curRowStr, "Anglv.: ");
-    var carbText = document.createElement("b");
-    carbText.setAttribute("id", "carb-" + curRowStr);
-    carbText.appendChild(document.createTextNode("-"))
-    mainDiv = treeAdd(mainDiv, carbContainer, carbLabel, carbText);
-
-    // PROTS
-    var protContainer = createContainer("prot-container");
-    var protLabel = createLabel("prot-" + curRowStr, "Balt.: ");
-    var protText = document.createElement("b");
-    protText.setAttribute("id", "prot-" + curRowStr);
-    protText.appendChild(document.createTextNode("-"))
-    mainDiv = treeAdd(mainDiv, protContainer, protLabel, protText);
-
-    // FATS
-    var fatContainer = createContainer("fat-container");
-    var fatLabel = createLabel("fat-" + curRowStr, "Rieb.: ");
-    var fatText = document.createElement("b");
-    fatText.setAttribute("id", "fat-" + curRowStr);
-    fatText.appendChild(document.createTextNode("-"))
-    mainDiv = treeAdd(mainDiv, fatContainer, fatLabel, fatText);
+    // MACROS & CALS
+    macroEl(mainDiv, "carb", "carb-" + curRowStr);
+    macroEl(mainDiv, "fat", "fat-" + curRowStr);
+    macroEl(mainDiv, "prot", "prot-" + curRowStr);
+    macroEl(mainDiv, "cal", "cal-" + curRowStr);
+    macroEl(mainDiv, "skaid", "skaid-" + curRowStr);
 
     // DELETE BUTTON
     var deleteContainer = createContainer("delete-row-container");
@@ -97,13 +44,13 @@ function addRow()
 
     // IMG
     var img = document.createElement("img");
-    img.setAttribute("src", "imgs/minus_icon.png");
+    img.setAttribute("src", "../imgs/minus_icon.png");
     img.setAttribute("class", "delrow-img");
     deleteBtn.appendChild(img);
     
     deleteBtn.setAttribute("class", "delete-row");
     deleteBtn.setAttribute("id", "delete-row-" + curRowStr);
-    deleteBtn.setAttribute("onclick", "delRow(" + curRowStr + ")")
+    deleteBtn.setAttribute("onclick", "delRow('" + curRowStr + "')");
     deleteContainer.appendChild(deleteBtn);
     mainDiv.appendChild(deleteContainer);
 
@@ -112,89 +59,104 @@ function addRow()
     document.getElementById("calorycalc").insertBefore(mainDiv, addRowBtn);
 }
 
-function treeAdd(mainDiv, childContainer, label, el)
+function macroEl(rowCont, which, id, defText="-")
 {
-    childContainer.appendChild(label);
+    var mCont = createContainer(which + "-container-parent macros");
+    var mText = document.createElement("b");
+    mText.setAttribute("id", id);
+    mText.appendChild(document.createTextNode(defText));
+    rowCont = treeAdd(rowCont, mCont, mText);
+}
+
+function treeAdd(mainDiv, childContainer, el)
+{
     childContainer.appendChild(el);
     mainDiv.appendChild(childContainer);
     return mainDiv;
 }
 
-function delRow(row)
+function createSearchableDropdown(rowNo, name, recipeName)
 {
-    rowEl = document.getElementById("calory" + row)
-    document.getElementById("calorycalc").removeChild(rowEl)
+    let mainCont = createContainer(name + "-container-parent");
+
+    let dropCont = createContainer("dropdown-container");
+    let i = name + "-container-" + rowNo;
+    dropCont.setAttribute("id", i);
+
+    let inp = createSearchableInput(rowNo, name);
+
+    let optionsCont = createContainer("options");
+    optionsCont.setAttribute("id", name + "-options-" + rowNo);
+
+    dropCont.appendChild(inp);
+    dropCont.appendChild(optionsCont);
+    mainCont.appendChild(dropCont);
+
+    if(name == "category")
+    {
+        populateSearchableCatDropdown(optionsCont, rowNo, recipeName);
+        // EMOJI
+        let emoji = document.createElement("b");
+        emoji.setAttribute("class", "cat-emoji");
+        emoji.setAttribute("id", "emoji-" + rowNo);
+        mainCont.appendChild(emoji);
+    }
+
+    return mainCont;
 }
 
-function catDropdownSelect(row)
+function createSearchableInput(rowNo, name)
 {
-    console.log(jsonData);
-    var catDropdown = document.getElementById("category-dropdown-" + row);
-    var prodDropdown = document.getElementById("product-dropdown-" + row);
-    prodDropdown.removeAttribute("disabled");
-
-    // Current category value
-    var catValue = catDropdown.value;
-
-    if(catValue == "")
+    let newInput = document.createElement("input");
+    let i = name + "-dropdown-" + rowNo;
+    newInput.setAttribute("id", i);
+    newInput.setAttribute("onfocus", "onDropdownClick('" + i + "');");
+    newInput.setAttribute("oninput", "dropdownFilter('" + i + "');");
+    newInput.setAttribute("size", "25");
+    newInput.setAttribute("onfocusout", "onDropdownFocusOut('" + rowNo + "', '" + name + "');");
+    newInput.setAttribute("placeholder", "Ieškoti...");
+    newInput.setAttribute("class", "searchable-input");
+    if(name == "product")
     {
-        prodDropdown.value = "";
-        prodDropdown.setAttribute("disabled", "true");
-        let inputField = document.getElementById("amount-" + row);
-        inputField.value = "";
-        inputField.setAttribute("disabled", "true");
-        document.getElementById("cal-" + row).innerHTML = "-";
-        document.getElementById("carb-" + row).innerHTML = "-";
-        document.getElementById("prot-" + row).innerHTML = "-";
-        document.getElementById("fat-" + row).innerHTML = "-";
-        return;
+        newInput.setAttribute("disabled", "true");
     }
-    
-    removeAllChildNodes(prodDropdown);
-    prodDropdown.appendChild(createOption(""));
-    for(var prod in jsonData[catValue])
+    return newInput;
+}
+
+function populateSearchableCatDropdown(catDropdown, curRowStr, recipeName)
+{
+    let counter = 0;
+    for(let cat in jsonData)
     {
-        prodDropdown.appendChild(createOption(prod));
+        insertDropdownButton(catDropdown, cat, curRowStr, counter, "cat", recipeName);
+        counter++;
     }
 }
 
-function prodDropdownSelect(row)
+function delRow(row, recipeName)
 {
-    let cal = document.getElementById("cal-" + row);
-    let carb = document.getElementById("carb-" + row);
-    let prot = document.getElementById("prot-" + row);
-    let fat = document.getElementById("fat-" + row);
-    var amountField = document.getElementById("amount-" + row);
-
-    if(document.getElementById("product-dropdown-" + row).value == "")
+    console.log(recipeName);
+    if(!recipeName || recipeName == 'undefined')
     {
-        cal.innerHTML = "-";
-        carb.innerHTML = "-";
-        prot.innerHTML = "-";
-        fat.innerHTML = "-";
-        amountField.value = "";
-        amountField.setAttribute("disabled", "true");
-        return;
+        let rowEl = document.getElementById("calory" + row);
+        document.getElementById("calorycalc").removeChild(rowEl);
     }
-    
-    var prodData = getProdData(row);
-
-    amountField.value = "100";
-    amountField.removeAttribute("disabled");
-
-    // Set nutrition values
-    cal.innerHTML = prodData["cal"];
-    carb.innerHTML = prodData["carb"];
-    prot.innerHTML = prodData["prot"];
-    fat.innerHTML = prodData["fat"];
+    else
+    {
+        let rowEl = document.getElementById("recipe-" + recipeName + "-" + row);
+        document.getElementById(recipeName + "-footer").removeChild(rowEl);
+        calcRcpTotals(recipeName);
+        saveCheck(recipeName);
+    }
 }
 
-function amountChange(row)
+function amountChange(row, recipeName)
 {
     var cal = document.getElementById("cal-" + row);
     var carb = document.getElementById("carb-" + row);
     var prot = document.getElementById("prot-" + row);
     var fat = document.getElementById("fat-" + row);
+    var skaid = document.getElementById("skaid-" + row);
 
     inputField = document.getElementById("amount-" + row);
     if(inputField.value == "")
@@ -203,6 +165,8 @@ function amountChange(row)
         carb.innerHTML = "-";
         prot.innerHTML = "-";
         fat.innerHTML = "-";
+        skaid.innerHTML = "-";
+        calcTotals();
         return;
     }
 
@@ -210,10 +174,18 @@ function amountChange(row)
     {
         var prodData = getProdData(row);
 
-        cal.innerHTML = (prodData["cal"] * parseInt(inputField.value)) / 100;
-        carb.innerHTML = (prodData["carb"] * parseInt(inputField.value)) / 100;
-        prot.innerHTML = (prodData["prot"] * parseInt(inputField.value)) / 100;
-        fat.innerHTML = (prodData["fat"] * parseInt(inputField.value)) / 100;
+        cal.innerHTML = fixedFloat((prodData["cal"] * parseFloat(inputField.value)) / 100);
+        carb.innerHTML = fixedFloat((prodData["carb"] * parseFloat(inputField.value)) / 100);
+        prot.innerHTML = fixedFloat((prodData["prot"] * parseFloat(inputField.value)) / 100);
+        fat.innerHTML = fixedFloat((prodData["fat"] * parseFloat(inputField.value)) / 100);
+        skaid.innerHTML = fixedFloat((prodData["skaid"] * parseFloat(inputField.value)) / 100);
+    }
+
+    if(!recipeName || recipeName == 'undefined') calcTotals();
+    else
+    {
+        calcRcpTotals(recipeName);
+        saveCheck(recipeName);
     }
 }
 
@@ -224,24 +196,36 @@ function getProdData(row)
     return jsonData[catValue][prodValue];
 }
 
+function getParentContainer(selected)
+{
+    let parent = selected.parentElement;
+    while(!parent.getAttribute("class").includes("parent"))
+    {
+        parent = parent.parentElement;
+    }
+    return parent;
+}
+
 function highlightRow(id)
 {
     let selected = document.getElementById(id);
     let splitId = id.split("-");
     let row = splitId[splitId.length-1];
 
-    if(!selected.parentElement.getAttribute("class").includes("highlighted"))
-    {
-        // get parent
-        let par = selected.parentElement.parentElement;
+    let parentCont = getParentContainer(selected);
 
-        highlightElement(par.getElementsByClassName("category-container")[0]);
-        highlightElement(par.getElementsByClassName("product-container")[0]);
-        highlightElement(par.getElementsByClassName("amount-container")[0]);
-        highlightElement(par.getElementsByClassName("cal-container")[0]);
-        highlightElement(par.getElementsByClassName("carb-container")[0]);
-        highlightElement(par.getElementsByClassName("prot-container")[0]);
-        highlightElement(par.getElementsByClassName("fat-container")[0]);
+    if(!parentCont.getAttribute("class").includes("highlighted"))
+    {
+        let par = parentCont.parentElement;
+
+        highlightElement(par.getElementsByClassName("category-container-parent")[0]);
+        highlightElement(par.getElementsByClassName("product-container-parent")[0]);
+        highlightElement(par.getElementsByClassName("amount-container-parent")[0]);
+        highlightElement(par.getElementsByClassName("cal-container-parent")[0]);
+        highlightElement(par.getElementsByClassName("carb-container-parent")[0]);
+        highlightElement(par.getElementsByClassName("prot-container-parent")[0]);
+        highlightElement(par.getElementsByClassName("fat-container-parent")[0]);
+        highlightElement(par.getElementsByClassName("skaid-container-parent")[0]);
     }
 
     // remove highlight from others if needed
@@ -261,7 +245,16 @@ function highlightRow(id)
             let dClass = d.getAttribute("class");
             if(dClass.includes("container") && dClass.includes("highlighted"))
             {
-                let newClass = dClass.split(" ")[0];
+                let dClassSplit = dClass.split(" ");
+                let newClass = "";
+                for(let i = 0; i < dClassSplit.length; ++i)
+                {
+                    if(dClassSplit[i] != "highlighted")
+                    {
+                        newClass += dClassSplit[i] + " ";
+                    }
+                }
+                newClass.slice(0, -1);
                 d.setAttribute("class", newClass);
                 highlightedRow = true;
             }
@@ -280,57 +273,279 @@ function highlightElement(el)
     el.setAttribute("class", newClass);
 }
 
-ipcRendererCc.on("sync-data", function(event, data) {
-    jsonData = data;
-
-    // Update dropdowns
-    let rows = document.getElementsByClassName("row");
-
-    for(r of rows)
+function onDropdownClick(id)
+{
+    let inputField = document.getElementById(id);
+    inputField.select();
+    let cls = inputField.getAttribute("class");
+    if(!cls.includes("selected-input"))
     {
-        let conts = r.getElementsByTagName("div");
+        cls += " selected-input";
+        inputField.setAttribute("class", cls);
+    }
+    dropdownFilter(id);
+    highlightRow(id);
+}
 
-        // Need it defined in a wider scope for product dropdown to know the value
-        let cDropdown;
+function onCatClick(id, recipeName)
+{
+    let splitId = onCatDropdownButtonClick(id);
+    if(splitId)
+    {
+        let ct = splitId[0];
+        let row = splitId[1];
+        let e = document.getElementById("emoji-" + row);
+        e.innerHTML = emojiData[ct];
 
-        for(c of conts)
+        // discard values
+        let prodInput = document.getElementById("product-dropdown-" + row);
+        prodInput.value = "";
+        discardValues(row);
+
+        let btn = document.getElementById(id);
+        if(btn.parentElement.getAttribute("id"))
+
+        if(recipeName == 'undefined') calcTotals();
+        else
         {
-            let cClass = c.getAttribute("class");
-            
-            if(cClass.includes("category-container"))
+            calcRcpTotals(recipeName);
+            saveCheck(recipeName);
+        }
+
+        populateProductDropdown(splitId, recipeName);
+    }
+}
+
+function onProdClick(id, recipeName)
+{
+    let splitId = onProdDropdownButtonClick(id);
+    if(splitId)
+    {
+        let row = splitId[1];
+        let cal = document.getElementById("cal-" + row);
+        let carb = document.getElementById("carb-" + row);
+        let prot = document.getElementById("prot-" + row);
+        let fat = document.getElementById("fat-" + row);
+        let skaid = document.getElementById("skaid-" + row);
+        var amountField = document.getElementById("amount-" + row);
+
+        var prodData = getProdData(row);
+
+        amountField.value = "100";
+        amountField.removeAttribute("disabled");
+
+        // Set nutrition values
+        cal.innerHTML = prodData["cal"];
+        carb.innerHTML = prodData["carb"];
+        prot.innerHTML = prodData["prot"];
+        fat.innerHTML = prodData["fat"];
+        skaid.innerHTML = prodData["skaid"];
+
+        if(recipeName == 'undefined') calcTotals();
+        else
+        {
+            calcRcpTotals(recipeName);
+            saveCheck(recipeName);
+        }
+    }
+}
+
+function calcTotals()
+{
+    let carbTotal = 0.0;
+    let fatTotal = 0.0;
+    let protTotal = 0.0;
+    let calTotal = 0.0;
+    let skaidTotal = 0.0;
+    for(let i = 0; i <= curRow; ++i)
+    {
+        let iStr = i.toString();
+        carbTotal += fixedFloat(document.getElementById("carb-" + iStr).innerHTML);
+        fatTotal += fixedFloat(document.getElementById("fat-" + iStr).innerHTML);
+        protTotal += fixedFloat(document.getElementById("prot-" + iStr).innerHTML);
+        calTotal += fixedFloat(document.getElementById("cal-" + iStr).innerHTML);
+        skaidTotal += fixedFloat(document.getElementById("skaid-" + iStr).innerHTML);
+    }
+
+    document.getElementById("totals-carb").innerHTML = fixedFloat(carbTotal).toString();
+    document.getElementById("totals-fat").innerHTML = fixedFloat(fatTotal).toString();
+    document.getElementById("totals-prot").innerHTML = fixedFloat(protTotal).toString();
+    document.getElementById("totals-cal").innerHTML = fixedFloat(calTotal).toString();
+    document.getElementById("totals-skaid").innerHTML = fixedFloat(skaidTotal).toString();
+}
+
+function addRecipe()
+{
+    ipcRendererCc.send("addrecipe");
+}
+
+ipcRendererCc.on("recipe-added", function(event, data) {
+    let calcData = [];
+    let rows = document.getElementById("calorycalc").getElementsByClassName("row");
+    for(let r of rows)
+    {
+        let prodParent = r.getElementsByClassName("product-container-parent")[0];
+        let prodOptions = prodParent.getElementsByClassName("options")[0];
+        let selectedBtns = prodOptions.getElementsByClassName("dropdown-btn selected-btn");
+        if(selectedBtns.length > 0)
+        {
+            let product = selectedBtns[0].innerHTML;
+            let catParent = r.getElementsByClassName("category-container-parent")[0];
+            let category = catParent.getElementsByClassName("options")[0].getElementsByClassName("dropdown-btn selected-btn")[0].innerHTML;
+            let amEl = r.getElementsByClassName("amount-container-parent")[0].getElementsByTagName("input")[0];
+            let amData = fixedFloat(amEl.value);
+            calcData.push({
+                "category": category,
+                "product": product,
+                "amount": amData
+            })
+        }
+    }
+
+    // put everything in one place
+    let completeRecipe = {};
+    completeRecipe["name"] = data["name"];
+    completeRecipe["category"] = data["category"];
+    completeRecipe["ingredients"] = calcData;
+    completeRecipe["description"] = data["description"];
+
+    onNewRecipe(completeRecipe);
+});
+
+ipcRendererCc.on("sync-data", function(event, jData, eData, rData, changed) {
+    jsonData = jData;
+    emojiData = eData;
+
+    // Update everything
+    let caloryContent = document.getElementById("calorycalc");
+    let dDivs = caloryContent.getElementsByClassName("dropdown-container");
+
+    for(let d of dDivs)
+    {
+        let dId = d.getAttribute("id");
+        let dIdSplit = dId.split("-");
+        let row = dIdSplit[dIdSplit.length - 1];
+        let name = dIdSplit[0];
+
+        let inputId = name + "-dropdown-" + row;
+        let relevantInput = document.getElementById(inputId);
+
+        if(!relevantInput.hasAttribute("disabled"))
+        {
+            let optionId = name + "-options-" + row;
+            let relevantOptions = document.getElementById(optionId);
+
+            let currentlySelected = "";
+            let oldBtns = relevantOptions.getElementsByTagName("button");
+            for(let ob of oldBtns)
             {
-
-                cDropdown = c.getElementsByTagName("select")[0];
-                let curValue = cDropdown.value;
-
-                removeAllChildNodes(cDropdown);
-                cDropdown.appendChild(createOption(""));
-                for(let cat in data)
+                if(ob.getAttribute("class").includes("selected"))
                 {
-                    cDropdown.appendChild(createOption(cat));
+                    currentlySelected = ob.innerHTML;
+                    currentlySelectedId = ob.getAttribute("id");
+                    break;
                 }
-
-                cDropdown.value = curValue;
-                continue;
             }
-            else if(cClass.includes("product-container"))
+            removeAllChildNodes(relevantOptions);
+
+            if(name == "category")
             {
-                let pDropdown = c.getElementsByTagName("select")[0];
-
-                if(!pDropdown.hasAttribute("disabled"))
+                if(currentlySelected != "" && !(currentlySelected in jsonData))
                 {
-                    let curValue = pDropdown.value;
-
-                    removeAllChildNodes(pDropdown);
-                    pDropdown.appendChild(createOption(""));
-                    for(let prod in data[cDropdown.value])
+                    let prd = document.getElementById("product-dropdown-" + row);
+                    if(!prd.hasAttribute("disabled"))
                     {
-                        pDropdown.appendChild(createOption(prod));
+                        prd.setAttribute("disabled", "true");
                     }
-
-                    pDropdown.value = curValue;
+                    currentlySelected = "";
+                    relevantInput.value = "";
+                    prd.value = "";
+                    discardValues(row);
+                    d.parentElement.getElementsByClassName("cat-emoji")[0].innerHTML = "";
+                }
+                let counter = 0;
+                let id = "";
+                for(let c in jsonData)
+                {
+                    let tempId = insertDropdownButton(relevantOptions, c, row, counter, "cat");
+                    if(c == currentlySelected)
+                    {
+                        id = tempId;
+                    }
+                    counter++;
+                }
+                if(currentlySelected != "" && id != "")
+                {
+                    onCatDropdownButtonClick(id);
+                    let splId = id.split("-");
+                    let r = splId[splId.length - 2];
+                    let ct = splId[0];
+                    let e = document.getElementById("emoji-" + r);
+                    e.innerHTML = emojiData[ct];
+                }
+            }
+            else if(name == "product")
+            {
+                let cato = document.getElementById("category-options-" + row);
+                let selected = cato.getElementsByClassName("dropdown-btn selected-btn");
+                if(selected.length > 0)
+                {
+                    let c = selected[0].innerHTML;
+                    if(currentlySelected && !currentlySelected in jsonData[c])
+                    {
+                        currentlySelected = "";
+                        discardValues(row);
+                    }
+                    let counter = 0;
+                    let id = "";
+                    for(let p in jsonData[c])
+                    {
+                        let tempId = insertDropdownButton(relevantOptions, p, row, counter, "prod");
+                        if(p == currentlySelected)
+                        {
+                            id = tempId;
+                        }
+                        counter++;
+                    }
+                    if(currentlySelected != "" && id != "")
+                    {
+                        onProdClick(id);
+                    }
+                }
+                else
+                {
+                    discardValues(row);
+                    if(!relevantInput.hasAttribute("disabled"))
+                    {
+                        relevantInput.setAttribute("disabled");
+                    }
                 }
             }
         }
     }
+
+    if(changed)
+    {
+        recipeData = rData;
+        removeAllChildNodes(document.getElementById("recipe-content"));
+        removeAllChildNodes(document.getElementById("filter-checkboxes"));
+        populateRecipes();
+    }
+    else
+    {
+        recipeSync(jData);
+    }
 });
+
+// used when syncing
+function discardValues(row)
+{
+    document.getElementById("cal-" + row).innerHTML = "-";
+    document.getElementById("carb-" + row).innerHTML = "-";
+    document.getElementById("prot-" + row).innerHTML = "-";
+    document.getElementById("fat-" + row).innerHTML = "-";
+    document.getElementById("skaid-" + row).innerHTML = "-";
+    let am = document.getElementById("amount-" + row)
+    am.value = "";
+    am.setAttribute("disabled", "true");
+}

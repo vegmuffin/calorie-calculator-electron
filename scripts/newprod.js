@@ -426,23 +426,23 @@ function done(prefix)
             }
             else if(cClass.includes(prefix + "-kcal-container"))
             {
-                kcal = parseInt(c.getElementsByTagName("input")[0].value);
+                kcal = parseFloat(c.getElementsByTagName("input")[0].value);
             }
             else if(cClass.includes(prefix + "-carb-container"))
             {
-                carb = parseInt(c.getElementsByTagName("input")[0].value);
+                carb = parseFloat(c.getElementsByTagName("input")[0].value);
             }
             else if(cClass.includes(prefix + "-prot-container"))
             {
-                prot = parseInt(c.getElementsByTagName("input")[0].value);
+                prot = parseFloat(c.getElementsByTagName("input")[0].value);
             }
             else if(cClass.includes(prefix + "-fat-container"))
             {
-                fat = parseInt(c.getElementsByTagName("input")[0].value);
+                fat = parseFloat(c.getElementsByTagName("input")[0].value);
             }
             else if(cClass.includes(prefix + "-skaid-container"))
             {
-                skaid = parseInt(c.getElementsByTagName("input")[0].value);
+                skaid = parseFloat(c.getElementsByTagName("input")[0].value);
             }
         }
 

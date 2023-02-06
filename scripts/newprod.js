@@ -3,7 +3,6 @@ const ipcRendererNp = require('electron').ipcRenderer;
 const remote = require('electron').remote;
 
 var jsonData;
-var emojiData;
 
 var currentCat = "";
 var checkboxValue = false;
@@ -144,19 +143,13 @@ function delRow(row)
 function populateCategories()
 {
     ipcRendererNp.send("retrieve-data");
-    ipcRendererNp.send("retrieve-emoji-data");
 }
 
 function onCatClick(id)
 {
-    let splitId = onCatDropdownButtonClick(id);
+    //let splitId = onCatDropdownButtonClick(id);
     if(splitId)
     {
-        currentCat = splitId[0];
-
-        let e = document.getElementById("emoji-0");
-        e.innerHTML = emojiData[currentCat];
-
         doneCheck("np", nc_curRow);
     }
 }
@@ -217,7 +210,6 @@ function onCheckbox()
         dropdown.setAttribute("disabled", "true");
         newcatInput.removeAttribute("disabled");
         currentCat = newcatInput.value;
-        enableDisableElement("ebtn", false);
     }
     else
     {
@@ -233,7 +225,6 @@ function onCheckbox()
         {
             currentCat = "";
         }
-        enableDisableElement("ebtn", true);
     }
 
     doneCheck("np", nc_curRow);
@@ -392,16 +383,11 @@ function done(prefix)
 
     let fs = require("fs");
     let p = require("path");
-    let ejf = p.join(p.dirname(__dirname), './src/extraResources', 'emojis.json');
 
     // Create new category
     if(checkboxValue)
     {
         jsonData[currentCat] = {};
-
-        let newEmoji = document.getElementById("ebtn").innerHTML;
-        emojiData[currentCat] = newEmoji;
-        fs.writeFileSync(ejf, JSON.stringify(emojiData));
     }
 
     for(r of rows)
@@ -460,7 +446,7 @@ function done(prefix)
     let jf = p.join(p.dirname(__dirname), './src/extraResources/', 'data.json');
     fs.writeFileSync(jf, JSON.stringify(jsonData));
 
-    ipcRendererNp.send("new-data", jsonData, emojiData);
+    ipcRendererNp.send("new-data", jsonData);
 }
 
 ipcRendererNp.on("finalize-data", function(event, jData) {
@@ -474,19 +460,12 @@ ipcRendererNp.on("finalize-data", function(event, jData) {
         insertDropdownButton(options, cat, "0", counter, "cat");
         counter++;
     }
-
-    document.querySelector('emoji-picker')
-        .addEventListener('emoji-click', event => onEmojiSelect(event.detail)); 
 });
 
-ipcRendererNp.on("emoji-data", function(event, eData) {
-    emojiData = eData;
-});
 
-ipcRendererNp.on("sync-data", function(event, jData, eData) {
+ipcRendererNp.on("sync-data", function(event, jData) {
     jsonData = jData;
-    emojiData = eData;
-
+    
     let options = document.getElementById("category-options-0");
     let btns = options.getElementsByClassName("dropdown-btn selected-btn");
     let currentlySelected = "";
@@ -510,14 +489,10 @@ ipcRendererNp.on("sync-data", function(event, jData, eData) {
     if(!(currentCat in jsonData))
     {
         document.getElementById("category-dropdown-0").value = "";
-        let e = document.getElementById("emoji-0");
-        e.innerHTML = "";
     }
 
     if(id != "" && currentlySelected != "")
     {
-        let e = document.getElementById("emoji-0");
-        e.innerHTML = emojiData[currentCat];
         onCatClick(id);
     }
     else

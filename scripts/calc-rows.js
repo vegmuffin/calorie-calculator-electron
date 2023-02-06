@@ -95,11 +95,6 @@ function createSearchableDropdown(rowNo, name, recipeName)
     if(name == "category")
     {
         populateSearchableCatDropdown(optionsCont, rowNo, recipeName);
-        // EMOJI
-        let emoji = document.createElement("b");
-        emoji.setAttribute("class", "cat-emoji");
-        emoji.setAttribute("id", "emoji-" + rowNo);
-        mainCont.appendChild(emoji);
     }
 
     return mainCont;
@@ -294,8 +289,6 @@ function onCatClick(id, recipeName)
     {
         let ct = splitId[0];
         let row = splitId[1];
-        let e = document.getElementById("emoji-" + row);
-        e.innerHTML = emojiData[ct];
 
         // discard values
         let prodInput = document.getElementById("product-dropdown-" + row);
@@ -412,9 +405,8 @@ ipcRendererCc.on("recipe-added", function(event, data) {
     onNewRecipe(completeRecipe);
 });
 
-ipcRendererCc.on("sync-data", function(event, jData, eData, rData, changed) {
+ipcRendererCc.on("sync-data", function(event, jData, rData, changed) {
     jsonData = jData;
-    emojiData = eData;
 
     // Update everything
     let caloryContent = document.getElementById("calorycalc");
@@ -461,7 +453,6 @@ ipcRendererCc.on("sync-data", function(event, jData, eData, rData, changed) {
                     relevantInput.value = "";
                     prd.value = "";
                     discardValues(row);
-                    d.parentElement.getElementsByClassName("cat-emoji")[0].innerHTML = "";
                 }
                 let counter = 0;
                 let id = "";
@@ -477,11 +468,6 @@ ipcRendererCc.on("sync-data", function(event, jData, eData, rData, changed) {
                 if(currentlySelected != "" && id != "")
                 {
                     onCatDropdownButtonClick(id);
-                    let splId = id.split("-");
-                    let r = splId[splId.length - 2];
-                    let ct = splId[0];
-                    let e = document.getElementById("emoji-" + r);
-                    e.innerHTML = emojiData[ct];
                 }
             }
             else if(name == "product")

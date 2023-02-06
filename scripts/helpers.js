@@ -407,55 +407,6 @@ function onProdDropdownButtonClick(id)
     }
 }
 
-function emojiPress()
-{
-    let em = document.getElementById("em")
-    let emCls = em.getAttribute("class");
-    if(emCls.includes("displayed"))
-    {
-        em.setAttribute("class", "emoji-container");
-    }
-    else
-    {
-        em.setAttribute("class", "emoji-displayed");
-    }
-}
-
-function onEmojiSelect(det)
-{
-    //console.log(det); need -> 'unicode' field
-
-    let em = document.getElementById("em"); // the div
-    let ebtn = document.getElementById("ebtn"); // the btn
-
-    // remove the emoji display(
-    em.setAttribute("class", "emoji-container");
-
-    // add the unicode instead of the add emoji image
-    removeAllChildNodes(ebtn);
-    ebtn.appendChild(document.createTextNode(det["unicode"]));
-}
-
-function onEmojiFocusOut()
-{
-    setTimeout(function() {
-        let focused = document.activeElement;
-        let parent = focused;
-        let em = document.getElementById("em");
-        let ebtn = document.getElementById("ebtn");
-        while(parent != document.body)
-        {
-            parent = parent.parentElement;
-            if(parent.hasAttribute("class") && parent.getAttribute("class").includes("icon-container"))
-            {
-                ebtn.focus();
-                return;
-            }
-        }
-        em.setAttribute("class", "emoji-container");
-    }, 20);
-}
-
 function fixedFloat(numStr)
 {
     let num = 0;

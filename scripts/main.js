@@ -144,13 +144,6 @@ function setMainMenu()
                     }
                 },
                 {
-                    label: "Išsaugoti emoji duomenis",
-                    click()
-                    {
-                        saveData("~/Emoji duomenys.json", emojiData);
-                    }
-                },
-                {
                     label: "Išsaugoti receptų duomenis",
                     click()
                     {
@@ -165,13 +158,6 @@ function setMainMenu()
                     click()
                     {
                         loadData("products");
-                    }
-                },
-                {
-                    label: "Įkelti emoji duomenis",
-                    click()
-                    {
-                        loadData("emoji");
                     }
                 },
                 {
@@ -438,12 +424,6 @@ function loadData(which)
                 jsonData = JSON.parse(fs.readFileSync(file.filePaths[0]))
                 fs.writeFileSync(jf, JSON.stringify(jsonData))
             }
-            else if(which == "emoji")
-            {
-                let ejf = path.join(path.dirname(__dirname), './src/extraResources', 'emojis.json');
-                emojiData = JSON.parse(fs.readFileSync(file.filePaths[0]))
-                fs.writeFileSync(ejf, JSON.stringify(emojiData))
-            }
             else if(which == "recipes")
             {
                 let rjf = path.join(path.dirname(__dirname), './src/extraResources', 'recipes.json');
@@ -451,11 +431,11 @@ function loadData(which)
                 fs.writeFileSync(rjf, JSON.stringify(recipeData))
                 rChanged = true;
             }
-            win.webContents.send("sync-data", jsonData, emojiData, recipeData, rChanged);
-            if(dp_win) dp_win.webContents.send("sync-data", jsonData, emojiData);
+            win.webContents.send("sync-data", jsonData, recipeData, rChanged);
+            if(dp_win) dp_win.webContents.send("sync-data", jsonData);
             if(up_win) dp_win.webContents.send("sync-data", jsonData);
-            if(uc_win) dp_win.webContents.send("sync-data", jsonData, emojiData);
-            if(np_win) dp_win.webContents.send("sync-data", jsonData, emojiData);
+            if(uc_win) dp_win.webContents.send("sync-data", jsonData);
+            if(np_win) dp_win.webContents.send("sync-data", jsonData);
         }
     }).catch(err => {
         console.log(err);
@@ -471,9 +451,8 @@ ipcMain.on("addrecipe", function(event) {
     newAddRecipeWindow();
 });
 
-ipcMain.on("load-data", function(event, jData, eData, rData) {
+ipcMain.on("load-data", function(event, jData, rData) {
     jsonData = jData;
-    emojiData = eData;
     recipeData = rData;
 });
 
@@ -483,10 +462,6 @@ ipcMain.on("retrieve-data", function (event) {
 
 ipcMain.on("retrieve-cc-data", function (event){
     event.sender.send("cc-data", tempData);
-});
-
-ipcMain.on("retrieve-emoji-data", function (event) {
-    event.sender.send("emoji-data", emojiData);
 });
 
 ipcMain.on("retrieve-recipes-data", function(event) {
@@ -509,16 +484,16 @@ ipcMain.on("recipe-file-add", function(event, data)
     fs.writeFileSync(rcpf, JSON.stringify(recipeData));
 });
 
-ipcMain.on("new-data", function(event, jData, eData) {
+ipcMain.on("new-data", function(event, jData) {
     jsonData = jData;
 
     // SYNC WITH MAIN WINDOW
-    win.webContents.send("sync-data", jData, eData);
+    win.webContents.send("sync-data", jData);
 
     // SYNC WITH DELETE WINDOW IF IT EXISTS
     if(dp_win)
     {
-        dp_win.webContents.send("sync-data", jData, eData);
+        dp_win.webContents.send("sync-data", jData);
     }
 
     // SYNC WITH UPDATE WINDOW IF IT EXISTS
@@ -529,15 +504,14 @@ ipcMain.on("new-data", function(event, jData, eData) {
 
     if(uc_win)
     {
-        uc_win.webContents.send("sync-data", jData, eData);
+        uc_win.webContents.send("sync-data", jData);
     }
     
     np_win.close();
 });
 
-ipcMain.on("delete-data", function(event, jData, eData) {
+ipcMain.on("delete-data", function(event, jData) {
     jsonData = jData;
-    emojiData = eData;
 
     // SYNC WITH MAIN WINDOW
     win.webContents.send("sync-data", jData);
@@ -545,7 +519,7 @@ ipcMain.on("delete-data", function(event, jData, eData) {
     // SYNC WITH NEW PRODUCT WINDOW IF IT EXISTS
     if(np_win)
     {
-        np_win.webContents.send("sync-data", jData, eData);
+        np_win.webContents.send("sync-data", jData);
     }
 
     // SYNC WITH UPDATE PRODUCT WINDOW IF IT EXISTS
@@ -556,7 +530,7 @@ ipcMain.on("delete-data", function(event, jData, eData) {
 
     if(uc_win)
     {
-        uc_win.webContents.send("sync-data", jData, eData);
+        uc_win.webContents.send("sync-data", jData);
     }
     
     dp_win.close();
@@ -566,18 +540,18 @@ ipcMain.on("update-data", function(event, data) {
     jsonData = data;
 
     // SYNC WITH MAIN WINDOW
-    win.webContents.send("sync-data", data, emojiData);
+    win.webContents.send("sync-data", data);
 
     // SYNC WITH NEW PRODUCT WINDOW IF IT EXISTS
     if(np_win)
     {
-        np_win.webContents.send("sync-data", data, emojiData);
+        np_win.webContents.send("sync-data", data);
     }
 
     // SYNC WITH DELETE PRODUCT WINDOW IF IT EXISTS
     if(dp_win)
     {
-        dp_win.webContents.send("sync-data", data, emojiData);
+        dp_win.webContents.send("sync-data", data);
     }
 
     if(uc_win)
@@ -588,20 +562,19 @@ ipcMain.on("update-data", function(event, data) {
     up_win.close();
 });
 
-ipcMain.on("update-category", function(event, jData, eData) {
+ipcMain.on("update-category", function(event, jData) {
     jsonData = jData;
-    emojiData = eData;
 
-    win.webContents.send("sync-data", jData, eData);
+    win.webContents.send("sync-data", jData);
 
     if(np_win)
     {
-        np_win.webContents.send("sync-data", jData, eData);
+        np_win.webContents.send("sync-data", jData);
     }
 
     if(dp_win)
     {
-        dp_win.webContents.send("sync-data", jData, eData);
+        dp_win.webContents.send("sync-data", jData);
     }
 
     if(up_win)

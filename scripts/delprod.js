@@ -1,14 +1,12 @@
 const ipcRendererDp = require('electron').ipcRenderer;
 
 var jsonData;
-var emojiData;
 
 var curCatVal = "";
 
 function onLoad()
 {
     ipcRendererDp.send("retrieve-data");
-    ipcRendererDp.send("retrieve-emoji-data");
 }
 
 function onDropdownClick(id)
@@ -156,9 +154,7 @@ function completeDelete()
     let fs = require("fs");
     let p = require("path");
     let jf = p.join(p.dirname(__dirname), './src/extraResources', 'data.json');
-    let ejf = p.join(p.dirname(__dirname), './src/extraResources', 'emojis.json');
     fs.writeFileSync(jf, JSON.stringify(jsonData));
-    fs.writeFileSync(ejf, JSON.stringify(emojiData));
 
     ipcRendererDp.send("delete-data", jsonData, emojiData);
 }
@@ -176,15 +172,9 @@ ipcRendererDp.on("finalize-data", function(event, data)
     }
 });
 
-ipcRendererDp.on("emoji-data", function(event, eData)
-{
-    emojiData = eData;
-});
-
-ipcRendererDp.on("sync-data", function(event, jData, eData)
+ipcRendererDp.on("sync-data", function(event, jData)
 {
     jsonData = jData;
-    emojiData = eData;
 
     let dropdown = document.getElementById("category-dropdown-0");
     let options = document.getElementById("category-options-0");

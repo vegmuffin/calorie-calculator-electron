@@ -10,14 +10,6 @@
     padding: 12px 0;
 }
 
-.newname-container-parent{
-    border: 2px solid #515656;
-    border-radius: 4px;
-    height: 50px;
-    vertical-align: middle;
-    margin: 12px 12px;
-}
-
 .newname-input-container{
     border-right: 2px solid #515656;
     height: inherit;

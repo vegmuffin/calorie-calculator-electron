@@ -32,13 +32,14 @@
     background-color: #787878;
     color: #fff;
     text-align: left;
-    height: 30px;
+    height: 40px;
     width: 100%;
     font-size: 12px;
     display: none;
     border: none;
     z-index: inherit;
     padding-left: 30px;
+    padding-right: 12px;
     background-image: none;
     background-position: 0 0;
 }

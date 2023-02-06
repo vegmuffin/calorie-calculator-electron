@@ -100,7 +100,7 @@ function setMainMenu()
             label: "Produktai",
             submenu: [
                 {
-                    label: "Nauji kategorijos produktai",
+                    label: "Pridėti naują produktą",
                     accelerator: "CmdOrCtrl+P",
                     click()
                     {

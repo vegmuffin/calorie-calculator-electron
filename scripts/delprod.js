@@ -131,7 +131,6 @@ function completeDelete()
     if(document.getElementById("del-all-checkbox").checked)
     {
         delete jsonData[curCatVal];
-        delete emojiData[curCatVal];
     }
     else
     {
@@ -156,7 +155,7 @@ function completeDelete()
     let jf = p.join(p.dirname(__dirname), './src/extraResources', 'data.json');
     fs.writeFileSync(jf, JSON.stringify(jsonData));
 
-    ipcRendererDp.send("delete-data", jsonData, emojiData);
+    ipcRendererDp.send("delete-data", jsonData);
 }
 
 ipcRendererDp.on("finalize-data", function(event, data)

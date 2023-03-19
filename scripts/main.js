@@ -12,7 +12,6 @@ let uc_win;
 let addr_win;
 
 var jsonData;
-var emojiData;
 var recipeData;
 
 var devTools = false;

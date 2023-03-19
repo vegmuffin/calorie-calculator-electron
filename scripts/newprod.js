@@ -147,9 +147,11 @@ function populateCategories()
 
 function onCatClick(id)
 {
-    //let splitId = onCatDropdownButtonClick(id);
+    let splitId = onCatDropdownButtonClick(id);
     if(splitId)
     {
+        currentCat = splitId[0];
+
         doneCheck("np", nc_curRow);
     }
 }

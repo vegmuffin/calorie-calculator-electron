@@ -64,9 +64,9 @@ function onProdClick(id)
         row.appendChild(createInput("up-skaid-container", "skaid", jsonData[curCatVal][curProdVal]["skaid"]))
 
         // updating a product name would be a huge headache
-        setTimeout(function() {
-            document.getElementById("prd").setAttribute("disabled", "true");
-        }, 1);
+        //setTimeout(function() {
+        //    document.getElementById("prd").setAttribute("disabled", "true");
+        //}, 1);
 
         content.appendChild(row);
 

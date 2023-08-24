@@ -336,8 +336,7 @@ function onProdClick(id, recipeName)
         prot.innerHTML = replacedString(prodData["prot"]);
         fat.innerHTML = replacedString(prodData["fat"]);
         skaid.innerHTML = replacedString(prodData["skaid"]);
-
-        if(recipeName == 'undefined') 
+        if(recipeName === undefined || recipeName == "undefined")
 		{
 			calcTotals();
 		}
@@ -364,7 +363,6 @@ function calcTotals()
         protTotal += replacedFloat(document.getElementById("prot-" + iStr).innerHTML);
         calTotal += replacedFloat(document.getElementById("cal-" + iStr).innerHTML);
         skaidTotal += replacedFloat(document.getElementById("skaid-" + iStr).innerHTML);
-		console.log(typeof(carbTotal))
     }
 
 	displayValue(document.getElementById("totals-carb"), carbTotal);

@@ -57,11 +57,11 @@ function onProdClick(id)
             }
         }
         row.appendChild(createInput("up-prod-container", "prd", prd))
-        row.appendChild(createInput("up-carb-container", "carb", jsonData[curCatVal][curProdVal]["carb"]))
-        row.appendChild(createInput("up-fat-container", "fat", jsonData[curCatVal][curProdVal]["fat"]))
-        row.appendChild(createInput("up-prot-container", "prot", jsonData[curCatVal][curProdVal]["prot"]))
-        row.appendChild(createInput("up-kcal-container", "kcal", jsonData[curCatVal][curProdVal]["cal"]))
-        row.appendChild(createInput("up-skaid-container", "skaid", jsonData[curCatVal][curProdVal]["skaid"]))
+        row.appendChild(createInput("up-carb-container", "carb", replacedString(jsonData[curCatVal][curProdVal]["carb"])))
+        row.appendChild(createInput("up-fat-container", "fat", replacedString(jsonData[curCatVal][curProdVal]["fat"])))
+        row.appendChild(createInput("up-prot-container", "prot", replacedString(jsonData[curCatVal][curProdVal]["prot"])))
+        row.appendChild(createInput("up-kcal-container", "kcal", replacedString(jsonData[curCatVal][curProdVal]["cal"])))
+        row.appendChild(createInput("up-skaid-container", "skaid", replacedString(jsonData[curCatVal][curProdVal]["skaid"])))
 
         // updating a product name would be a huge headache
         //setTimeout(function() {
@@ -182,11 +182,11 @@ function update()
     let skaid = document.getElementById("skaid").value;
 
     let prodObj = {
-        "cal": parseFloat(cal),
-        "carb": parseFloat(carb),
-        "prot": parseFloat(prot),
-        "fat": parseFloat(fat),
-        "skaid": parseFloat(skaid)
+        "cal": parseFloatComma(cal),
+        "carb": parseFloatComma(carb),
+        "prot": parseFloatComma(prot),
+        "fat": parseFloatComma(fat),
+        "skaid": parseFloatComma(skaid)
     }
 
     jsonData[curCatVal][prod] = prodObj;

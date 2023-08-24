@@ -14,7 +14,7 @@ let addr_win;
 var jsonData;
 var recipeData;
 
-var devTools = false;
+var devTools = true;
 
 function createWindow()
 {

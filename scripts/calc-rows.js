@@ -169,11 +169,11 @@ function amountChange(row, recipeName)
     {
         var prodData = getProdData(row);
 
-        cal.innerHTML = fixedFloat((prodData["cal"] * parseFloat(inputField.value)) / 100);
-        carb.innerHTML = fixedFloat((prodData["carb"] * parseFloat(inputField.value)) / 100);
-        prot.innerHTML = fixedFloat((prodData["prot"] * parseFloat(inputField.value)) / 100);
-        fat.innerHTML = fixedFloat((prodData["fat"] * parseFloat(inputField.value)) / 100);
-        skaid.innerHTML = fixedFloat((prodData["skaid"] * parseFloat(inputField.value)) / 100);
+        cal.innerHTML = replacedString((prodData["cal"] * parseFloat(inputField.value)) / 100);
+        carb.innerHTML = replacedString((prodData["carb"] * parseFloat(inputField.value)) / 100);
+        prot.innerHTML = replacedString((prodData["prot"] * parseFloat(inputField.value)) / 100);
+        fat.innerHTML = replacedString((prodData["fat"] * parseFloat(inputField.value)) / 100);
+        skaid.innerHTML = replacedString((prodData["skaid"] * parseFloat(inputField.value)) / 100);
     }
 
     if(!recipeName || recipeName == 'undefined') calcTotals();
@@ -298,7 +298,10 @@ function onCatClick(id, recipeName)
         let btn = document.getElementById(id);
         if(btn.parentElement.getAttribute("id"))
 
-        if(recipeName == 'undefined') calcTotals();
+        if(recipeName == 'undefined')
+		{
+			//calcTotals();	
+		}
         else
         {
             calcRcpTotals(recipeName);
@@ -328,13 +331,16 @@ function onProdClick(id, recipeName)
         amountField.removeAttribute("disabled");
 
         // Set nutrition values
-        cal.innerHTML = prodData["cal"];
-        carb.innerHTML = prodData["carb"];
-        prot.innerHTML = prodData["prot"];
-        fat.innerHTML = prodData["fat"];
-        skaid.innerHTML = prodData["skaid"];
+        cal.innerHTML = replacedString(prodData["cal"]);
+        carb.innerHTML = replacedString(prodData["carb"]);
+        prot.innerHTML = replacedString(prodData["prot"]);
+        fat.innerHTML = replacedString(prodData["fat"]);
+        skaid.innerHTML = replacedString(prodData["skaid"]);
 
-        if(recipeName == 'undefined') calcTotals();
+        if(recipeName == 'undefined') 
+		{
+			calcTotals();
+		}
         else
         {
             calcRcpTotals(recipeName);
@@ -353,18 +359,19 @@ function calcTotals()
     for(let i = 0; i <= curRow; ++i)
     {
         let iStr = i.toString();
-        carbTotal += fixedFloat(document.getElementById("carb-" + iStr).innerHTML);
-        fatTotal += fixedFloat(document.getElementById("fat-" + iStr).innerHTML);
-        protTotal += fixedFloat(document.getElementById("prot-" + iStr).innerHTML);
-        calTotal += fixedFloat(document.getElementById("cal-" + iStr).innerHTML);
-        skaidTotal += fixedFloat(document.getElementById("skaid-" + iStr).innerHTML);
+        carbTotal += replacedFloat(document.getElementById("carb-" + iStr).innerHTML);
+        fatTotal += replacedFloat(document.getElementById("fat-" + iStr).innerHTML);
+        protTotal += replacedFloat(document.getElementById("prot-" + iStr).innerHTML);
+        calTotal += replacedFloat(document.getElementById("cal-" + iStr).innerHTML);
+        skaidTotal += replacedFloat(document.getElementById("skaid-" + iStr).innerHTML);
+		console.log(typeof(carbTotal))
     }
 
-    document.getElementById("totals-carb").innerHTML = fixedFloat(carbTotal).toString();
-    document.getElementById("totals-fat").innerHTML = fixedFloat(fatTotal).toString();
-    document.getElementById("totals-prot").innerHTML = fixedFloat(protTotal).toString();
-    document.getElementById("totals-cal").innerHTML = fixedFloat(calTotal).toString();
-    document.getElementById("totals-skaid").innerHTML = fixedFloat(skaidTotal).toString();
+	displayValue(document.getElementById("totals-carb"), carbTotal);
+	displayValue(document.getElementById("totals-fat"), fatTotal);
+	displayValue(document.getElementById("totals-prot"), protTotal);
+	displayValue(document.getElementById("totals-cal"), calTotal);
+	displayValue(document.getElementById("totals-skaid"), skaidTotal);
 }
 
 function addRecipe()

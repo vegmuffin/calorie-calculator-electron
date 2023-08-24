@@ -58,8 +58,8 @@ function checkInputValidity(inputField)
     
     if(!valid)
     {
-        let r = inputField.value.match(/\./g) || [];
-        if(r.length < 2 && lastChar == ".")
+        let r = inputField.value.match(/\,/g) || [];
+        if(r.length < 2 && lastChar == ",")
         {
             returnValue = true;
         }
@@ -91,9 +91,14 @@ function createLabel(forWhat, childText)
     return label;
 }
 
+function parseFloatComma(input)
+{
+	return fixedFloat(input);
+}
+
 function isNumeric(str)
 {
-    return !isNaN(str) && !isNaN(parseFloat(str));    
+    return !isNaN(str) && !isNaN(parseFloat(str.replace(",", ".")));    
 }
 
 function removeAllChildNodes(parent)
@@ -409,10 +414,39 @@ function onProdDropdownButtonClick(id)
 
 function fixedFloat(numStr)
 {
-    let num = 0;
-    if(parseFloat(numStr))
+    let num = parseFloat(numStr.replace(",", "."))
+    if(num)
     {
-        num = parseFloat(parseFloat(numStr).toFixed(2));
+		num = parseFloat(num.toFixed(2));
     }
     return num;
+}
+
+function replacedFloat(numStr)
+{
+	let num = parseFloat(numStr.replace(",", "."))
+	return num;
+}
+
+function replacedString(num)
+{
+	num = num.toFixed(2);
+	num = removeTrailingZeros(num);
+	num = num.replace(".", ",");
+	return num;
+}
+
+function removeTrailingZeros(num) {
+	const numberString = String(num).replace(/\.0+$/, '');
+  
+	return numberString;
+}
+
+function displayValue(element, elementValue)
+{
+	let displayString = +(elementValue);
+	displayString = displayString.toFixed(2);
+	displayString = removeTrailingZeros(displayString);
+	displayString = displayString.replace(".", ",");
+	element.innerHTML = displayString;
 }

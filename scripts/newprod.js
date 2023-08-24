@@ -414,23 +414,23 @@ function done(prefix)
             }
             else if(cClass.includes(prefix + "-kcal-container"))
             {
-                kcal = parseFloat(c.getElementsByTagName("input")[0].value);
+                kcal = parseFloatComma(c.getElementsByTagName("input")[0].value);
             }
             else if(cClass.includes(prefix + "-carb-container"))
             {
-                carb = parseFloat(c.getElementsByTagName("input")[0].value);
+                carb = parseFloatComma(c.getElementsByTagName("input")[0].value);
             }
             else if(cClass.includes(prefix + "-prot-container"))
             {
-                prot = parseFloat(c.getElementsByTagName("input")[0].value);
+                prot = parseFloatComma(c.getElementsByTagName("input")[0].value);
             }
             else if(cClass.includes(prefix + "-fat-container"))
             {
-                fat = parseFloat(c.getElementsByTagName("input")[0].value);
+                fat = parseFloatComma(c.getElementsByTagName("input")[0].value);
             }
             else if(cClass.includes(prefix + "-skaid-container"))
             {
-                skaid = parseFloat(c.getElementsByTagName("input")[0].value);
+                skaid = parseFloatComma(c.getElementsByTagName("input")[0].value);
             }
         }
 

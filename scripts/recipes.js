@@ -345,19 +345,19 @@ function calcRcpTotals(recipeName)
         {
             let mClass = m.getAttribute("class");
             let mText = m.getElementsByTagName("b")[0].innerHTML;
-            if(mClass.includes("carb")) carbTotal += fixedFloat(mText);
-            else if(mClass.includes("fat")) fatTotal += fixedFloat(mText);
-            else if(mClass.includes("prot")) protTotal += fixedFloat(mText);
-            else if(mClass.includes("cal")) calTotal += fixedFloat(mText);
-            else if(mClass.includes("skaid")) skaidTotal += fixedFloat(mText);
+			if(mClass.includes("carb")) carbTotal += replacedFloat(mText);
+            else if(mClass.includes("fat")) fatTotal += replacedFloat(mText);
+            else if(mClass.includes("prot")) protTotal += replacedFloat(mText);
+            else if(mClass.includes("cal")) calTotal += replacedFloat(mText);
+            else if(mClass.includes("skaid")) skaidTotal += replacedFloat(mText);
         }
     }
 
-    carbTotalEl.innerHTML = fixedFloat(carbTotal).toString();
-    fatTotalEl.innerHTML = fixedFloat(fatTotal).toString();
-    protTotalEl.innerHTML = fixedFloat(protTotal).toString();
-    calTotalEl.innerHTML = fixedFloat(calTotal).toString();
-    skaidTotalEl.innerHTML = fixedFloat(skaidTotal).toString();
+	displayValue(carbTotalEl, carbTotal);
+	displayValue(fatTotalEl, fatTotal);
+	displayValue(protTotalEl, protTotal);
+	displayValue(calTotalEl, calTotal);
+	displayValue(skaidTotalEl, skaidTotal);
 }
 
 function onNewRecipe(newRecipe)

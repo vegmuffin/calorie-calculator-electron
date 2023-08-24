@@ -322,8 +322,20 @@ function onCatDropdownButtonClick(id)
     let btn = document.getElementById(id);
     let btnClass = btn.getAttribute("class");
     
+	let splitId = [];
+	splitId.push(btn.innerHTML);
+
+	// fukken trimming magic i came up with
+	let cat = btn.innerHTML;
+	id = id.replace(cat + "-", "");
+	let lastDashIndex = id.lastIndexOf("-");
+	id = id.substring(0, lastDashIndex);
+	
+	splitId.push(id);
+
     if(btnClass.includes("selected"))
     {
+		endDropdownDisplay(id, "category");
         return;
     }
     else
@@ -335,17 +347,6 @@ function onCatDropdownButtonClick(id)
             previouslySelected[0].setAttribute("class", btnClass);
         }
         btn.setAttribute("class", newClass);
-
-        let splitId = [];
-        splitId.push(btn.innerHTML);
-
-        // fukken trimming magic i came up with
-        let cat = btn.innerHTML;
-        id = id.replace(cat + "-", "");
-        let lastDashIndex = id.lastIndexOf("-");
-        id = id.substring(0, lastDashIndex);
-        
-        splitId.push(id);
 
         endDropdownDisplay(id, "category");
 
@@ -378,8 +379,20 @@ function onProdDropdownButtonClick(id)
     let btn = document.getElementById(id);
     let btnClass = btn.getAttribute("class");
     
+	let splitId = [];
+	splitId.push(btn.innerHTML);
+
+	// fukken trimming magic i came up with
+	let prod = btn.innerHTML;
+	id = id.replace(prod + "-", "");
+	let lastDashIndex = id.lastIndexOf("-");
+	id = id.substring(0, lastDashIndex);
+
+	splitId.push(id);
+
     if(btnClass.includes("selected"))
     {
+		endDropdownDisplay(id, "product");
         return;
     }
     else
@@ -391,17 +404,6 @@ function onProdDropdownButtonClick(id)
             previouslySelected[0].setAttribute("class", btnClass);
         }
         btn.setAttribute("class", newClass);
-
-        let splitId = [];
-        splitId.push(btn.innerHTML);
-
-        // fukken trimming magic i came up with
-        let prod = btn.innerHTML;
-        id = id.replace(prod + "-", "");
-        let lastDashIndex = id.lastIndexOf("-");
-        id = id.substring(0, lastDashIndex);
-
-        splitId.push(id);
 
         endDropdownDisplay(id, "product");
 

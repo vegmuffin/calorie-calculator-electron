@@ -130,11 +130,12 @@ function populateSearchableCatDropdown(catDropdown, curRowStr, recipeName)
 
 function delRow(row, recipeName)
 {
-    console.log(recipeName);
     if(!recipeName || recipeName == 'undefined')
     {
         let rowEl = document.getElementById("calory" + row);
         document.getElementById("calorycalc").removeChild(rowEl);
+		curRow--;
+		calcTotals();
     }
     else
     {
@@ -304,7 +305,6 @@ function onCatClick(id, recipeName)
 		}
         else
         {
-            calcRcpTotals(recipeName);
             saveCheck(recipeName);
         }
 

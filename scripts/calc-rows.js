@@ -137,13 +137,6 @@ function delRow(row, recipeName)
 		curRow--;
 		calcTotals();
     }
-    else
-    {
-        let rowEl = document.getElementById("recipe-" + recipeName + "-" + row);
-        document.getElementById(recipeName + "-footer").removeChild(rowEl);
-        calcRcpTotals(recipeName);
-        saveCheck(recipeName);
-    }
 }
 
 function amountChange(row, recipeName)

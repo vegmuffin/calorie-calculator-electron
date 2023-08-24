@@ -215,6 +215,15 @@ function addRcpRow(recipeName)
     saveCheck(recipeName);
 }
 
+function delRcpRow(row, recipeName)
+{
+	let rowEl = document.getElementById("recipe-" + recipeName + "-" + row);
+	document.getElementById(recipeName + "-footer").removeChild(rowEl);
+	ingCounters[recipeName]--;
+	calcRcpTotals(recipeName);
+	saveCheck(recipeName);
+}
+
 function rcpRow(recipeName, ingredient, rcpFooter, counter, iBefore)
 {
     setTimeout(function() {
@@ -258,7 +267,7 @@ function rcpRow(recipeName, ingredient, rcpFooter, counter, iBefore)
             deleteBtn.setAttribute("class", "delete-row");
             deleteBtn.setAttribute("id", "delete-row-" + counterStr);
 
-            deleteBtn.setAttribute("onclick", "delRow('" + counter.toString() + "', '" + recipeName + "')");
+            deleteBtn.setAttribute("onclick", "delRcpRow('" + counter.toString() + "', '" + recipeName + "')");
             deleteCont.appendChild(deleteBtn);
         }
         r.appendChild(deleteCont);

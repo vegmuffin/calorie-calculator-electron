@@ -211,8 +211,6 @@ function addRcpRow(recipeName)
     ingCounters[recipeName]++;
     let iBefore = document.getElementById(recipeName + "-addrow");
     rcpRow(recipeName, null, rcpFooter, ingCounters[recipeName], iBefore);
-
-    saveCheck(recipeName);
 }
 
 function delRcpRow(row, recipeName)
@@ -220,13 +218,14 @@ function delRcpRow(row, recipeName)
 	let rowEl = document.getElementById("recipe-" + recipeName + "-" + row);
 	document.getElementById(recipeName + "-footer").removeChild(rowEl);
 	ingCounters[recipeName]--;
+	realignElements(row, recipeName, ingCounters[recipeName]);
 	calcRcpTotals(recipeName);
 	saveCheck(recipeName);
 }
 
 function rcpRow(recipeName, ingredient, rcpFooter, counter, iBefore)
 {
-    setTimeout(function() {
+	setTimeout(function() {
         let counterStr = recipeName + "-" + counter.toString();
         let r = createContainer("row");
         r.setAttribute("id", "recipe-" + counterStr);
@@ -245,6 +244,7 @@ function rcpRow(recipeName, ingredient, rcpFooter, counter, iBefore)
         input.setAttribute("oninput", "amountChange('" + counterStr + "', '" + recipeName + "');");
         input.setAttribute("onclick", "highlightRow('" + iId + "');");
         input.setAttribute("disabled", "true");
+		input.setAttribute("class", "amount-input");
         r = treeAdd(r, amContainer, input);
 
         macroEl(r, "carb", "carb-" + counterStr);
@@ -305,8 +305,10 @@ function rcpRow(recipeName, ingredient, rcpFooter, counter, iBefore)
                 let amount = document.getElementById("amount-" + counterStr);
                 amount.value = ingredient["amount"];
                 amountChange(counterStr, recipeName);
+				saveCheck(recipeName);
             }, 1);
         }
+		saveCheck(recipeName);
     }, 1);
 }
 
@@ -354,6 +356,7 @@ function calcRcpTotals(recipeName)
         {
             let mClass = m.getAttribute("class");
             let mText = m.getElementsByTagName("b")[0].innerHTML;
+			if (mText == "-") continue;
 			if(mClass.includes("carb")) carbTotal += replacedFloat(mText);
             else if(mClass.includes("fat")) fatTotal += replacedFloat(mText);
             else if(mClass.includes("prot")) protTotal += replacedFloat(mText);
@@ -400,7 +403,6 @@ function saveCheck(recipeName)
         else
         {
             let origRecipe = originalRecipeRaw[0];
-            let origIngredientsLen = origRecipe["ingredients"].length;
 
             let headerStringTest = "<b>" + origRecipe["name"] + "</b> (" + origRecipe["category"] + ")";
             let headerString = document.getElementById(recipeName + "-headerspan").innerHTML;
@@ -409,10 +411,6 @@ function saveCheck(recipeName)
             let footer = document.getElementById(recipeName + "-footer");
             let rows = footer.getElementsByClassName("row");
 
-            let rowCount = rows.length;
-            if(rowCount != origIngredientsLen) check = false;
-
-            let counter = 0;
             for(let r of rows)
             {
                 let catOptions = r.getElementsByClassName("category-container-parent")[0].getElementsByClassName("options")[0];
@@ -420,48 +418,27 @@ function saveCheck(recipeName)
                 let catOptionsSelected = catOptions.getElementsByClassName("dropdown-btn selected-btn");
                 let prodOptionsSelected = prodOptions.getElementsByClassName("dropdown-btn selected-btn");
 
-                if(counter >= origIngredientsLen)
-                {
-                    if(catOptionsSelected.length == 0 || prodOptionsSelected.length == 0)
-                    {
-                        enableDisableElement(recipeName + "-savebutton", true);
-                    }
-                    else
-                    {
-                        check = false;
-                        enableDisableElement(recipeName + "-savebutton", false);
-                    }
-                }
-                else if(catOptionsSelected.length == 0 || prodOptionsSelected.length == 0)
-                {
-                    check = false;
-                    enableDisableElement(recipeName + "-savebutton", true);
-                }
-                else if(catOptionsSelected[0].innerHTML != origRecipe["ingredients"][counter]["category"] || prodOptionsSelected[0].innerHTML != origRecipe["ingredients"][counter]["product"])
-                {
-                    check = false;
-                }
-
-                if(counter < origIngredientsLen)
-                {
-                    let am = r.getElementsByClassName("amount-container-parent")[0].getElementsByTagName("input")[0].value;
-                    if(am != origRecipe["ingredients"][counter]["amount"].toString())
-                    {
-                        check = false;
-                    }
-                }
-                counter++;
+				if(catOptionsSelected.length == 0 || prodOptionsSelected.length == 0)
+				{
+					check = false;
+				}
+				else
+				{
+					check = true
+				}
             }
         }
     }
     
-    // display unsaved changes
-    let unsavedSpan = document.getElementById(recipeName + "-unsavedspan");
-    if(!check) unsavedSpan.innerHTML = "<i>Pakeitimai neišsaugoti</i>";
+    if(!check) {
+		//unsavedSpan.innerHTML = "<i>Pakeitimai neišsaugoti</i>";
+		// THIS MEANS BUTTON IS DISABLED
+		enableDisableElement(recipeName + "-savebutton", true);
+	} 
     else
     {
-        unsavedSpan.innerHTML = "";
-        enableDisableElement(recipeName + "-savebutton", false);
+		// THIS MEANS BUTTON IS NOT DISABLED
+		enableDisableElement(recipeName + "-savebutton", false);
     }
 }
 

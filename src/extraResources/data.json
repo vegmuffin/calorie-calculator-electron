@@ -1,1 +1,3604 @@
-{"asdasd":{"aa":{"cal":4.2,"carb":2,"prot":1,"fat":3.1,"skaid":0},"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa":{"cal":1,"carb":1,"prot":1,"fat":1,"skaid":1}},"asdasdasd":{"aaa":{"cal":1,"carb":1,"prot":1,"fat":1,"skaid":1}}}
+{
+	"Kiaušiniai": {
+		"Vištos kiaušinų baltymas, (LT)": {
+			"cal": 49,
+			"carb": 0.8,
+			"prot": 11.3,
+			"fat": 0,
+			"skaid": 0
+		},
+		"Vištos kiaušinių trynys, (LT)": {
+			"cal": 359,
+			"carb": 0,
+			"prot": 16.3,
+			"fat": 32.1,
+			"skaid": 0
+		},
+		"Anties kiaušiniai, (US)": {
+			"cal": 185,
+			"carb": 1.45,
+			"prot": 12.8,
+			"fat": 13.8,
+			"skaid": 0
+		},
+		"Putpelių kiaušiniai, (US)": {
+			"cal": 158,
+			"carb": 0.41,
+			"prot": 13,
+			"fat": 11.1,
+			"skaid": 0
+		},
+		"Vištos kiaušiniai, (LT)": {
+			"cal": 157,
+			"carb": 0.7,
+			"prot": 12.3,
+			"fat": 11.7,
+			"skaid": 0
+		},
+		"Vištos kiaušinis, 1 didel., 50 g, (US)": {
+			"cal": 71.5,
+			"carb": 0.36,
+			"prot": 6.3,
+			"fat": 4.76,
+			"skaid": 0
+		},
+		"Vištos kiaušinis, 1 mažas., 38 g, (US)": {
+			"cal": 54.3,
+			"carb": 0.27,
+			"prot": 4.79,
+			"fat": 3.61,
+			"skaid": 0
+		},
+		"Vištos kiaušinis, 1 vidut., 44 g, (US)": {
+			"cal": 62.9,
+			"carb": 0.32,
+			"prot": 5.54,
+			"fat": 4.18,
+			"skaid": 0
+		},
+		"Žąsies kiaušiniai, (US)": {
+			"cal": 185,
+			"carb": 1.35,
+			"prot": 13.9,
+			"fat": 13.3,
+			"skaid": 0
+		}
+	},
+	"Žuvis ir jūros produktai": {
+		"Tunas, savo sultyse, (Fish Port, be skysčio, 1 pak. 56 g)": {
+			"cal": 98,
+			"carb": 0,
+			"prot": 23,
+			"fat": 0.7,
+			"skaid": 0
+		},
+		"Menkės filė, (LT)": {
+			"cal": 68,
+			"carb": 0,
+			"prot": 16.5,
+			"fat": 0.3,
+			"skaid": 0
+		},
+		"Lašiša, (LT)": {
+			"cal": 202,
+			"carb": 0,
+			"prot": 19.9,
+			"fat": 13.6,
+			"skaid": 0
+		},
+		"Menkė, (LT)": {
+			"cal": 75,
+			"carb": 0.1,
+			"prot": 17.7,
+			"fat": 0.4,
+			"skaid": 0
+		},
+		"Silkė, atlantinė, sūdyta, (LT)": {
+			"cal": 222,
+			"carb": 0.7,
+			"prot": 20,
+			"fat": 15.4,
+			"skaid": 0
+		},
+		"Lydeka, (LT)": {
+			"cal": 87,
+			"carb": 0.1,
+			"prot": 19.7,
+			"fat": 0.8,
+			"skaid": 0
+		},
+		"Lydeka, jūrinė, (LT)": {
+			"cal": 89,
+			"carb": 0,
+			"prot": 17.2,
+			"fat": 2.2,
+			"skaid": 0
+		},
+		"Skumbrė, (LT)": {
+			"cal": 174,
+			"carb": 0.1,
+			"prot": 18.8,
+			"fat": 10.9,
+			"skaid": 0
+		},
+		"Ančiuviai, švieži, (US)": {
+			"cal": 131,
+			"carb": 0,
+			"prot": 20.4,
+			"fat": 4.84,
+			"skaid": 0
+		},
+		"Ančiuviai, kons. aliejuje, (US)": {
+			"cal": 210,
+			"carb": 0,
+			"prot": 28.9,
+			"fat": 9.71,
+			"skaid": 0
+		},
+		"Skumbrė, atlantinė, šviežia, (US)": {
+			"cal": 205,
+			"carb": 0,
+			"prot": 18.6,
+			"fat": 13.9,
+			"skaid": 0
+		},
+		"Menkė, atlantinė, šviežia, (US)": {
+			"cal": 82,
+			"carb": 0,
+			"prot": 17.8,
+			"fat": 0.67,
+			"skaid": 0
+		},
+		"Šamas, laukinis, šviežias, (US)": {
+			"cal": 95,
+			"carb": 0,
+			"prot": 16.4,
+			"fat": 2.82,
+			"skaid": 0
+		},
+		"Plekšnė, (LT)": {
+			"cal": 93,
+			"carb": 0,
+			"prot": 17.1,
+			"fat": 2.7,
+			"skaid": 0
+		},
+		"Menkė, juodadėmė, šviežia, (US)": {
+			"cal": 74,
+			"carb": 0,
+			"prot": 16.3,
+			"fat": 0.45,
+			"skaid": 0
+		},
+		"Sardinės, atlantinės, kons. aliejuje, (US)": {
+			"cal": 208,
+			"carb": 0,
+			"prot": 24.6,
+			"fat": 11.4,
+			"skaid": 0
+		},
+		"Krevetės, šviežios, (US)": {
+			"cal": 85,
+			"carb": 0,
+			"prot": 20.1,
+			"fat": 0.51,
+			"skaid": 0
+		},
+		"Tilapija, šviežia, (US)": {
+			"cal": 96,
+			"carb": 0,
+			"prot": 20.1,
+			"fat": 1.7,
+			"skaid": 0
+		},
+		"Sterkas, (LT)": {
+			"cal": 84,
+			"carb": 0.4,
+			"prot": 18.7,
+			"fat": 0.8,
+			"skaid": 0
+		},
+		"Karpis, (LT)": {
+			"cal": 123,
+			"carb": 0.1,
+			"prot": 17.1,
+			"fat": 6,
+			"skaid": 0
+		},
+		"Menkė, aliaskinė, šviežia, (US)": {
+			"cal": 76,
+			"carb": 0,
+			"prot": 17.2,
+			"fat": 0.82,
+			"skaid": 0
+		},
+		"Upėtakis, margasis, (LT)": {
+			"cal": 111,
+			"carb": 0.1,
+			"prot": 18.2,
+			"fat": 4.2,
+			"skaid": 0
+		},
+		"Upėtakis, vaivorykštinis, (LT)": {
+			"cal": 161,
+			"carb": 0,
+			"prot": 18.6,
+			"fat": 9.6,
+			"skaid": 0
+		},
+		"Silkė, Matjes, be aliejaus, (190 g)": {
+			"cal": 199,
+			"carb": 0.5,
+			"prot": 14,
+			"fat": 16,
+			"skaid": 0
+		},
+		"Otas, (LT)": {
+			"cal": 124,
+			"carb": 0.1,
+			"prot": 20.1,
+			"fat": 4.8,
+			"skaid": 0
+		},
+		"Tunas, dryžasis (skipjack), šviežias, (US)": {
+			"cal": 103,
+			"carb": 0,
+			"prot": 22,
+			"fat": 1.01,
+			"skaid": 0
+		},
+		"Tunas, (LT)": {
+			"cal": 136,
+			"carb": 0,
+			"prot": 23.7,
+			"fat": 4.6,
+			"skaid": 0
+		},
+		"Tunas, kons. aliejuje, (US)": {
+			"cal": 186,
+			"carb": 0,
+			"prot": 26.5,
+			"fat": 8.08,
+			"skaid": 0
+		},
+		"Tunas, kons. vandenyje, light, (US) ": {
+			"cal": 86,
+			"carb": 0,
+			"prot": 19.4,
+			"fat": 0.96,
+			"skaid": 0
+		},
+		"Ešeriai, įv. rūšių, švieži, (US) ": {
+			"cal": 91,
+			"carb": 0,
+			"prot": 19.4,
+			"fat": 0.92,
+			"skaid": 0
+		},
+		"Upėtakiai, įv. rūšių, švieži, (US)": {
+			"cal": 148,
+			"carb": 0,
+			"prot": 20.8,
+			"fat": 6.61,
+			"skaid": 0
+		},
+		"Silkė, atlantinė, šviežia, (US)": {
+			"cal": 158,
+			"carb": 0,
+			"prot": 18,
+			"fat": 9.04,
+			"skaid": 0
+		},
+		"Silkė, Ram.v.,, šviežia, (US)": {
+			"cal": 195,
+			"carb": 0,
+			"prot": 16.4,
+			"fat": 13.9,
+			"skaid": 0
+		},
+		"Tunas, dryžasis, vanden., (Wide Ocean)": {
+			"cal": 72,
+			"carb": 0,
+			"prot": 16,
+			"fat": 0.75,
+			"skaid": 0
+		},
+		"Tunas, dryžasis, savo sult., (Nixe, Lidl)": {
+			"cal": 91,
+			"carb": 0.1,
+			"prot": 21.1,
+			"fat": 0.6,
+			"skaid": 0
+		},
+		"Tunas, kons., savo sult., dryžasis, (norfa)": {
+			"cal": 114,
+			"carb": 0,
+			"prot": 26.5,
+			"fat": 0.9,
+			"skaid": 0
+		},
+		"Lašišos filė, sūdyta, (Zigmo)": {
+			"cal": 194,
+			"carb": 0.8,
+			"prot": 19,
+			"fat": 13,
+			"skaid": 0
+		},
+		"Lašišos filė, sūdyta, (Well Done)": {
+			"cal": 183,
+			"carb": 0.5,
+			"prot": 17,
+			"fat": 13,
+			"skaid": 0
+		}
+	},
+	"Pienas ir jo produktai": {
+		"Užtepėlė su žalumynais, (Vilkyškių)": {
+			"cal": 209,
+			"carb": 6.3,
+			"prot": 5.5,
+			"fat": 18,
+			"skaid": 0
+		},
+		"Užtepėlė su česnakais, (Vilkyškių)": {
+			"cal": 213,
+			"carb": 5.3,
+			"prot": 6.2,
+			"fat": 18.5,
+			"skaid": 0
+		},
+		"Užtepėlė su pom. ir bazil.,  (Amfora)": {
+			"cal": 245,
+			"carb": 3.5,
+			"prot": 5.2,
+			"fat": 23,
+			"skaid": 0
+		},
+		"Užtepėlė su žolelėm, (Amfora)": {
+			"cal": 245,
+			"carb": 3.4,
+			"prot": 5.2,
+			"fat": 23,
+			"skaid": 0
+		},
+		"Sūris, ferm., be lakt., (Rokiškio light, maž., rieb.)": {
+			"cal": 263,
+			"carb": 2,
+			"prot": 30,
+			"fat": 15,
+			"skaid": 0
+		},
+		"Sūris, ferm., be lakt., (Valio Atleet Light)": {
+			"cal": 260,
+			"carb": 0,
+			"prot": 31,
+			"fat": 15,
+			"skaid": 0
+		},
+		"Sūris, ferm., riekelėmis, be lakt., (Rokiškio Light)": {
+			"cal": 263,
+			"carb": 2,
+			"prot": 30,
+			"fat": 15,
+			"skaid": 0
+		},
+		"Jogurtas, geriamas, (Amfora, 250g)": {
+			"cal": 60,
+			"carb": 3.1,
+			"prot": 6,
+			"fat": 2.6,
+			"skaid": 0
+		},
+		"Jogurtas, proteininis, obuol., (Valio)": {
+			"cal": 62,
+			"carb": 4.6,
+			"prot": 9.2,
+			"fat": 0.7,
+			"skaid": 0
+		},
+		"Pienas, 2,5 % rieb., (LT)": {
+			"cal": 56,
+			"carb": 4.9,
+			"prot": 3.4,
+			"fat": 2.5,
+			"skaid": 0
+		},
+		"Pienas, 3,2 % rieb., (LT)": {
+			"cal": 61,
+			"carb": 4.8,
+			"prot": 3.3,
+			"fat": 3.2,
+			"skaid": 0
+		},
+		"Pienas, 3,5 % rieb., (LT)": {
+			"cal": 65,
+			"carb": 4.8,
+			"prot": 3.3,
+			"fat": 3.5,
+			"skaid": 0
+		},
+		"Varškė, liesa, (LT)": {
+			"cal": 99,
+			"carb": 3.5,
+			"prot": 19.8,
+			"fat": 0.5,
+			"skaid": 0
+		},
+		"Varškė, pusriebė, (LT)": {
+			"cal": 160,
+			"carb": 3.5,
+			"prot": 16,
+			"fat": 9,
+			"skaid": 0
+		},
+		"Sūris, varškės, 13 % rieb., (LT)": {
+			"cal": 213,
+			"carb": 3.6,
+			"prot": 20.1,
+			"fat": 13,
+			"skaid": 0
+		},
+		"Sūris, varškės, 22 % rieb., (LT)": {
+			"cal": 287,
+			"carb": 3.8,
+			"prot": 18.2,
+			"fat": 22,
+			"skaid": 0
+		},
+		"Sūris, varškės, 0,5 % rieb., (LT)": {
+			"cal": 136,
+			"carb": 4,
+			"prot": 28.5,
+			"fat": 0.5,
+			"skaid": 0
+		},
+		"Jogurtas, graikiško tipo, 0,2 % rieb.,  (Actifeel)": {
+			"cal": 54,
+			"carb": 4.1,
+			"prot": 9,
+			"fat": 0.2,
+			"skaid": 0
+		},
+		"Varškė grūdeliais, 0,1 % rieb.,  (Alma)": {
+			"cal": 64,
+			"carb": 2.6,
+			"prot": 13.3,
+			"fat": 0.1,
+			"skaid": 0
+		},
+		"Varškė grūdeliais, 7 % rieb., (Pieno žvaigždės)": {
+			"cal": 119,
+			"carb": 2.7,
+			"prot": 12,
+			"fat": 7,
+			"skaid": 0
+		},
+		"Kefyras, 2,5 % rieb., (LT)": {
+			"cal": 60,
+			"carb": 4.9,
+			"prot": 3.4,
+			"fat": 2.5,
+			"skaid": 0
+		},
+		"Kefyras, 3,2 % rieb., (LT)": {
+			"cal": 61,
+			"carb": 4.5,
+			"prot": 3.3,
+			"fat": 3.2,
+			"skaid": 0
+		},
+		"Jogurtas, islandiškas, liesas,  (Aistė)": {
+			"cal": 63,
+			"carb": 4.5,
+			"prot": 11,
+			"fat": 0.1,
+			"skaid": 0
+		},
+		"Sūris, kietasis, tarkuotas, 37 % rieb., (Well done)": {
+			"cal": 346,
+			"carb": 0,
+			"prot": 34,
+			"fat": 23,
+			"skaid": 0
+		},
+		"Sūris, kietasis, tarkuotas, 40 % rieb., (Džiugas)": {
+			"cal": 367,
+			"carb": 0,
+			"prot": 33,
+			"fat": 26,
+			"skaid": 0
+		},
+		"Sūris, kietasis, 40 % rieb., (Džiugas)": {
+			"cal": 367,
+			"carb": 0,
+			"prot": 33,
+			"fat": 26,
+			"skaid": 0
+		},
+		"Sūris, kietasis, 40 % rieb., skiedrelės, (Džiugas)": {
+			"cal": 357,
+			"carb": 0,
+			"prot": 33,
+			"fat": 25,
+			"skaid": 0
+		},
+		"Užtepėlė iš pasukų, be lakt., (Lidl, Cream spread)": {
+			"cal": 190,
+			"carb": 3.3,
+			"prot": 7.8,
+			"fat": 16,
+			"skaid": 0
+		},
+		"Sūris, parmezano, (LT)": {
+			"cal": 454,
+			"carb": 0.1,
+			"prot": 41.5,
+			"fat": 32,
+			"skaid": 0
+		},
+		"Sūris, parmezano, (Rimi)": {
+			"cal": 402,
+			"carb": 0,
+			"prot": 32,
+			"fat": 30,
+			"skaid": 0
+		},
+		"Sūris, balkaniškas, (Lidl)": {
+			"cal": 252,
+			"carb": 3,
+			"prot": 15.5,
+			"fat": 20,
+			"skaid": 0
+		},
+		"Sūris, mocarela, pjaustytas,  45 % rieb., (Rokiškio)": {
+			"cal": 320,
+			"carb": 2,
+			"prot": 25.2,
+			"fat": 24,
+			"skaid": 0
+		},
+		"Sūris, mocarela, nepjaustytas, 45  % rieb., (Rokiškio)": {
+			"cal": 324,
+			"carb": 2,
+			"prot": 25,
+			"fat": 24,
+			"skaid": 0
+		},
+		"Sūris, mocarela, tarkuotas, 45 % rieb., (Well done)": {
+			"cal": 321,
+			"carb": 2,
+			"prot": 25,
+			"fat": 24,
+			"skaid": 0
+		},
+		"Sūris, mocarela, rutulys, (Galbani, 1 vnt. 125 g)": {
+			"cal": 238,
+			"carb": 2,
+			"prot": 17,
+			"fat": 18,
+			"skaid": 0
+		},
+		"Jogurtas, proteininis, brašk., (Valio)": {
+			"cal": 61,
+			"carb": 4.6,
+			"prot": 9.2,
+			"fat": 0.7,
+			"skaid": 0
+		},
+		"Jogurtas, nat., 3% rieb., (Farm Milk)": {
+			"cal": 66,
+			"carb": 5.8,
+			"prot": 4,
+			"fat": 3,
+			"skaid": 0
+		},
+		"Varškė, grūdeliais, 3 % rieb., (Pilos, Lidl)": {
+			"cal": 85,
+			"carb": 2.5,
+			"prot": 12,
+			"fat": 3,
+			"skaid": 0
+		},
+		"Jogurtas, nat., 2,5 % rieb., be lakt., (Rokiškio Tikras)": {
+			"cal": 57,
+			"carb": 4,
+			"prot": 4.5,
+			"fat": 2.5,
+			"skaid": 0
+		},
+		"Jogurtas, graik., daugiau balt., (Aistė)": {
+			"cal": 62,
+			"carb": 2.3,
+			"prot": 9,
+			"fat": 2,
+			"skaid": 0
+		},
+		"Jogurtas, nat., be lakt., (Well done, 400g)": {
+			"cal": 57,
+			"carb": 4,
+			"prot": 4.5,
+			"fat": 2.5,
+			"skaid": 0
+		},
+		"Jogurtas, nat., 3,8 % rieb., be lakt., (Bios)": {
+			"cal": 70,
+			"carb": 4.2,
+			"prot": 4.7,
+			"fat": 3.8,
+			"skaid": 0
+		},
+		"Jogurtas, nat., be lakt., (Gian Luca Demarco)": {
+			"cal": 57,
+			"carb": 4,
+			"prot": 4.5,
+			"fat": 2.5,
+			"skaid": 0
+		},
+		"Pienas, 1,5% rieb., be lakt., (Lidl)": {
+			"cal": 44,
+			"carb": 4.7,
+			"prot": 3,
+			"fat": 1.5,
+			"skaid": 0
+		},
+		"Sūrio lazdelės, (Pik-Nik, 1 vnt. 20 g)": {
+			"cal": 296,
+			"carb": 0.5,
+			"prot": 26.7,
+			"fat": 20.8,
+			"skaid": 0
+		},
+		"Sūris, čederio, be lakt., (Valio Atleet)": {
+			"cal": 340,
+			"carb": 0,
+			"prot": 24,
+			"fat": 27,
+			"skaid": 0
+		},
+		"Sūris, feta, 21,5 % rieb., (US)": {
+			"cal": 265,
+			"carb": 3.88,
+			"prot": 14.2,
+			"fat": 21.5,
+			"skaid": 0
+		},
+		"Sviestas, 72 % rieb., (LT)": {
+			"cal": 660,
+			"carb": 1.1,
+			"prot": 0.8,
+			"fat": 72.5,
+			"skaid": 0
+		},
+		"Kefyras, 2,5 % rieb., (Vilkyškių)": {
+			"cal": 54,
+			"carb": 4.6,
+			"prot": 3.3,
+			"fat": 2.5,
+			"skaid": 0
+		},
+		"Varškė, grūd. - tepama, su laišk. česn., (Lidl, Pilos)": {
+			"cal": 115,
+			"carb": 2,
+			"prot": 11,
+			"fat": 7,
+			"skaid": 0
+		},
+		"Sūris, varškės, 13 % rieb., (Lidl)": {
+			"cal": 232,
+			"carb": 3,
+			"prot": 25.7,
+			"fat": 13,
+			"skaid": 0
+		},
+		"Sūris, sūdytas, 45 % rieb., (Favita)": {
+			"cal": 226,
+			"carb": 6,
+			"prot": 10,
+			"fat": 18,
+			"skaid": 0
+		},
+		"Sviestas, 82 % rieb., (Lidl, Pilos)": {
+			"cal": 746,
+			"carb": 1,
+			"prot": 1,
+			"fat": 82,
+			"skaid": 0
+		},
+		"Užtepėlė, natūral. sk., (Amfora)": {
+			"cal": 257,
+			"carb": 2.8,
+			"prot": 5.5,
+			"fat": 25,
+			"skaid": 0
+		},
+		"Varškė grūdeliais, 5 % rieb., be lakt., (Alma)": {
+			"cal": 105,
+			"carb": 2.6,
+			"prot": 12.5,
+			"fat": 5,
+			"skaid": 0
+		},
+		"Sviestas, 82,5 % rieb., (LT)": {
+			"cal": 744,
+			"carb": 0.8,
+			"prot": 0.7,
+			"fat": 82.6,
+			"skaid": 0
+		},
+		"Sviestas, ghee, (US)": {
+			"cal": 900,
+			"carb": 0,
+			"prot": 0,
+			"fat": 100,
+			"skaid": 0
+		},
+		"Grietinė, 30 % rieb., (LT)": {
+			"cal": 293,
+			"carb": 3.1,
+			"prot": 2.4,
+			"fat": 30,
+			"skaid": 0
+		},
+		"Grietinė, 12 % rieb., (Saulės Pienas)": {
+			"cal": 138,
+			"carb": 4.3,
+			"prot": 3.3,
+			"fat": 12,
+			"skaid": 0
+		},
+		"Grietinė, 25 % rieb., (Bios, eko)": {
+			"cal": 249,
+			"carb": 3.3,
+			"prot": 2.6,
+			"fat": 25,
+			"skaid": 0
+		},
+		"Jogurtas, graik., 3,9 % rieb., (Amfora)": {
+			"cal": 88,
+			"carb": 4.2,
+			"prot": 9,
+			"fat": 3.9,
+			"skaid": 0
+		},
+		"Grietinėlė, 35 % rieb., (LT)": {
+			"cal": 338,
+			"carb": 3.1,
+			"prot": 2.3,
+			"fat": 35,
+			"skaid": 0
+		},
+		"Grietinėlė, 10 % rieb., (LT)": {
+			"cal": 120,
+			"carb": 4.3,
+			"prot": 3,
+			"fat": 10,
+			"skaid": 0
+		},
+		"Jogurtas, proteininis, mėlynių sk., (Milbona, Lidl)": {
+			"cal": 65,
+			"carb": 6,
+			"prot": 10,
+			"fat": 0.3,
+			"skaid": 0
+		},
+		"Pienas, 3,2 % rieb., (Well done)": {
+			"cal": 60,
+			"carb": 4.7,
+			"prot": 3.2,
+			"fat": 3.2,
+			"skaid": 0
+		},
+		"Sūrio trašk., pom. ir raud. skonio, (Granarolo)": {
+			"cal": 525,
+			"carb": 25,
+			"prot": 35,
+			"fat": 31,
+			"skaid": 1.1
+		},
+		"Sūris, rikotos, 33 % rieb., (Milbona)": {
+			"cal": 160,
+			"carb": 3,
+			"prot": 10,
+			"fat": 12,
+			"skaid": 0
+		},
+		"Sūris, šviežias, (Goldessa light, Lidl)": {
+			"cal": 100,
+			"carb": 3.4,
+			"prot": 12.1,
+			"fat": 4,
+			"skaid": 0
+		},
+		"Sūris, ferm., be lakt., (Valio Atleet Original)": {
+			"cal": 340,
+			"carb": 0,
+			"prot": 26,
+			"fat": 26,
+			"skaid": 0
+		},
+		"Jogurtas, nat., pilno rieb., (US)": {
+			"cal": 61,
+			"carb": 4.66,
+			"prot": 3.47,
+			"fat": 3.25,
+			"skaid": 0
+		},
+		"Varškė grūdeliais, 2 % rieb., (US)": {
+			"cal": 81,
+			"carb": 4.76,
+			"prot": 10.4,
+			"fat": 2.27,
+			"skaid": 0
+		},
+		"Varškė, protein., vanil., (Pilos, Lidl)": {
+			"cal": 67,
+			"carb": 3.2,
+			"prot": 12.4,
+			"fat": 0.5,
+			"skaid": 0
+		},
+		"Sūris, tepamas, 20 % rieb., Cream Cheese, (Rimi)": {
+			"cal": 208,
+			"carb": 3.1,
+			"prot": 3.6,
+			"fat": 20,
+			"skaid": 0.6
+		},
+		"Sūris, mocarelos, pjaustytas, (Milbona, Lidl)": {
+			"cal": 289,
+			"carb": 0.9,
+			"prot": 24,
+			"fat": 21,
+			"skaid": 0
+		}
+	},
+	"Riešutai ir sėklos, jų produktai": {
+		"Riešutų ir razinų mix, (Lidl, Alesto)": {
+			"cal": 507,
+			"carb": 37.2,
+			"prot": 15.5,
+			"fat": 31.6,
+			"skaid": 0
+		},
+		"Chia - ispaninio šalavijo sėklos, (US)": {
+			"cal": 486,
+			"carb": 42.1,
+			"prot": 16.5,
+			"fat": 30.7,
+			"skaid": 34.4
+		},
+		"Anakardžių kremas, (US)": {
+			"cal": 587,
+			"carb": 27.6,
+			"prot": 17.6,
+			"fat": 49.4,
+			"skaid": 2
+		},
+		"Anakardžiai, (LT)": {
+			"cal": 585,
+			"carb": 30.5,
+			"prot": 15.8,
+			"fat": 46.3,
+			"skaid": 6
+		},
+		"Kokosų drožlės, (US)": {
+			"cal": 660,
+			"carb": 23.6,
+			"prot": 6.88,
+			"fat": 64.5,
+			"skaid": 16.3
+		},
+		"Migdolų kremas, (US)": {
+			"cal": 614,
+			"carb": 18.8,
+			"prot": 21,
+			"fat": 55.5,
+			"skaid": 10.3
+		},
+		"Lazdyno riešutai, (LT)": {
+			"cal": 658,
+			"carb": 14.9,
+			"prot": 17.6,
+			"fat": 63.2,
+			"skaid": 8.9
+		},
+		"Pekano riešutai, (US)": {
+			"cal": 691,
+			"carb": 13.9,
+			"prot": 9.17,
+			"fat": 72,
+			"skaid": 9.6
+		},
+		"Kedrų riešutai, (US)": {
+			"cal": 673,
+			"carb": 13.1,
+			"prot": 13.7,
+			"fat": 68.4,
+			"skaid": 3.7
+		},
+		"Pistacijos, (LT)": {
+			"cal": 610,
+			"carb": 27.6,
+			"prot": 20.5,
+			"fat": 48.5,
+			"skaid": 6.1
+		},
+		"Aguonos, (US)": {
+			"cal": 525,
+			"carb": 28.1,
+			"prot": 18,
+			"fat": 41.6,
+			"skaid": 19.5
+		},
+		"Kanapių sėklos, lukštentos, (US)": {
+			"cal": 553,
+			"carb": 8.67,
+			"prot": 31.6,
+			"fat": 48.8,
+			"skaid": 4
+		},
+		"Sezamų sėklos, (LT)": {
+			"cal": 597,
+			"carb": 14.9,
+			"prot": 22,
+			"fat": 53.2,
+			"skaid": 7.9
+		},
+		"Sezamų pasta (tahini), (US)": {
+			"cal": 592,
+			"carb": 21.5,
+			"prot": 17.4,
+			"fat": 53,
+			"skaid": 4.7
+		},
+		"Saulėgrąžos, (LT)": {
+			"cal": 611,
+			"carb": 21.5,
+			"prot": 22.5,
+			"fat": 49,
+			"skaid": 2.7
+		},
+		"Moliūgų sėklos, (US)": {
+			"cal": 559,
+			"carb": 10.7,
+			"prot": 30.2,
+			"fat": 49,
+			"skaid": 6
+		},
+		"Linų sėmenys, (US)": {
+			"cal": 534,
+			"carb": 28.9,
+			"prot": 18.3,
+			"fat": 42.2,
+			"skaid": 27.3
+		},
+		"Migdolų kremas, traškus, (Uldukas)": {
+			"cal": 644,
+			"carb": 17.3,
+			"prot": 21.7,
+			"fat": 56,
+			"skaid": 0
+		},
+		"Žemės riešutų kremas, traškus/glotnus, (Uldukas)": {
+			"cal": 625,
+			"carb": 13,
+			"prot": 26,
+			"fat": 51,
+			"skaid": 0
+		},
+		"Žemės rieš. kremas, traškus, (Maribel, Lidl)": {
+			"cal": 620,
+			"carb": 18.9,
+			"prot": 26.3,
+			"fat": 49.9,
+			"skaid": 5.1
+		},
+		"Žemės riešutų kremas, glotnus, (US)": {
+			"cal": 598,
+			"carb": 22.3,
+			"prot": 22.2,
+			"fat": 51.4,
+			"skaid": 5
+		},
+		"Bertoletijos - braziliški riešutai, (DK)": {
+			"cal": 689,
+			"carb": 13.7,
+			"prot": 15,
+			"fat": 65,
+			"skaid": 5.3
+		},
+		"Riešutų ir spang. mix, (AlisCo, Maxima)": {
+			"cal": 549,
+			"carb": 32.06,
+			"prot": 12.69,
+			"fat": 43.26,
+			"skaid": 7.16
+		},
+		"Migdolai, (LT)": {
+			"cal": 580,
+			"carb": 20.5,
+			"prot": 20,
+			"fat": 52,
+			"skaid": 12.9
+		},
+		"Graikiniai riešutai, (LT)": {
+			"cal": 655,
+			"carb": 14.6,
+			"prot": 18.5,
+			"fat": 60.4,
+			"skaid": 5.9
+		},
+		"Žemės riešutai, (LT)": {
+			"cal": 569,
+			"carb": 19.2,
+			"prot": 25.7,
+			"fat": 46.1,
+			"skaid": 7.3
+		},
+		"Riešutų ir raz. mix. su kep. rieš., (Arimex, Student Premium)": {
+			"cal": 486,
+			"carb": 42,
+			"prot": 11,
+			"fat": 29,
+			"skaid": 0
+		},
+		"Žemės riešutų kremas, glotnus, (Well Done)": {
+			"cal": 620,
+			"carb": 19,
+			"prot": 26,
+			"fat": 50,
+			"skaid": 5.1
+		}
+	},
+	"Aliejai": {
+		"Alyvuogių aliejus, (US)": {
+			"cal": 884,
+			"carb": 0,
+			"prot": 0,
+			"fat": 100,
+			"skaid": 0
+		},
+		"Rapsų aliejus, (US)": {
+			"cal": 884,
+			"carb": 0,
+			"prot": 0,
+			"fat": 100,
+			"skaid": 0
+		},
+		"Saulėgrąžų aliejus, (US)": {
+			"cal": 884,
+			"carb": 0,
+			"prot": 0,
+			"fat": 100,
+			"skaid": 0
+		},
+		"Avokadų aliejus, (US)": {
+			"cal": 884,
+			"carb": 0,
+			"prot": 0,
+			"fat": 100,
+			"skaid": 0
+		},
+		"Linų sėmenų aliejus, (US)": {
+			"cal": 884,
+			"carb": 0,
+			"prot": 0.11,
+			"fat": 100,
+			"skaid": 0
+		},
+		"Kokosų aliejus, (US)": {
+			"cal": 892,
+			"carb": 0,
+			"prot": 0,
+			"fat": 99.1,
+			"skaid": 0
+		}
+	},
+	"Grūdiniai gaminiai": {
+		"Trapučiai, kukurūzų, su kanap. ir pipir., (Lidl, 1 vnt. 5 g.)": {
+			"cal": 379,
+			"carb": 72,
+			"prot": 9.8,
+			"fat": 3.9,
+			"skaid": 8.5
+		},
+		"Duona skrudinimui su spelta grūdais, (Toste, Vilniaus duona)": {
+			"cal": 283,
+			"carb": 46,
+			"prot": 10,
+			"fat": 5.7,
+			"skaid": 4.5
+		},
+		"Duona skrudinimui, viso grūdo, (Toste, Vilniaus duona)": {
+			"cal": 255,
+			"carb": 45,
+			"prot": 11,
+			"fat": 2.3,
+			"skaid": 6.1
+		},
+		"Duona skrudinimui, ruginė, (Toste, Vilniaus duona)": {
+			"cal": 264,
+			"carb": 38,
+			"prot": 12,
+			"fat": 5.5,
+			"skaid": 8.8
+		},
+		"Duona skrudinimui, protein, (Toste, Vilniaus duona) ": {
+			"cal": 292,
+			"carb": 28,
+			"prot": 16,
+			"fat": 11,
+			"skaid": 8.5
+		},
+		"Duona, ruginė, viso grūdo, be pridėt cukr., (Biržų duona)": {
+			"cal": 240,
+			"carb": 48.2,
+			"prot": 5.1,
+			"fat": 1,
+			"skaid": 8.8
+		},
+		"Duona, ruginė, viso grūdo, be pridėt. cukr., (Rugelis)": {
+			"cal": 214,
+			"carb": 40,
+			"prot": 5.6,
+			"fat": 1,
+			"skaid": 11
+		},
+		"Duona, ruginė, viso grūdo, (Trejos girnos, eko)": {
+			"cal": 233,
+			"carb": 42.8,
+			"prot": 7.4,
+			"fat": 1.6,
+			"skaid": 9.1
+		},
+		"Duonelės, porcijinės, (Laba aviža)": {
+			"cal": 212,
+			"carb": 22,
+			"prot": 15,
+			"fat": 4.9,
+			"skaid": 10
+		},
+		"Paplotėliai, ruginiai, viso grūdo, (Tastino, Lidl, 1 vnt. 9 g)": {
+			"cal": 345,
+			"carb": 59.2,
+			"prot": 10.8,
+			"fat": 2.8,
+			"skaid": 20
+		},
+		"Tortilijos, su burok., (Santa Maria)": {
+			"cal": 304,
+			"carb": 52,
+			"prot": 9.3,
+			"fat": 6.8,
+			"skaid": 3.3
+		},
+		"Lazdelės, ruginės, viso grūdo, su česnak., (Rūgpien. kaimo)": {
+			"cal": 275,
+			"carb": 62.1,
+			"prot": 11.5,
+			"fat": 6.8,
+			"skaid": 0
+		},
+		"Lazdelės, ruginės, viso grūdo, su sėkl., (Rūgpien. kaimo)": {
+			"cal": 270,
+			"carb": 60.1,
+			"prot": 12,
+			"fat": 7,
+			"skaid": 0
+		},
+		"Lazdelės, ruginės, viso grūdo, su svog., (Rūgpien. kaimo)": {
+			"cal": 260,
+			"carb": 59.2,
+			"prot": 11.1,
+			"fat": 6.5,
+			"skaid": 0
+		},
+		"Lazdelės, kvietinės, su viso gr. milt., (Saulės grūdas)": {
+			"cal": 446,
+			"carb": 67.03,
+			"prot": 12.4,
+			"fat": 14.2,
+			"skaid": 2.56
+		},
+		"Tortilijos, viso grūdo, (Lidl, 61.7g)": {
+			"cal": 294,
+			"carb": 44.9,
+			"prot": 9.5,
+			"fat": 7.2,
+			"skaid": 5.6
+		},
+		"Duona, ruginė, viso grūdo, (Lidl)": {
+			"cal": 186,
+			"carb": 34.6,
+			"prot": 4.2,
+			"fat": 1.2,
+			"skaid": 10.1
+		},
+		"Bagelis, naminis, (1 vnt., 69 g)": {
+			"cal": 191.97,
+			"carb": 28.7,
+			"prot": 9.94,
+			"fat": 4.8,
+			"skaid": 1.66
+		},
+		"Duona skrudinimui, pilno grūdo, (Lidl)": {
+			"cal": 245,
+			"carb": 38.7,
+			"prot": 12.3,
+			"fat": 3,
+			"skaid": 7
+		},
+		"Krekeriai, kviet., pilno grūdo, (US)": {
+			"cal": 427,
+			"carb": 69.6,
+			"prot": 10.6,
+			"fat": 14.1,
+			"skaid": 10.3
+		},
+		"Duona, ruginė, viso grūdo, be prid. mielių ir cukr., (Trejos girnos)": {
+			"cal": 216,
+			"carb": 41,
+			"prot": 6.6,
+			"fat": 1.1,
+			"skaid": 7.7
+		},
+		"Duonelės, viso grūdo, (Mano Duona, Lidl)": {
+			"cal": 309,
+			"carb": 42.8,
+			"prot": 11.4,
+			"fat": 8.8,
+			"skaid": 6.2
+		}
+	},
+	"Grūdinės kultūros, miltai, makaronai\t": {
+		"Grikių kruopos, (LT)": {
+			"cal": 349,
+			"carb": 69.3,
+			"prot": 12.6,
+			"fat": 3.1,
+			"skaid": 5.9
+		},
+		"Ryžiai, rudieji, ilgag., (US)": {
+			"cal": 367,
+			"carb": 76.2,
+			"prot": 7.54,
+			"fat": 3.2,
+			"skaid": 3.6
+		},
+		"Ryžiai, rudieji, (DK)": {
+			"cal": 358,
+			"carb": 76,
+			"prot": 9,
+			"fat": 2.9,
+			"skaid": 4.2
+		},
+		"Ryžiai, basmati, (URTEKRAM)": {
+			"cal": 360,
+			"carb": 77,
+			"prot": 9.5,
+			"fat": 1.1,
+			"skaid": 1
+		},
+		"Bolivinė balanda, juodoji, (DK)": {
+			"cal": 347,
+			"carb": 65.6,
+			"prot": 13.7,
+			"fat": 6.5,
+			"skaid": 13.9
+		},
+		"Bolivinė balanda, raudonoji, (DK)": {
+			"cal": 358,
+			"carb": 65.4,
+			"prot": 14.6,
+			"fat": 7,
+			"skaid": 12.3
+		},
+		"Bolivinė balanda, (US)": {
+			"cal": 368,
+			"carb": 64.2,
+			"prot": 14.1,
+			"fat": 6.07,
+			"skaid": 7
+		},
+		"Bulguras, (US)": {
+			"cal": 342,
+			"carb": 75.9,
+			"prot": 12.3,
+			"fat": 1.33,
+			"skaid": 12.5
+		},
+		"Kuskusas, (US)": {
+			"cal": 376,
+			"carb": 77.4,
+			"prot": 12.8,
+			"fat": 0.64,
+			"skaid": 5
+		},
+		"Burnočio sėklos, (US)": {
+			"cal": 371,
+			"carb": 65.2,
+			"prot": 13.6,
+			"fat": 7.02,
+			"skaid": 6.7
+		},
+		"Sorgų kruopos, (US)": {
+			"cal": 329,
+			"carb": 72.1,
+			"prot": 10.6,
+			"fat": 3.46,
+			"skaid": 6.7
+		},
+		"Kukurūzų krakmolas, (US)": {
+			"cal": 381,
+			"carb": 91.3,
+			"prot": 0.26,
+			"fat": 0.05,
+			"skaid": 0.9
+		},
+		"Miltai, kukurūzų, (DK)": {
+			"cal": 361,
+			"carb": 78.7,
+			"prot": 6.8,
+			"fat": 2.8,
+			"skaid": 3.2
+		},
+		"Miltai, rudųjų ryžių, (US)": {
+			"cal": 363,
+			"carb": 76.5,
+			"prot": 7.23,
+			"fat": 2.78,
+			"skaid": 4.6
+		},
+		"Miltai, speltos, šviesūs, (MALSENA)": {
+			"cal": 351,
+			"carb": 71.5,
+			"prot": 12.9,
+			"fat": 2.2,
+			"skaid": 0
+		},
+		"Miltai, speltos, viso grūdo, (MALSENA)": {
+			"cal": 343,
+			"carb": 70.8,
+			"prot": 13.8,
+			"fat": 2.3,
+			"skaid": 0
+		},
+		"Miltai, speltos, viso grūdo, (DK)": {
+			"cal": 332,
+			"carb": 72.2,
+			"prot": 13.4,
+			"fat": 2.3,
+			"skaid": 15.3
+		},
+		"Miltai, speltos, sijoti, (DK)": {
+			"cal": 348,
+			"carb": 73.6,
+			"prot": 12,
+			"fat": 1.7,
+			"skaid": 5.1
+		},
+		"Miltai, avižiniai, viso grūdo, (Malsena)": {
+			"cal": 369,
+			"carb": 67.9,
+			"prot": 13.2,
+			"fat": 7.2,
+			"skaid": 0
+		},
+		"Avižos, kapotos, (Malsena)": {
+			"cal": 350,
+			"carb": 53.8,
+			"prot": 16.4,
+			"fat": 6.4,
+			"skaid": 10.9
+		},
+		"Miežinės kruopos, (Ekofrisa)": {
+			"cal": 350,
+			"carb": 72.7,
+			"prot": 11.3,
+			"fat": 1.5,
+			"skaid": 1.6
+		},
+		"Kukurūzų branduoliai, (US)": {
+			"cal": 365,
+			"carb": 74.3,
+			"prot": 9.42,
+			"fat": 4.74,
+			"skaid": 7.3
+		},
+		"Makaronai, lęšių, (Lidl)": {
+			"cal": 340,
+			"carb": 54.2,
+			"prot": 23.9,
+			"fat": 1.7,
+			"skaid": 6.2
+		},
+		"Makaronai, kukurūzų, (US)": {
+			"cal": 357,
+			"carb": 79.3,
+			"prot": 7.46,
+			"fat": 2.08,
+			"skaid": 11
+		},
+		"Makaronai, viso grūdo, (US)": {
+			"cal": 352,
+			"carb": 73.4,
+			"prot": 13.9,
+			"fat": 2.93,
+			"skaid": 9.2
+		},
+		"Makaronai, spagečiai, kukurūzų, (Al dente)": {
+			"cal": 359,
+			"carb": 76,
+			"prot": 7.1,
+			"fat": 2.3,
+			"skaid": 0
+		},
+		"Makaronai, spagečiai, viso grūdo, (Lubella)": {
+			"cal": 357,
+			"carb": 68,
+			"prot": 15.2,
+			"fat": 1.3,
+			"skaid": 0
+		},
+		"Makaronai, Soba, su grikių milt., (AJI)": {
+			"cal": 346,
+			"carb": 67.3,
+			"prot": 13.9,
+			"fat": 2.3,
+			"skaid": 0
+		},
+		"Grikiai, skrudinti, virti, (US)": {
+			"cal": 92,
+			"carb": 19.9,
+			"prot": 3.38,
+			"fat": 0.62,
+			"skaid": 2.7
+		},
+		"Makaronai, avinžirnių, (Lidl)": {
+			"cal": 363,
+			"carb": 54.6,
+			"prot": 17.1,
+			"fat": 6.1,
+			"skaid": 10.5
+		},
+		"Miltai, avinžirnių, (US)": {
+			"cal": 387,
+			"carb": 57.8,
+			"prot": 22.4,
+			"fat": 6.69,
+			"skaid": 10.8
+		},
+		"Avižiniai dribsniai, viso grūdo, (Malsena)": {
+			"cal": 368,
+			"carb": 68.7,
+			"prot": 12.05,
+			"fat": 7,
+			"skaid": 0
+		},
+		"Grikiai, neskrudinti, Rimi)": {
+			"cal": 367,
+			"carb": 69.3,
+			"prot": 12.6,
+			"fat": 3.1,
+			"skaid": 5.9
+		},
+		"Makaronai, grikių, (Amisa)": {
+			"cal": 361,
+			"carb": 65.9,
+			"prot": 13.6,
+			"fat": 3.2,
+			"skaid": 7
+		},
+		"Bolivinė balanda, virta, (US)": {
+			"cal": 120,
+			"carb": 21.3,
+			"prot": 4.4,
+			"fat": 1.92,
+			"skaid": 2.8
+		},
+		"Bolivinė balanda, baltoji, (DK)": {
+			"cal": 362,
+			"carb": 66.5,
+			"prot": 13.3,
+			"fat": 6.5,
+			"skaid": 8.3
+		},
+		"Miltai, baltųjų ryžių, (US)": {
+			"cal": 366,
+			"carb": 80.1,
+			"prot": 5.95,
+			"fat": 1.42,
+			"skaid": 2.4
+		},
+		"Makaronai, sausi, (US)": {
+			"cal": 371,
+			"carb": 74.7,
+			"prot": 13,
+			"fat": 1.51,
+			"skaid": 3.2
+		},
+		"Perlinės kruopos, (US)": {
+			"cal": 352,
+			"carb": 77.7,
+			"prot": 9.91,
+			"fat": 1.16,
+			"skaid": 15.6
+		},
+		"Manų kruopos, (US)": {
+			"cal": 360,
+			"carb": 72.8,
+			"prot": 12.7,
+			"fat": 1.05,
+			"skaid": 3.9
+		},
+		"Ryžiai, laukiniai, (US)": {
+			"cal": 357,
+			"carb": 74.9,
+			"prot": 14.7,
+			"fat": 1.08,
+			"skaid": 6.2
+		},
+		"Makaronai, ryžių, (US)": {
+			"cal": 364,
+			"carb": 80.2,
+			"prot": 5.95,
+			"fat": 0.56,
+			"skaid": 1.6
+		},
+		"Miltai, grikių, (DK)": {
+			"cal": 343,
+			"carb": 70,
+			"prot": 12,
+			"fat": 2.8,
+			"skaid": 4.7
+		},
+		"Miltai, avižiniai, viso grūdo, (US)": {
+			"cal": 389,
+			"carb": 69.9,
+			"prot": 13.2,
+			"fat": 6.31,
+			"skaid": 10.5
+		},
+		"Avižiniai dribsniai, (LT)": {
+			"cal": 365,
+			"carb": 67.5,
+			"prot": 13.8,
+			"fat": 6.7,
+			"skaid": 9
+		},
+		"Avižų kruopos, kapotos, (US)": {
+			"cal": 381,
+			"carb": 69.8,
+			"prot": 12.5,
+			"fat": 5.8,
+			"skaid": 12
+		},
+		"Kukurūzų kruopos, (US)": {
+			"cal": 371,
+			"carb": 79.6,
+			"prot": 8.8,
+			"fat": 1.2,
+			"skaid": 1.6
+		},
+		"Sorų kruopos, (US)": {
+			"cal": 378,
+			"carb": 72.8,
+			"prot": 11,
+			"fat": 4.22,
+			"skaid": 8.5
+		},
+		"Miltai, kvietiniai, pilno grūdo, (US)": {
+			"cal": 340,
+			"carb": 72,
+			"prot": 13.2,
+			"fat": 2.5,
+			"skaid": 10.7
+		},
+		"Speltos kviečių kruopos, (US)": {
+			"cal": 338,
+			"carb": 70.2,
+			"prot": 14.6,
+			"fat": 2.43,
+			"skaid": 10.7
+		},
+		"Miltai, ruginiai, viso grūdo, (DK)": {
+			"cal": 333,
+			"carb": 76.6,
+			"prot": 8.7,
+			"fat": 2.3,
+			"skaid": 14.8
+		},
+		"Miltai, ruginiai, 85 % sijoti, (DK)": {
+			"cal": 339,
+			"carb": 77.5,
+			"prot": 7.8,
+			"fat": 1.8,
+			"skaid": 9
+		},
+		"Ryžiai, balt., plikyti, (DK)": {
+			"cal": 358,
+			"carb": 79.4,
+			"prot": 7.8,
+			"fat": 1.2,
+			"skaid": 0.9
+		},
+		"Ryžiai, balt., šlif., (DK)": {
+			"cal": 354,
+			"carb": 77.8,
+			"prot": 8.4,
+			"fat": 1.2,
+			"skaid": 0.7
+		},
+		"Miltai, kvietiniai, (US)": {
+			"cal": 364,
+			"carb": 76.3,
+			"prot": 10.3,
+			"fat": 0.98,
+			"skaid": 2.7
+		},
+		"Avižos, (US)": {
+			"cal": 379,
+			"carb": 67.7,
+			"prot": 13.15,
+			"fat": 6.52,
+			"skaid": 10.1
+		},
+		"Ryžiai, ilgag., plikyt., (US)": {
+			"cal": 374,
+			"carb": 80.9,
+			"prot": 7.51,
+			"fat": 1.03,
+			"skaid": 1.8
+		},
+		"Ryžiai, ilgag., įprast., (US)": {
+			"cal": 365,
+			"carb": 80,
+			"prot": 7.13,
+			"fat": 0.66,
+			"skaid": 1.3
+		},
+		"Avižų kruopos, (Fasma)": {
+			"cal": 352,
+			"carb": 64.2,
+			"prot": 14.9,
+			"fat": 6.6,
+			"skaid": 11.7
+		},
+		"Sėlenos, kviečių, (LT)": {
+			"cal": 162,
+			"carb": 59.3,
+			"prot": 15.4,
+			"fat": 4.4,
+			"skaid": 44.9
+		},
+		"Avižos, kapotos, (Branded, US)": {
+			"cal": 375,
+			"carb": 67.5,
+			"prot": 12.5,
+			"fat": 6.25,
+			"skaid": 10
+		}
+	},
+	"Ankštinės daržovės": {
+		"Avinžirniai, kons., (US)": {
+			"cal": 139,
+			"carb": 22.5,
+			"prot": 7.05,
+			"fat": 2.77,
+			"skaid": 6.4
+		},
+		"Avinžirniai, virti, (US)": {
+			"cal": 164,
+			"carb": 27.4,
+			"prot": 8.86,
+			"fat": 2.59,
+			"skaid": 7.6
+		},
+		"Avinžirniai, sausi, (US)": {
+			"cal": 378,
+			"carb": 63,
+			"prot": 20.5,
+			"fat": 6.04,
+			"skaid": 12.2
+		},
+		"Lęšiai, virti, (US)": {
+			"cal": 116,
+			"carb": 20.1,
+			"prot": 9.02,
+			"fat": 0.38,
+			"skaid": 7.9
+		},
+		"Pupelės, sausos, (LT)": {
+			"cal": 290,
+			"carb": 60,
+			"prot": 22.8,
+			"fat": 1.6,
+			"skaid": 15
+		},
+		"Lęšiai, garinti, (Auga)": {
+			"cal": 176,
+			"carb": 28,
+			"prot": 13,
+			"fat": 0.6,
+			"skaid": 4.7
+		},
+		"Lęšiai, sausi, (US)": {
+			"cal": 352,
+			"carb": 63.4,
+			"prot": 24.6,
+			"fat": 1.06,
+			"skaid": 10.7
+		},
+		"Žirniai, džiovinti, virti, (US)": {
+			"cal": 118,
+			"carb": 21.1,
+			"prot": 8.34,
+			"fat": 0.39,
+			"skaid": 8.3
+		},
+		"Pupelės, kepintos, pom., pad., (Lild)": {
+			"cal": 83,
+			"carb": 12.4,
+			"prot": 4.1,
+			"fat": 0.6,
+			"skaid": 0
+		},
+		"Lęšiai, sausi, žalieji, (Gralla)": {
+			"cal": 319,
+			"carb": 46.7,
+			"prot": 24.4,
+			"fat": 1.9,
+			"skaid": 18
+		},
+		"Avinžirniai, virti, (Lidl)": {
+			"cal": 117,
+			"carb": 15,
+			"prot": 6.3,
+			"fat": 2.4,
+			"skaid": 5
+		},
+		"Lęšiai, rudieji, kons., (Well done)": {
+			"cal": 86,
+			"carb": 12,
+			"prot": 6.1,
+			"fat": 0.4,
+			"skaid": 0
+		},
+		"Pupelės, baltosios, kons., (US)": {
+			"cal": 114,
+			"carb": 21.2,
+			"prot": 7.26,
+			"fat": 0.29,
+			"skaid": 4.8
+		},
+		"Pupelės, baltosios, sausos, (US)": {
+			"cal": 333,
+			"carb": 60.3,
+			"prot": 23.4,
+			"fat": 0.85,
+			"skaid": 15.2
+		},
+		"Pupelės, baltosios, virtos, (US)": {
+			"cal": 139,
+			"carb": 25.1,
+			"prot": 9.73,
+			"fat": 0.35,
+			"skaid": 6.3
+		},
+		"Pupelės, edamame, be lukšt., (DK)": {
+			"cal": 131,
+			"carb": 9,
+			"prot": 10.7,
+			"fat": 7.1,
+			"skaid": 5.1
+		},
+		"Pupelės, juodosios, kons., (US)": {
+			"cal": 91,
+			"carb": 16.6,
+			"prot": 6.03,
+			"fat": 0.29,
+			"skaid": 6.9
+		},
+		"Pupelės, juodosios, sausos, (US)": {
+			"cal": 341,
+			"carb": 62.4,
+			"prot": 21.6,
+			"fat": 1.42,
+			"skaid": 15.5
+		},
+		"Pupelės, juodosios, virtos, (US)": {
+			"cal": 132,
+			"carb": 23.7,
+			"prot": 8.86,
+			"fat": 0.54,
+			"skaid": 8.7
+		},
+		"Pupelės, raudonosios, kons., (US)": {
+			"cal": 124,
+			"carb": 21.5,
+			"prot": 7.98,
+			"fat": 1.05,
+			"skaid": 5.5
+		},
+		"Pupelės, raudonosios, sausos, (US)": {
+			"cal": 337,
+			"carb": 61.3,
+			"prot": 22.5,
+			"fat": 1.06,
+			"skaid": 15.2
+		},
+		"Pupelės, raudonosios, virtos, (US)": {
+			"cal": 127,
+			"carb": 22.8,
+			"prot": 8.67,
+			"fat": 0.5,
+			"skaid": 7.4
+		},
+		"Pupelės, sviestinės, kons., (Well done)": {
+			"cal": 98,
+			"carb": 13,
+			"prot": 6,
+			"fat": 0.7,
+			"skaid": 7.9
+		},
+		"Pupelės, sviestinės, sausos, (US)": {
+			"cal": 338,
+			"carb": 63.4,
+			"prot": 21.5,
+			"fat": 0.69,
+			"skaid": 19
+		},
+		"Pupelės, sviestinės, virtos, (US)": {
+			"cal": 115,
+			"carb": 20.9,
+			"prot": 7.8,
+			"fat": 0.38,
+			"skaid": 7
+		},
+		"Žirneliai, žalieji, kons., (US)": {
+			"cal": 69,
+			"carb": 12.6,
+			"prot": 4.42,
+			"fat": 0.35,
+			"skaid": 4.1
+		},
+		"Žirneliai, žalieji, švieži, gliaudyti, (US)": {
+			"cal": 81,
+			"carb": 14.4,
+			"prot": 5.42,
+			"fat": 0.4,
+			"skaid": 5.7
+		},
+		"Žirneliai, žalieji, švieži, su ankštimis, (US)": {
+			"cal": 42,
+			"carb": 7.55,
+			"prot": 2.8,
+			"fat": 0.2,
+			"skaid": 2.6
+		},
+		"Žirneliai, žalieji, šaldyti, (US)": {
+			"cal": 77,
+			"carb": 13.6,
+			"prot": 5.22,
+			"fat": 0.4,
+			"skaid": 4.5
+		},
+		"Žirniai, džiovinti, (LT)": {
+			"cal": 300,
+			"carb": 58.1,
+			"prot": 22.4,
+			"fat": 1.3,
+			"skaid": 11.6
+		},
+		"Lęšiai, sausi, (LT)": {
+			"cal": 312,
+			"carb": 55.7,
+			"prot": 25.4,
+			"fat": 1.1,
+			"skaid": 8.9
+		},
+		"Žirneliai, žalieji, kons., (Well done)": {
+			"cal": 76,
+			"carb": 8.8,
+			"prot": 5.4,
+			"fat": 0.8,
+			"skaid": 5.9
+		}
+	},
+	"Augaliniai gėrimai, kiti augaliniai produktai": {
+		"Tofu, rūkytas, (Lidl)": {
+			"cal": 134,
+			"carb": 2.4,
+			"prot": 13,
+			"fat": 8,
+			"skaid": 0
+		},
+		"Kokosų kremas, riebesnis, (Lidl, 400 ml)": {
+			"cal": 201,
+			"carb": 2.2,
+			"prot": 2.3,
+			"fat": 20.1,
+			"skaid": 0
+		},
+		"Tofu, marinuotas, (Lidl)": {
+			"cal": 141,
+			"carb": 2.5,
+			"prot": 13,
+			"fat": 8.8,
+			"skaid": 0
+		},
+		"Tofu, (US)": {
+			"cal": 151,
+			"carb": 6.9,
+			"prot": 12.5,
+			"fat": 8.1,
+			"skaid": 0
+		},
+		"Avižų gėrimas, (Lidl)": {
+			"cal": 37,
+			"carb": 5.6,
+			"prot": 0.4,
+			"fat": 1.2,
+			"skaid": 0
+		},
+		"Avižų gėrimas, (Well done)": {
+			"cal": 53,
+			"carb": 9.3,
+			"prot": 0.4,
+			"fat": 1.4,
+			"skaid": 0.8
+		},
+		"Avižų gėrimas, (Naturli, paprast.)": {
+			"cal": 47,
+			"carb": 8,
+			"prot": 0.4,
+			"fat": 1.3,
+			"skaid": 0
+		},
+		"Augalinis avižų kreminis gaminys, (Naturli, 330 ml)": {
+			"cal": 164,
+			"carb": 5.6,
+			"prot": 1.9,
+			"fat": 15,
+			"skaid": 0
+		},
+		"Kokosų kremas, (Creamo planton)": {
+			"cal": 159,
+			"carb": 4.9,
+			"prot": 1,
+			"fat": 15,
+			"skaid": 0
+		},
+		"Kokosų pienas (Freshona, Lidl, 200 ml)": {
+			"cal": 177,
+			"carb": 1.9,
+			"prot": 1.5,
+			"fat": 18,
+			"skaid": 0
+		},
+		"Grietinėlė, sojų, (Alpro)": {
+			"cal": 142,
+			"carb": 1.2,
+			"prot": 2,
+			"fat": 14,
+			"skaid": 0
+		},
+		"Maistinių mielių dribsniai (Engevita, rožiniai)": {
+			"cal": 349,
+			"carb": 19,
+			"prot": 47,
+			"fat": 5,
+			"skaid": 20
+		},
+		"Tofu, marinuotas, (Lunter, Maxima)": {
+			"cal": 133,
+			"carb": 1.8,
+			"prot": 13,
+			"fat": 8,
+			"skaid": 1
+		},
+		"Užtepėlė, čederio skonio, (Violife)": {
+			"cal": 244,
+			"carb": 9,
+			"prot": 0.1,
+			"fat": 23,
+			"skaid": 0
+		},
+		"Užtepėlė, su keptais svog., (Vemondo, Lidl)": {
+			"cal": 287,
+			"carb": 5.8,
+			"prot": 8.1,
+			"fat": 25,
+			"skaid": 0
+		},
+		"Kokosų gėrimas, (Alpro Barista)": {
+			"cal": 33,
+			"carb": 3.3,
+			"prot": 1.5,
+			"fat": 1.4,
+			"skaid": 0.2
+		},
+		"Migdolų gėrimas, nesald., (US)": {
+			"cal": 15,
+			"carb": 1.31,
+			"prot": 0.4,
+			"fat": 0.96,
+			"skaid": 0.2
+		}
+	},
+	"Vaisiai ir uogos": {
+		"Mėlynės, šviežios, (LT)": {
+			"cal": 44,
+			"carb": 11.5,
+			"prot": 0.7,
+			"fat": 0.6,
+			"skaid": 3.2
+		},
+		"Braškės, šaldytos, (US)": {
+			"cal": 35,
+			"carb": 9.13,
+			"prot": 0.43,
+			"fat": 0.11,
+			"skaid": 2.1
+		},
+		"Avietės, šviežios, (US)": {
+			"cal": 52,
+			"carb": 11.9,
+			"prot": 1.2,
+			"fat": 0.65,
+			"skaid": 6.5
+		},
+		"Avietės, šaldytos, (US)": {
+			"cal": 56,
+			"carb": 12.6,
+			"prot": 1.15,
+			"fat": 0.81,
+			"skaid": 4.3
+		},
+		"Trešnės, šviežios, (US)": {
+			"cal": 63,
+			"carb": 16,
+			"prot": 1.06,
+			"fat": 0.2,
+			"skaid": 2.1
+		},
+		"Vyšnios, šaldytos, (US)": {
+			"cal": 46,
+			"carb": 11,
+			"prot": 0.92,
+			"fat": 0.44,
+			"skaid": 1.6
+		},
+		"Gervuogės, šviežios, (US)": {
+			"cal": 43,
+			"carb": 9.61,
+			"prot": 1.39,
+			"fat": 0.49,
+			"skaid": 5.3
+		},
+		"Gervuogės, šaldytos, (US)": {
+			"cal": 64,
+			"carb": 15.7,
+			"prot": 1.18,
+			"fat": 0.43,
+			"skaid": 5
+		},
+		"Šilauogės, šviežios, (US)": {
+			"cal": 57,
+			"carb": 14.5,
+			"prot": 0.74,
+			"fat": 0.33,
+			"skaid": 2.4
+		},
+		"Šilauogės, šaldytos, (US)": {
+			"cal": 51,
+			"carb": 12.2,
+			"prot": 0.42,
+			"fat": 0.64,
+			"skaid": 2.7
+		},
+		"Bruknės, šviežios, (LT)": {
+			"cal": 43,
+			"carb": 12.1,
+			"prot": 0.6,
+			"fat": 0.5,
+			"skaid": 3.6
+		},
+		"Spanguolės, šviežios, (US)": {
+			"cal": 46,
+			"carb": 12,
+			"prot": 0.46,
+			"fat": 0.13,
+			"skaid": 3.6
+		},
+		"Serbentai, juodieji, švieži, (LT)": {
+			"cal": 52,
+			"carb": 17.2,
+			"prot": 1.2,
+			"fat": 0.3,
+			"skaid": 6.8
+		},
+		"Serbentai, baltieji, švieži,  (LT)": {
+			"cal": 37,
+			"carb": 13.8,
+			"prot": 0.7,
+			"fat": 0.2,
+			"skaid": 6.1
+		},
+		"Serbentai, raudonieji, švieži, (LT)": {
+			"cal": 38,
+			"carb": 12.8,
+			"prot": 1.1,
+			"fat": 0.3,
+			"skaid": 5.4
+		},
+		"Vynuogės, šviežios, (US)": {
+			"cal": 69,
+			"carb": 18.1,
+			"prot": 0.72,
+			"fat": 0.16,
+			"skaid": 0.9
+		},
+		"Obuoliai, švieži, be odos, (US)": {
+			"cal": 48,
+			"carb": 12.8,
+			"prot": 0.27,
+			"fat": 0.13,
+			"skaid": 1.3
+		},
+		"Obuoliai, Golden Delicious, su oda, (US)": {
+			"cal": 57,
+			"carb": 13.6,
+			"prot": 0.28,
+			"fat": 0.15,
+			"skaid": 2.4
+		},
+		"Obuoliai, švieži, su oda, (US)": {
+			"cal": 52,
+			"carb": 13.8,
+			"prot": 0.26,
+			"fat": 0.17,
+			"skaid": 2.4
+		},
+		"Obuoliai,  Granny Smith, su oda, (US)": {
+			"cal": 58,
+			"carb": 13.6,
+			"prot": 0.44,
+			"fat": 0.19,
+			"skaid": 2.8
+		},
+		"Obuoliai, Red Delicious, su oda, (US)": {
+			"cal": 59,
+			"carb": 14.1,
+			"prot": 0.27,
+			"fat": 0.2,
+			"skaid": 2.3
+		},
+		"Nektarinai, švieži, (US)": {
+			"cal": 44,
+			"carb": 10.6,
+			"prot": 1.06,
+			"fat": 0.32,
+			"skaid": 1.7
+		},
+		"Datulės, Deglet Noor, (US)": {
+			"cal": 282,
+			"carb": 75,
+			"prot": 2.45,
+			"fat": 0.39,
+			"skaid": 8
+		},
+		"Datulės, Medjool, (US)": {
+			"cal": 277,
+			"carb": 75,
+			"prot": 1.81,
+			"fat": 0.15,
+			"skaid": 6.7
+		},
+		"Slyvos, džiovintos, (LT)": {
+			"cal": 275,
+			"carb": 69,
+			"prot": 3.5,
+			"fat": 0.7,
+			"skaid": 9.4
+		},
+		"Razinos, tamsios, (US)": {
+			"cal": 299,
+			"carb": 79.3,
+			"prot": 3.3,
+			"fat": 0.25,
+			"skaid": 4.5
+		},
+		"Razinos, Golden, (US)": {
+			"cal": 301,
+			"carb": 80,
+			"prot": 3.28,
+			"fat": 0.2,
+			"skaid": 3.3
+		},
+		"Spanguolės, džiovintos, saldintos, (US)": {
+			"cal": 308,
+			"carb": 82.8,
+			"prot": 0.17,
+			"fat": 1.09,
+			"skaid": 5.3
+		},
+		"Arbūzai, švieži, (US)": {
+			"cal": 30,
+			"carb": 7.55,
+			"prot": 0.61,
+			"fat": 0.15,
+			"skaid": 0.4
+		},
+		"Melionai, Cantaloupe, (US)": {
+			"cal": 34,
+			"carb": 8.16,
+			"prot": 0.84,
+			"fat": 0.19,
+			"skaid": 0.9
+		},
+		"Melionai, Honeydew, (US)": {
+			"cal": 36,
+			"carb": 9.09,
+			"prot": 0.54,
+			"fat": 0.14,
+			"skaid": 0.8
+		},
+		"Greipfrutai, baltieji, (US)": {
+			"cal": 33,
+			"carb": 8.41,
+			"prot": 0.69,
+			"fat": 0.1,
+			"skaid": 1.1
+		},
+		"Greipfrutai, rož. ir raud., (US)": {
+			"cal": 42,
+			"carb": 10.7,
+			"prot": 0.77,
+			"fat": 0.14,
+			"skaid": 1.6
+		},
+		"Kiviai, švieži, (LT)": {
+			"cal": 56,
+			"carb": 13.9,
+			"prot": 1,
+			"fat": 0.6,
+			"skaid": 3
+		},
+		"Citrinų sultys, (US)": {
+			"cal": 22,
+			"carb": 6.9,
+			"prot": 0.35,
+			"fat": 0.24,
+			"skaid": 0.3
+		},
+		"Citrinų žievelės, (US)": {
+			"cal": 47,
+			"carb": 16,
+			"prot": 1.5,
+			"fat": 0.3,
+			"skaid": 10.6
+		},
+		"Žaliųjų citrinų sultys, (US)": {
+			"cal": 25,
+			"carb": 8.42,
+			"prot": 0.42,
+			"fat": 0.07,
+			"skaid": 0.4
+		},
+		"Apelsinai, švieži, (US)": {
+			"cal": 47,
+			"carb": 11.8,
+			"prot": 0.94,
+			"fat": 0.12,
+			"skaid": 2.4
+		},
+		"Mandarinai, švieži, (US)": {
+			"cal": 53,
+			"carb": 13.3,
+			"prot": 0.81,
+			"fat": 0.31,
+			"skaid": 1.8
+		},
+		"Persimonai, švieži, (US)": {
+			"cal": 70,
+			"carb": 18.6,
+			"prot": 0.58,
+			"fat": 0.19,
+			"skaid": 3.6
+		},
+		"Kriaušės, šviežios, (US)": {
+			"cal": 57,
+			"carb": 15.2,
+			"prot": 0.36,
+			"fat": 0.14,
+			"skaid": 3.1
+		},
+		"Abrikosai, džiovinti, (LT)": {
+			"cal": 271,
+			"carb": 67.2,
+			"prot": 4.6,
+			"fat": 0.5,
+			"skaid": 14
+		},
+		"Braškės, šviežios, (LT)": {
+			"cal": 41,
+			"carb": 9.7,
+			"prot": 0.9,
+			"fat": 0.4,
+			"skaid": 1.8
+		},
+		"Bananai, švieži, (LT)": {
+			"cal": 97,
+			"carb": 23.1,
+			"prot": 1.2,
+			"fat": 0.3,
+			"skaid": 2.1
+		},
+		"Persikai, švieži, (LT)": {
+			"cal": 47,
+			"carb": 12.1,
+			"prot": 0.8,
+			"fat": 0.2,
+			"skaid": 2.3
+		},
+		"Slyvos, šviežios, (LT)": {
+			"cal": 57,
+			"carb": 14.6,
+			"prot": 0.7,
+			"fat": 0.2,
+			"skaid": 2.2
+		},
+		"Datulės, džiov., (LT)": {
+			"cal": 291,
+			"carb": 74,
+			"prot": 2,
+			"fat": 0.4,
+			"skaid": 8.7
+		},
+		"Mangai, švieži, (LT)": {
+			"cal": 70,
+			"carb": 16.5,
+			"prot": 0.6,
+			"fat": 0.5,
+			"skaid": 1.7
+		},
+		"Vyšnios, šviežios, (LT)": {
+			"cal": 51,
+			"carb": 12.2,
+			"prot": 1,
+			"fat": 0.6,
+			"skaid": 2.4
+		},
+		"Abrikosai, švieži, (LT)": {
+			"cal": 49,
+			"carb": 12,
+			"prot": 0.8,
+			"fat": 0.2,
+			"skaid": 1.9
+		},
+		"Ananasai, švieži, (LT)": {
+			"cal": 52,
+			"carb": 12.7,
+			"prot": 0.5,
+			"fat": 0.2,
+			"skaid": 1.3
+		},
+		"Razinos, tamsios, (Arimex)": {
+			"cal": 313,
+			"carb": 74,
+			"prot": 2.4,
+			"fat": 0.5,
+			"skaid": 0
+		},
+		"Datulės, džiov., (Seeberger)": {
+			"cal": 296,
+			"carb": 66,
+			"prot": 1.9,
+			"fat": 0.5,
+			"skaid": 0
+		},
+		"Citrinos, (LT)": {
+			"cal": 31,
+			"carb": 9.2,
+			"prot": 0.7,
+			"fat": 0.4,
+			"skaid": 3.6
+		}
+	},
+	"Desertai": {
+		"Batonėlis, 3bit, (46g)": {
+			"cal": 547,
+			"carb": 58,
+			"prot": 5.1,
+			"fat": 33,
+			"skaid": 1.3
+		},
+		"Šokoladas, juodas, 85 %, (Lidl)": {
+			"cal": 579,
+			"carb": 21.4,
+			"prot": 10.8,
+			"fat": 46.8,
+			"skaid": 0
+		},
+		"Ledai, vegan, vanil., su miško uogom, (Vemondo, Lidl)": {
+			"cal": 185,
+			"carb": 29,
+			"prot": 1.1,
+			"fat": 7.1,
+			"skaid": 0
+		},
+		"Ledai, vaflyje, (Nykštukas, 72 g)": {
+			"cal": 234,
+			"carb": 25.2,
+			"prot": 3.9,
+			"fat": 13.1,
+			"skaid": 0
+		},
+		"Šokolado lašai (kak. ne maž. 44%)": {
+			"cal": 493,
+			"carb": 58.8,
+			"prot": 5.7,
+			"fat": 24.4,
+			"skaid": 7.4
+		},
+		"Ledai, migdoliniai su citr., (Naturli, 335 g)": {
+			"cal": 181,
+			"carb": 25,
+			"prot": 1.4,
+			"fat": 8.2,
+			"skaid": 0
+		},
+		"Ledai, šok. su šok. gabaliukais, (Lidl, 65 g)": {
+			"cal": 232,
+			"carb": 24.5,
+			"prot": 3.4,
+			"fat": 13.1,
+			"skaid": 0
+		},
+		"Sausainiai, gaidelio klasik., (165 g, 1 vnt. 11 g)": {
+			"cal": 438,
+			"carb": 71,
+			"prot": 8.7,
+			"fat": 13,
+			"skaid": 0
+		},
+		"Tinginys, varškės, (100g)": {
+			"cal": 238.67,
+			"carb": 26.69,
+			"prot": 11.29,
+			"fat": 9.6,
+			"skaid": 0.29
+		},
+		"Šokoladukas, (Daim)": {
+			"cal": 536,
+			"carb": 60,
+			"prot": 3,
+			"fat": 31,
+			"skaid": 1.2
+		},
+		"Avižiniai sausainiai, (100 g)": {
+			"cal": 206.49,
+			"carb": 36.75,
+			"prot": 5.2,
+			"fat": 4.97,
+			"skaid": 4.15
+		},
+		"Kukurūzų rut., dengti šok., (Super Fudgio)": {
+			"cal": 546,
+			"carb": 51,
+			"prot": 4.1,
+			"fat": 35,
+			"skaid": 5.8
+		},
+		"Dribsniai, traškūs, šokoladiniai, (Crownfield, Lidl)": {
+			"cal": 482,
+			"carb": 65,
+			"prot": 8,
+			"fat": 20,
+			"skaid": 5.2
+		},
+		"Ledai, vanil., su mangais ir pasif., (Dadu, 65 g)": {
+			"cal": 190,
+			"carb": 27.8,
+			"prot": 3.2,
+			"fat": 7.2,
+			"skaid": 0
+		},
+		"Šokoladas, balt., su kakav. ir juod. šok., (Schogetten)": {
+			"cal": 546,
+			"carb": 55,
+			"prot": 5.8,
+			"fat": 33,
+			"skaid": 0
+		},
+		"Sausainiai, gaidelio, 7 grūdų": {
+			"cal": 472,
+			"carb": 59,
+			"prot": 8.4,
+			"fat": 21,
+			"skaid": 5.7
+		},
+		"Pyragas, moliūgų, biskvit., (US, Entenmanns)": {
+			"cal": 387,
+			"carb": 54.8,
+			"prot": 3.23,
+			"fat": 16.1,
+			"skaid": 1.6
+		},
+		"Pyragėliai, trapios tešlos, su brašk.": {
+			"cal": 435,
+			"carb": 72.5,
+			"prot": 4.7,
+			"fat": 13.6,
+			"skaid": 0
+		},
+		"Šokoladas, Schogetten Trilogia, (1 gab. 6 g)": {
+			"cal": 541,
+			"carb": 56,
+			"prot": 6.3,
+			"fat": 32,
+			"skaid": 0
+		},
+		"Sausainiai, (Skanėstas, ADUGS)": {
+			"cal": 451,
+			"carb": 55.2,
+			"prot": 11,
+			"fat": 20.7,
+			"skaid": 0
+		},
+		"Dribsniai, traškūs, su lazd. rieš., (Crownfield, Lidl)": {
+			"cal": 471,
+			"carb": 63,
+			"prot": 9,
+			"fat": 19,
+			"skaid": 5.8
+		},
+		"Ledai, vanil., su cukr. pabarstukais, (Klasika, 70 g, Rimi)  ": {
+			"cal": 216,
+			"carb": 30,
+			"prot": 3.4,
+			"fat": 9.2,
+			"skaid": 0
+		},
+		"Sausainiai, gaidelio, 7 grūdų, vaniliniai": {
+			"cal": 448,
+			"carb": 62,
+			"prot": 8.8,
+			"fat": 17,
+			"skaid": 6.7
+		},
+		"Dribsniai, traškūs, su liof. brašk., (Crownfield, Lidl)": {
+			"cal": 452,
+			"carb": 67,
+			"prot": 9,
+			"fat": 15,
+			"skaid": 6.4
+		}
+	},
+	"Pusgaminiai, salotos": {
+		"Salotos su feta, (Maxima, 200g)": {
+			"cal": 153,
+			"carb": 3.5,
+			"prot": 3.7,
+			"fat": 14,
+			"skaid": 0
+		},
+		"Virtinukai, švieži, su pom. ir moc. įdaru, (Lidl) ": {
+			"cal": 196,
+			"carb": 34.3,
+			"prot": 7.7,
+			"fat": 2.7,
+			"skaid": 0
+		},
+		"Virtinukai, bulvių, švieži, (Lidl)": {
+			"cal": 152,
+			"carb": 32,
+			"prot": 4.2,
+			"fat": 0.5,
+			"skaid": 0
+		},
+		"Glotnutis, vyšnių ir banan., (Lidl)": {
+			"cal": 46,
+			"carb": 9.9,
+			"prot": 0.5,
+			"fat": 0.2,
+			"skaid": 1
+		},
+		"Salotos su bol. bal., tunu, (Maxima, 260 g)": {
+			"cal": 130,
+			"carb": 4.1,
+			"prot": 4.5,
+			"fat": 10.8,
+			"skaid": 0
+		},
+		"Salotos, gaiviosios, ryžių, (Maxima, 300 g)": {
+			"cal": 80,
+			"carb": 5.94,
+			"prot": 5.12,
+			"fat": 4.52,
+			"skaid": 0
+		},
+		"Glotnutis, mėlyn. ir kriauš., (Lidl)": {
+			"cal": 46,
+			"carb": 9.9,
+			"prot": 0.5,
+			"fat": 0.24,
+			"skaid": 1
+		},
+		"Humusas, su alyvuogėmis, (Lidl)": {
+			"cal": 270,
+			"carb": 11.2,
+			"prot": 5.1,
+			"fat": 22.4,
+			"skaid": 0
+		},
+		"Gvakamolė, naminė, (100g)": {
+			"cal": 121.49,
+			"carb": 7.58,
+			"prot": 1.69,
+			"fat": 10.64,
+			"skaid": 5.18
+		},
+		"Sumuštinis su tunu ir kiauš., (Lidl, 150 g)": {
+			"cal": 255,
+			"carb": 25.2,
+			"prot": 9.8,
+			"fat": 12.6,
+			"skaid": 0
+		},
+		"Gvakamolė, naminė, 2 var.": {
+			"cal": 130.93,
+			"carb": 7.92,
+			"prot": 1.75,
+			"fat": 11.6,
+			"skaid": 5.52
+		},
+		"Lęšių troškinys, naminis": {
+			"cal": 160.37,
+			"carb": 26.41,
+			"prot": 9.6,
+			"fat": 2.3,
+			"skaid": 4.53
+		},
+		"Gvakamolė, naminė, nr. 3": {
+			"cal": 134.45,
+			"carb": 8.29,
+			"prot": 1.84,
+			"fat": 11.84,
+			"skaid": 5.7
+		},
+		"Kukuliai, augaliniai, su svog. ir čiobr., (Vemondo, Lidl)": {
+			"cal": 231,
+			"carb": 10,
+			"prot": 15.5,
+			"fat": 13.4,
+			"skaid": 4.3
+		},
+		"Žirnių kepsneliai, (Naturli)": {
+			"cal": 256,
+			"carb": 14,
+			"prot": 12,
+			"fat": 17,
+			"skaid": 3.8
+		}
+	},
+	"Traškučiai, trapučiai su priedais\t": {
+		"Traškučai, kukurūzų, (Doritos, sweet chili)": {
+			"cal": 496,
+			"carb": 59,
+			"prot": 6.1,
+			"fat": 25,
+			"skaid": 0
+		},
+		"Traškučiai, (Eat Real, veggie straws, 45 g)": {
+			"cal": 540,
+			"carb": 60.5,
+			"prot": 2.9,
+			"fat": 31.3,
+			"skaid": 2.3
+		},
+		"Trapučiai, pom. skonio, (Saulės grūdas, 60 g)": {
+			"cal": 374,
+			"carb": 75.8,
+			"prot": 8.7,
+			"fat": 2.9,
+			"skaid": 7.2
+		},
+		"Trapučiai, sūrio skonio, (Saulės grūdas, 60 g)": {
+			"cal": 412,
+			"carb": 75.6,
+			"prot": 7,
+			"fat": 8.77,
+			"skaid": 1.1
+		},
+		"Lazdelės, sūrio skonio, (Grissini, Biržų duona)": {
+			"cal": 486,
+			"carb": 75.2,
+			"prot": 15.2,
+			"fat": 13.7,
+			"skaid": 0
+		},
+		"Brusketos, su česn. ir petraž., (Bruschetta, Valentina Snacks)": {
+			"cal": 528,
+			"carb": 52.9,
+			"prot": 8.9,
+			"fat": 30.4,
+			"skaid": 3.4
+		},
+		"Trapučiai, lęšių, bbq skonio, (Ustukių)": {
+			"cal": 384,
+			"carb": 47,
+			"prot": 21,
+			"fat": 11,
+			"skaid": 5
+		},
+		"Traškučiai, viso grūdo, rudųjų ryžių, čederio skonio, (B.yond)": {
+			"cal": 418,
+			"carb": 61,
+			"prot": 6.1,
+			"fat": 16,
+			"skaid": 2.7
+		},
+		"Trapučiai, viso grūdo, rudųjų ryžių, kečupo skonio, (Rice Up)": {
+			"cal": 452,
+			"carb": 72,
+			"prot": 8,
+			"fat": 14,
+			"skaid": 3.1
+		},
+		"Traškučiai, Lattice Crisps, pesto skonio, (Italiamo, Lidl)": {
+			"cal": 557,
+			"carb": 51,
+			"prot": 5.5,
+			"fat": 36,
+			"skaid": 0
+		},
+		"Tortilijų trašk., sūdyti, (US)": {
+			"cal": 497,
+			"carb": 67.4,
+			"prot": 6.62,
+			"fat": 22.3,
+			"skaid": 4.7
+		},
+		"Tortilijų trašk., su sūriu, (Santa Maria)": {
+			"cal": 472,
+			"carb": 64,
+			"prot": 6.6,
+			"fat": 20,
+			"skaid": 4
+		},
+		"Tortilijų trašk., sūdyti, (Snack Day, Lidl)": {
+			"cal": 481,
+			"carb": 59.6,
+			"prot": 7.8,
+			"fat": 22.2,
+			"skaid": 0
+		},
+		"Traškučiai, su sūriu, (Estrella)": {
+			"cal": 540,
+			"carb": 49,
+			"prot": 5.6,
+			"fat": 35,
+			"skaid": 4.1
+		},
+		"Lazdelės, miel. tešl., su emental. rr čeder. sūr., (Duc De Coeur, Lidl)": {
+			"cal": 486,
+			"carb": 55,
+			"prot": 13,
+			"fat": 23,
+			"skaid": 3.6
+		},
+		"Traškučiai, bulvių, svog. ir griet., (Estrella Oven Chips)": {
+			"cal": 411,
+			"carb": 73,
+			"prot": 6.1,
+			"fat": 9.4,
+			"skaid": 4.5
+		},
+		"Traškučiai, bulvių, krapų skonio, (Estrella Dill)": {
+			"cal": 539,
+			"carb": 48,
+			"prot": 5.5,
+			"fat": 35,
+			"skaid": 4.7
+		},
+		"Traškučiai, lęšių, grietinės ir svog. skonio, (OHO) ": {
+			"cal": 471,
+			"carb": 63,
+			"prot": 13,
+			"fat": 17,
+			"skaid": 3.5
+		}
+	},
+	"Mėsa ir jos produktai\t": {
+		"Vištienos krūtinėlė, su oda, (US)": {
+			"cal": 172,
+			"carb": 0,
+			"prot": 20.8,
+			"fat": 9.25,
+			"skaid": 0
+		},
+		"Vištienos sparneliai, be odos, (US)": {
+			"cal": 126,
+			"carb": 0,
+			"prot": 22,
+			"fat": 3.54,
+			"skaid": 0
+		},
+		"Vištienos sparneliai, su oda, (US)": {
+			"cal": 191,
+			"carb": 0,
+			"prot": 17.5,
+			"fat": 12.8,
+			"skaid": 0
+		},
+		"Vištienos šlaunelės, be odos, (US)": {
+			"cal": 121,
+			"carb": 0,
+			"prot": 19.7,
+			"fat": 4.12,
+			"skaid": 0
+		},
+		"Vištienos blauzdelės, su oda, (US)": {
+			"cal": 161,
+			"carb": 0,
+			"prot": 18.1,
+			"fat": 9.2,
+			"skaid": 0
+		},
+		"Vištienos blauzdelės, be odos, (US)": {
+			"cal": 116,
+			"carb": 0,
+			"prot": 19.4,
+			"fat": 3.71,
+			"skaid": 0
+		},
+		"Vištienos krūtinėlė, be odos, (LT)": {
+			"cal": 104,
+			"carb": 0.3,
+			"prot": 23.6,
+			"fat": 0.9,
+			"skaid": 0
+		},
+		"Kalakutienos krūtinėlė, be odos, (LT)": {
+			"cal": 109,
+			"carb": 0.3,
+			"prot": 21.5,
+			"fat": 2.4,
+			"skaid": 0
+		},
+		"Kalakutienos krūtinėlė, su oda, (US)": {
+			"cal": 157,
+			"carb": 0,
+			"prot": 21.9,
+			"fat": 7.02,
+			"skaid": 0
+		},
+		"Kalakutienos šlaunelės, be odos, (US)": {
+			"cal": 116,
+			"carb": 0,
+			"prot": 20.6,
+			"fat": 3.69,
+			"skaid": 0
+		},
+		"Kalakutienos šlaunelės, su oda, (US)": {
+			"cal": 161,
+			"carb": 0,
+			"prot": 19.5,
+			"fat": 9.16,
+			"skaid": 0
+		},
+		"Kalakutienos blauzdelės, be odos, (US)": {
+			"cal": 118,
+			"carb": 0,
+			"prot": 20.5,
+			"fat": 3.97,
+			"skaid": 0
+		},
+		"Kalakutienos blauzdelės, su oda, (US)": {
+			"cal": 141,
+			"carb": 0,
+			"prot": 20,
+			"fat": 6.84,
+			"skaid": 0
+		},
+		"Antienos krūtinėlė, be odos, (US)": {
+			"cal": 123,
+			"carb": 0,
+			"prot": 19.8,
+			"fat": 4.25,
+			"skaid": 0
+		},
+		"Kiaulienos išpjova, ir rieb. ir lies., (US)": {
+			"cal": 120,
+			"carb": 0,
+			"prot": 20.6,
+			"fat": 3.53,
+			"skaid": 0
+		},
+		"Kiaulienos kumpis, tik lies., (US)": {
+			"cal": 136,
+			"carb": 0,
+			"prot": 20.5,
+			"fat": 5.41,
+			"skaid": 0
+		},
+		"Kiaulienos nugarinė, ir rieb. ir lies., (US)": {
+			"cal": 198,
+			"carb": 0,
+			"prot": 19.7,
+			"fat": 12.6,
+			"skaid": 0
+		},
+		"Kiaulienos mentė, ir rieb. ir lies. (US)": {
+			"cal": 236,
+			"carb": 0,
+			"prot": 17.2,
+			"fat": 18,
+			"skaid": 0
+		},
+		"Kiaulienos sprandinė, (LT)": {
+			"cal": 285,
+			"carb": 0,
+			"prot": 15.3,
+			"fat": 24.9,
+			"skaid": 0
+		},
+		"Jautienos mentė, (LT)": {
+			"cal": 175,
+			"carb": 0.2,
+			"prot": 19.9,
+			"fat": 10.5,
+			"skaid": 0
+		},
+		"Jautienos kumpis, I rūš., (LT)": {
+			"cal": 147,
+			"carb": 0.2,
+			"prot": 19.4,
+			"fat": 7.7,
+			"skaid": 0
+		},
+		"Jautienos nugarinė, I rūš., (LT)": {
+			"cal": 152,
+			"carb": 0.3,
+			"prot": 20.6,
+			"fat": 7.6,
+			"skaid": 0
+		}
+	},
+	"Prieskoniai, padažai, sirupai, cukrus\t": {
+		"Maistinių mielių dribsniai (Engevita, rožiniai)": {
+			"cal": 349,
+			"carb": 19,
+			"prot": 47,
+			"fat": 5,
+			"skaid": 20
+		},
+		"Padažas, sojos, sušiams": {
+			"cal": 80,
+			"carb": 11.8,
+			"prot": 7.8,
+			"fat": 0,
+			"skaid": 0
+		},
+		"Pomidorų tyrė, (Passata Vesu, 680 g)": {
+			"cal": 22,
+			"carb": 3.3,
+			"prot": 1.3,
+			"fat": 0.2,
+			"skaid": 0.8
+		},
+		"Sirupas, datulių, (Amrita)": {
+			"cal": 325,
+			"carb": 77,
+			"prot": 1.6,
+			"fat": 0.65,
+			"skaid": 3.2
+		},
+		"Svogūnai, malti, (US)": {
+			"cal": 341,
+			"carb": 79.1,
+			"prot": 10.4,
+			"fat": 1.04,
+			"skaid": 15.2
+		},
+		"Česnakai, malti, (US)": {
+			"cal": 331,
+			"carb": 72.7,
+			"prot": 16.6,
+			"fat": 0.73,
+			"skaid": 9
+		},
+		"Karis, (US)": {
+			"cal": 325,
+			"carb": 55.8,
+			"prot": 14.3,
+			"fat": 14,
+			"skaid": 53.2
+		},
+		"Čili milteliai, (US)": {
+			"cal": 282,
+			"carb": 49.7,
+			"prot": 13.5,
+			"fat": 14.3,
+			"skaid": 34.8
+		},
+		"Cinamonas, maltas, (US)": {
+			"cal": 247,
+			"carb": 80.6,
+			"prot": 3.99,
+			"fat": 1.24,
+			"skaid": 53.1
+		},
+		"Ciberžolė, malta, (US)": {
+			"cal": 312,
+			"carb": 67.1,
+			"prot": 9.68,
+			"fat": 3.25,
+			"skaid": 22.7
+		},
+		"Cukraus pudra, (US)": {
+			"cal": 389,
+			"carb": 99.8,
+			"prot": 0,
+			"fat": 0,
+			"skaid": 0
+		},
+		"Cukrus, (LT)": {
+			"cal": 395,
+			"carb": 99.8,
+			"prot": 0,
+			"fat": 0,
+			"skaid": 0
+		},
+		"Sirupas, agavų, (US)": {
+			"cal": 310,
+			"carb": 76.4,
+			"prot": 0.09,
+			"fat": 0.45,
+			"skaid": 0.2
+		},
+		"Klevų sirupas, kanadietiškas, (US)": {
+			"cal": 270,
+			"carb": 67.4,
+			"prot": 0,
+			"fat": 0,
+			"skaid": 0
+		},
+		"Bazilikas, džiov., (US)": {
+			"cal": 233,
+			"carb": 47.8,
+			"prot": 23,
+			"fat": 4.07,
+			"skaid": 37.7
+		},
+		"Raudonėlis, džiov., (US)": {
+			"cal": 265,
+			"carb": 68.9,
+			"prot": 9,
+			"fat": 4.28,
+			"skaid": 42.5
+		},
+		"Rozmarinas, džiov., (US)": {
+			"cal": 331,
+			"carb": 64.1,
+			"prot": 4.88,
+			"fat": 15.2,
+			"skaid": 42.6
+		},
+		"Pipirai, juodieji, (LT)": {
+			"cal": 309,
+			"carb": 63.4,
+			"prot": 11.8,
+			"fat": 8.6,
+			"skaid": 13.9
+		},
+		"Paprika, raud., malta, (US)": {
+			"cal": 282,
+			"carb": 54,
+			"prot": 14.1,
+			"fat": 12.9,
+			"skaid": 34.9
+		},
+		"Medus, (LT)": {
+			"cal": 324,
+			"carb": 81.7,
+			"prot": 0.3,
+			"fat": 0,
+			"skaid": 0
+		},
+		"Majonezinis pad., česnak. ir žol., (Hellmanns)": {
+			"cal": 290,
+			"carb": 13,
+			"prot": 1.1,
+			"fat": 26,
+			"skaid": 0
+		},
+		"Majonezinis pad., vegan, (Vemondo, Aioli)": {
+			"cal": 489,
+			"carb": 8.1,
+			"prot": 1.2,
+			"fat": 50,
+			"skaid": 0.3
+		},
+		"Kepimo milt. su vynakm., (Biovegan)": {
+			"cal": 226,
+			"carb": 43,
+			"prot": 0.5,
+			"fat": 0.5,
+			"skaid": 0.5
+		},
+		"Prieskonių miš., Everything Bagel Seasoning, (100 g)": {
+			"cal": 431.19,
+			"carb": 38.93,
+			"prot": 15.36,
+			"fat": 26.71,
+			"skaid": 15.9
+		},
+		"Kakava, 99% kakav. milt, (Beatos virtuvė)": {
+			"cal": 361,
+			"carb": 8.9,
+			"prot": 20,
+			"fat": 21,
+			"skaid": 28
+		},
+		"Obuolienė, naminė": {
+			"cal": 64.39,
+			"carb": 16.87,
+			"prot": 0.23,
+			"fat": 0.15,
+			"skaid": 2.16
+		}
+	},
+	"Daržovės, žolelės": {
+		"Bulvės, virtos, (DK)": {
+			"cal": 85,
+			"carb": 20,
+			"prot": 1.7,
+			"fat": 0.1,
+			"skaid": 1.4
+		},
+		"Bulvės, žalios, (DK)": {
+			"cal": 77,
+			"carb": 17.3,
+			"prot": 2,
+			"fat": 0.3,
+			"skaid": 1.4
+		},
+		"Batatai, virti, (US)": {
+			"cal": 76,
+			"carb": 17.7,
+			"prot": 1.37,
+			"fat": 0.14,
+			"skaid": 2.5
+		},
+		"Batatai, žali (US)": {
+			"cal": 86,
+			"carb": 20.1,
+			"prot": 1.57,
+			"fat": 0.05,
+			"skaid": 3
+		},
+		"Burokėliai, žali, (US)": {
+			"cal": 43,
+			"carb": 9.56,
+			"prot": 1.61,
+			"fat": 0.17,
+			"skaid": 2.8
+		},
+		"Burokėliai, virti, (US)": {
+			"cal": 44,
+			"carb": 9.96,
+			"prot": 1.68,
+			"fat": 0.18,
+			"skaid": 2
+		},
+		"Gražgarstės, (US)": {
+			"cal": 25,
+			"carb": 3.65,
+			"prot": 2.58,
+			"fat": 0.66,
+			"skaid": 1.6
+		},
+		"Kopūstai, briuseliniai, (US)": {
+			"cal": 43,
+			"carb": 8.95,
+			"prot": 3.38,
+			"fat": 0.3,
+			"skaid": 3.8
+		},
+		"Kopūstai, briuseliniai, šaldyti, (US)": {
+			"cal": 41,
+			"carb": 7.86,
+			"prot": 3.78,
+			"fat": 0.41,
+			"skaid": 3.8
+		},
+		"Lapiniai kopūstai, kale, (US)": {
+			"cal": 35,
+			"carb": 4.42,
+			"prot": 2.92,
+			"fat": 1.49,
+			"skaid": 4.1
+		},
+		"Morkos, žalios, (US)": {
+			"cal": 41,
+			"carb": 9.58,
+			"prot": 0.93,
+			"fat": 0.24,
+			"skaid": 2.8
+		},
+		"Paprikos, raudonosios, (LT)": {
+			"cal": 29,
+			"carb": 6.6,
+			"prot": 1.3,
+			"fat": 0.5,
+			"skaid": 2
+		},
+		"Paprikos, žaliosios, (US)": {
+			"cal": 20,
+			"carb": 4.64,
+			"prot": 0.86,
+			"fat": 0.17,
+			"skaid": 1.7
+		},
+		"Paprikos, geltonosios, (US)": {
+			"cal": 27,
+			"carb": 6.32,
+			"prot": 1,
+			"fat": 0.21,
+			"skaid": 0.9
+		},
+		"Ridikai, (US)": {
+			"cal": 16,
+			"carb": 3.4,
+			"prot": 0.68,
+			"fat": 0.1,
+			"skaid": 1.6
+		},
+		"Salierų stiebai, (US)": {
+			"cal": 14,
+			"carb": 2.97,
+			"prot": 0.69,
+			"fat": 0.17,
+			"skaid": 1.6
+		},
+		"Salotos, gūžinės, iceberg, (US)": {
+			"cal": 14,
+			"carb": 2.97,
+			"prot": 0.9,
+			"fat": 0.14,
+			"skaid": 1.2
+		},
+		"Salotinės sultenės, (US)": {
+			"cal": 21,
+			"carb": 3.6,
+			"prot": 2,
+			"fat": 0.4,
+			"skaid": 0
+		},
+		"Salotos, paprastosios žaliosios, (US)": {
+			"cal": 15,
+			"carb": 2.87,
+			"prot": 1.36,
+			"fat": 0.15,
+			"skaid": 1.3
+		},
+		"Smidrai, (US)": {
+			"cal": 20,
+			"carb": 3.88,
+			"prot": 2.2,
+			"fat": 0.12,
+			"skaid": 2.1
+		},
+		"Moliūgai, sviestiniai, (US)": {
+			"cal": 45,
+			"carb": 11.7,
+			"prot": 1,
+			"fat": 0.1,
+			"skaid": 2
+		},
+		"Moliūgai, (US)": {
+			"cal": 26,
+			"carb": 6.5,
+			"prot": 1,
+			"fat": 0.1,
+			"skaid": 0.5
+		},
+		"Topinambai, žali, (US)": {
+			"cal": 73,
+			"carb": 17.4,
+			"prot": 2,
+			"fat": 0.01,
+			"skaid": 1.6
+		},
+		"Imbierų šaknys, (US)": {
+			"cal": 80,
+			"carb": 17.8,
+			"prot": 1.82,
+			"fat": 0.75,
+			"skaid": 2
+		},
+		"Kukurūzai, virti, (US)": {
+			"cal": 96,
+			"carb": 21,
+			"prot": 3.41,
+			"fat": 1.5,
+			"skaid": 2.4
+		},
+		"Kukurūzai, kons., (LT)": {
+			"cal": 103,
+			"carb": 22,
+			"prot": 2.9,
+			"fat": 0.6,
+			"skaid": 1.8
+		},
+		"Agurkai, rauginti, (Juškų raugyklėlė)": {
+			"cal": 13,
+			"carb": 2,
+			"prot": 1,
+			"fat": 0.1,
+			"skaid": 0
+		},
+		"Agurkai, marinuoti, (US)": {
+			"cal": 11,
+			"carb": 2.26,
+			"prot": 0.33,
+			"fat": 0.2,
+			"skaid": 1.2
+		},
+		"Kopūstai, rauginti, (US)": {
+			"cal": 19,
+			"carb": 4.28,
+			"prot": 0.91,
+			"fat": 0.14,
+			"skaid": 2.9
+		},
+		"Avokadai, (US)": {
+			"cal": 160,
+			"carb": 8.53,
+			"prot": 2,
+			"fat": 14.7,
+			"skaid": 6.7
+		},
+		"Voveraitės, šviežios, (US)": {
+			"cal": 32,
+			"carb": 6.86,
+			"prot": 1.49,
+			"fat": 0.53,
+			"skaid": 3.8
+		},
+		"Agurkai, marinuoti, (Lidl, Pickled Gherkins)": {
+			"cal": 33,
+			"carb": 5.6,
+			"prot": 1,
+			"fat": 0.1,
+			"skaid": 0
+		},
+		"Kopūstai, baltagūžiai, (US)": {
+			"cal": 25,
+			"carb": 5.8,
+			"prot": 1.28,
+			"fat": 0.1,
+			"skaid": 2.5
+		},
+		"Kopūstai, raudongūžiai, (US)": {
+			"cal": 31,
+			"carb": 7.37,
+			"prot": 1.43,
+			"fat": 0.16,
+			"skaid": 2.1
+		},
+		"Kopūstai, kininiai, (US)": {
+			"cal": 16,
+			"carb": 3.23,
+			"prot": 1.2,
+			"fat": 0.2,
+			"skaid": 1.2
+		},
+		"Kopūstai, žiediniai, (US)": {
+			"cal": 25,
+			"carb": 4.97,
+			"prot": 1.92,
+			"fat": 0.28,
+			"skaid": 2
+		},
+		"Česnakai, (US)": {
+			"cal": 149,
+			"carb": 33.1,
+			"prot": 6.36,
+			"fat": 0.5,
+			"skaid": 2.1
+		},
+		"Brokoliai, (US)": {
+			"cal": 34,
+			"carb": 6.64,
+			"prot": 2.82,
+			"fat": 0.37,
+			"skaid": 2.6
+		},
+		"Svogūnai, (US)": {
+			"cal": 40,
+			"carb": 9.34,
+			"prot": 1.1,
+			"fat": 0.1,
+			"skaid": 1.7
+		},
+		"Svogūnų laiškai, (US)": {
+			"cal": 27,
+			"carb": 5.74,
+			"prot": 0.97,
+			"fat": 0.47,
+			"skaid": 1.8
+		},
+		"Petražolės, (US)": {
+			"cal": 36,
+			"carb": 6.33,
+			"prot": 2.97,
+			"fat": 0.79,
+			"skaid": 3.3
+		},
+		"Kalendra, (US)": {
+			"cal": 23,
+			"carb": 3.67,
+			"prot": 2.13,
+			"fat": 0.52,
+			"skaid": 2.8
+		},
+		"Krapai, (US)": {
+			"cal": 43,
+			"carb": 7.02,
+			"prot": 3.46,
+			"fat": 1.12,
+			"skaid": 2.1
+		},
+		"Bazilikas, šviežias, (US)": {
+			"cal": 23,
+			"carb": 2.65,
+			"prot": 3.15,
+			"fat": 0.64,
+			"skaid": 1.6
+		},
+		"Pomidorai, gelton., (US)": {
+			"cal": 15,
+			"carb": 2.98,
+			"prot": 0.98,
+			"fat": 0.26,
+			"skaid": 0.7
+		},
+		"Pomidorai, raud., (US)": {
+			"cal": 18,
+			"carb": 3.89,
+			"prot": 0.88,
+			"fat": 0.2,
+			"skaid": 1.2
+		},
+		"Agurkai, (US)": {
+			"cal": 15,
+			"carb": 3.63,
+			"prot": 0.65,
+			"fat": 0.11,
+			"skaid": 0.5
+		},
+		"Baklažanai, (US)": {
+			"cal": 25,
+			"carb": 5.88,
+			"prot": 0.98,
+			"fat": 0.18,
+			"skaid": 3
+		},
+		"Cukinijos, (US)": {
+			"cal": 17,
+			"carb": 3.11,
+			"prot": 1.21,
+			"fat": 0.32,
+			"skaid": 1
+		},
+		"Porai, lapai ir apatinė dalis, (US)": {
+			"cal": 61,
+			"carb": 14.2,
+			"prot": 1.5,
+			"fat": 0.3,
+			"skaid": 1.8
+		},
+		"Pupelės, šparaginės, (US)": {
+			"cal": 31,
+			"carb": 6.97,
+			"prot": 1.83,
+			"fat": 0.22,
+			"skaid": 2.7
+		},
+		"Salierų gumbai, (US)": {
+			"cal": 42,
+			"carb": 9.2,
+			"prot": 1.5,
+			"fat": 0.3,
+			"skaid": 1.8
+		},
+		"Špinatai, (US)": {
+			"cal": 23,
+			"carb": 3.63,
+			"prot": 2.86,
+			"fat": 0.39,
+			"skaid": 2.2
+		},
+		"Ropės, (US)": {
+			"cal": 28,
+			"carb": 6.43,
+			"prot": 0.9,
+			"fat": 0.1,
+			"skaid": 1.8
+		},
+		"Kaliaropės, (US)": {
+			"cal": 27,
+			"carb": 6.2,
+			"prot": 1.7,
+			"fat": 0.1,
+			"skaid": 3.6
+		},
+		"Jalapenai, kons., (Well done)": {
+			"cal": 21,
+			"carb": 3.6,
+			"prot": 0.5,
+			"fat": 0.2,
+			"skaid": 1.5
+		},
+		"Pievagrybiai, (LT)": {
+			"cal": 20,
+			"carb": 3,
+			"prot": 2.8,
+			"fat": 0.2,
+			"skaid": 2
+		},
+		"Grybai, balti, virti, (US)": {
+			"cal": 28,
+			"carb": 5.29,
+			"prot": 2.17,
+			"fat": 0.47,
+			"skaid": 2.2
+		},
+		"Burokėliai, virti, (Lidl Turgelis)": {
+			"cal": 53,
+			"carb": 9.8,
+			"prot": 1.8,
+			"fat": 0.1,
+			"skaid": 2
+		},
+		"Šaldytų daržovių miksas, (Mexico Mix, Lidl)": {
+			"cal": 60,
+			"carb": 8.4,
+			"prot": 3.2,
+			"fat": 0.5,
+			"skaid": 4.7
+		},
+		"Daržovių mix., Coleslaw, (Fit & Easy, Rimi)": {
+			"cal": 37,
+			"carb": 6.53,
+			"prot": 1.17,
+			"fat": 0.2,
+			"skaid": 2.33
+		},
+		"Daržovių mix., Coleslaw, (Fit and Easy, Rimi)": {
+			"cal": 37,
+			"carb": 6.53,
+			"prot": 1.17,
+			"fat": 0.2,
+			"skaid": 2.33
+		},
+		"Grybai, Shiitake, švieži, (US)": {
+			"cal": 34,
+			"carb": 6.79,
+			"prot": 2.24,
+			"fat": 0.49,
+			"skaid": 2.5
+		},
+		"Šaldytų daržovių miksas, meksikiet., (Well Done)": {
+			"cal": 41,
+			"carb": 8.3,
+			"prot": 5,
+			"fat": 0.3,
+			"skaid": 0
+		}
+	}
+}

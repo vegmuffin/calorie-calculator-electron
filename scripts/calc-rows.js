@@ -28,6 +28,7 @@ function addRow()
     input.setAttribute("disabled", "true");
     input.setAttribute("oninput", "amountChange(" + curRowStr + ")");
     input.setAttribute("onclick", "highlightRow('" + iId + "');");
+	input.setAttribute("class", "amount-input");
 
     mainDiv = treeAdd(mainDiv, amountContainer, input);
 
@@ -135,8 +136,95 @@ function delRow(row, recipeName)
         let rowEl = document.getElementById("calory" + row);
         document.getElementById("calorycalc").removeChild(rowEl);
 		curRow--;
+		realignElements(row, "", curRow);
 		calcTotals();
     }
+}
+
+// After deleting a row, need to go over all subsequent elements and edit their attributes 
+// so that they don't point to non-existing rows.
+function realignElements(deletedRow, recipeName, rowCount) {
+	if (!recipeName || recipeName == 'undefined') {
+		recipeName = "";
+	}
+	
+	deletedRow = Number(deletedRow)
+	for (let i = deletedRow + 1; i < rowCount + 2; ++i) {
+		let adjustedRow = (i-1).toString();
+		let rowId;
+		if (recipeName == "") {
+			rowId = "calory" + i.toString();
+		} else {
+			rowId = "recipe-" + recipeName + "-" + i.toString();
+		}
+		let row = document.getElementById(rowId);
+		let allChildren = row.getElementsByTagName("*");
+		for (let j = 0; j < allChildren.length; ++j) {
+			
+			let element = allChildren[j];
+			let elementClass = element.getAttribute("class");
+			let parentElementClass = element.parentElement.getAttribute("class");
+			let splitId = element.id.split("-");
+
+			if (elementClass == "dropdown-container") {
+				splitId[splitId.length-1] = adjustedRow;
+				element.setAttribute("id", splitId.join("-"));
+			} else if (elementClass == "searchable-input" && element.id.includes("category")) {
+				splitId[splitId.length-1] = adjustedRow;
+				element.setAttribute("id", splitId.join("-"));
+				let rcp = recipeName == "" ? "-" : "-" + recipeName + "-"; 
+				let rcpNoPrefix = recipeName == "" ? "" : recipeName + "-";
+				element.setAttribute("onfocus", "onDropdownClick('category-dropdown" + rcp + adjustedRow + "')");
+				element.setAttribute("oninput", "dropdownFilter('category-dropdown" + rcp +  adjustedRow + "')");
+				element.setAttribute("onfocusout", "onDropdownFocusOut('" + rcpNoPrefix + adjustedRow + "', 'category')");
+			} else if (elementClass == "searchable-input" && element.id.includes("product")) {
+				splitId[splitId.length-1] = adjustedRow;
+				element.setAttribute("id", splitId.join("-"));
+				let rcp = recipeName == "" ? "-" : "-" + recipeName + "-"; 
+				let rcpNoPrefix = recipeName == "" ? "" : recipeName + "-";
+				element.setAttribute("onfocus", "onDropdownClick('product-dropdown" + rcp + adjustedRow + "')");
+				element.setAttribute("oninput", "dropdownFilter('product-dropdown" + rcp +  adjustedRow + "')");
+				element.setAttribute("onfocusout", "onDropdownFocusOut('" + rcpNoPrefix + adjustedRow + "', 'product')");
+			} else if (elementClass == "options") {
+				// for both category and product dropdown element containers
+				splitId[splitId.length - 1] = adjustedRow;
+				element.setAttribute("id", splitId.join("-"));
+			} else if (parentElementClass.includes("parent macros")) {
+				// carb fat prot cal skaid
+				splitId[splitId.length - 1] = adjustedRow;
+				element.setAttribute("id", splitId.join("-"));
+			} else if (elementClass == "dropdown-btn") {
+				// for both dropdowns
+				let splitOnClick = element.getAttribute("onclick").split("-");
+				splitOnClick[splitOnClick.length-2] = adjustedRow;
+				element.setAttribute("onclick", splitOnClick.join("-"));
+
+				splitId[splitId.length - 2] = adjustedRow;
+				element.setAttribute("id", splitId.join("-"));
+			} else if (elementClass == "amount-input") {
+				splitId[splitId.length - 1] = adjustedRow;
+				element.setAttribute("id", splitId.join("-"));
+
+				let amountChange = recipeName == "" ? "amountChange(" + adjustedRow + ")" : "amountChange('" + recipeName + "-" + adjustedRow + "', '" + recipeName + "');";
+				let highlightRow = recipeName == "" ? "highlightRow('amount-" + adjustedRow + "');" : "highlightRow('amount-" + recipeName + "-" + adjustedRow +"');";
+
+				element.setAttribute("oninput", amountChange);
+				element.setAttribute("onfocus", highlightRow);
+			} else if (elementClass == "delete-row") {
+				splitId[splitId.length - 1] = adjustedRow;
+				element.setAttribute("id", splitId.join("-"));
+
+				let delRow = recipeName == "" ? "delRow('" + adjustedRow + "')" : "delRcpRow('" + adjustedRow + "', '" + recipeName + "')";
+				element.setAttribute("onclick", delRow);
+			}
+		}
+		
+		if (recipeName == "") {
+			row.setAttribute("id", "calory" + adjustedRow);
+		} else {
+			row.setAttribute("id", "recipe-" + recipeName + "-" + adjustedRow);
+		}
+	}
 }
 
 function amountChange(row, recipeName)
@@ -161,7 +249,12 @@ function amountChange(row, recipeName)
 
     if(checkInputValidity(inputField))
     {
-        var prodData = getProdData(row);
+		var prodData;
+		if (!recipeName || recipeName == 'undefined') {
+			prodData = getProdData(row, false);
+		} else {
+			prodData = getProdData(row, true);
+		}
 
         cal.innerHTML = replacedString((prodData["cal"] * parseFloat(inputField.value)) / 100);
         carb.innerHTML = replacedString((prodData["carb"] * parseFloat(inputField.value)) / 100);
@@ -178,9 +271,16 @@ function amountChange(row, recipeName)
     }
 }
 
-function getProdData(row)
+function getProdData(row, isRecipe)
 {
-    var catValue = document.getElementById("category-dropdown-" + row).value;
+	var catValue;
+    if (isRecipe) 
+	{
+		catValue = document.getElementById("category-dropdown-" + row).value;
+	} else
+	{
+		catValue = category_rows[row];
+	}
     var prodValue = document.getElementById("product-dropdown-" + row).value;
     return jsonData[catValue][prodValue];
 }
@@ -276,25 +376,27 @@ function onDropdownClick(id)
     highlightRow(id);
 }
 
+category_rows = {}
+
 function onCatClick(id, recipeName)
 {
     let splitId = onCatDropdownButtonClick(id);
     if(splitId)
     {
-        let ct = splitId[0];
         let row = splitId[1];
-
+		
         // discard values
         let prodInput = document.getElementById("product-dropdown-" + row);
         prodInput.value = "";
         discardValues(row);
-
+		
         let btn = document.getElementById(id);
         if(btn.parentElement.getAttribute("id"))
-
+		
         if(recipeName == 'undefined')
 		{
-			//calcTotals();	
+			let elementName = "category-dropdown-" + row.toString();
+			category_rows[row] = document.getElementById(elementName).value
 		}
         else
         {
@@ -317,8 +419,13 @@ function onProdClick(id, recipeName)
         let fat = document.getElementById("fat-" + row);
         let skaid = document.getElementById("skaid-" + row);
         var amountField = document.getElementById("amount-" + row);
-
-        var prodData = getProdData(row);
+		
+		var prodData;
+		if (recipeName === undefined || recipeName == "undefined") {
+			prodData = getProdData(row, false);
+		} else {
+			prodData = getProdData(row, true);
+		}
 
         amountField.value = "100";
         amountField.removeAttribute("disabled");

@@ -426,6 +426,7 @@ function fixedFloat(numStr)
 
 function replacedFloat(numStr)
 {
+	if (numStr == "-") return 0;
 	let num = parseFloat(numStr.replace(",", "."))
 	return num;
 }

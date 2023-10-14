@@ -206,10 +206,11 @@ function realignElements(deletedRow, recipeName, rowCount) {
 				element.setAttribute("id", splitId.join("-"));
 
 				let amountChange = recipeName == "" ? "amountChange(" + adjustedRow + ")" : "amountChange('" + recipeName + "-" + adjustedRow + "', '" + recipeName + "');";
-				let highlightRow = recipeName == "" ? "highlightRow('amount-" + adjustedRow + "');" : "highlightRow('amount-" + recipeName + "-" + adjustedRow +"');";
+				let highlightFocusRow = recipeName == "" ? "highlightRow('amount-" + adjustedRow + "');" : "highlightRow('amount-" + recipeName + "-" + adjustedRow +"');";
 
 				element.setAttribute("oninput", amountChange);
-				element.setAttribute("onfocus", highlightRow);
+				element.setAttribute("onfocus", highlightFocusRow);
+				element.setAttribute("onclick", highlightFocusRow);
 			} else if (elementClass == "delete-row") {
 				splitId[splitId.length - 1] = adjustedRow;
 				element.setAttribute("id", splitId.join("-"));

@@ -24,7 +24,7 @@ function addRow()
     var input = document.createElement("input");
     let iId = "amount-" + curRowStr;
     input.setAttribute("id", iId);
-    input.setAttribute("size", "7");
+    input.setAttribute("size", "99");
     input.setAttribute("disabled", "true");
     input.setAttribute("oninput", "amountChange(" + curRowStr + ")");
     input.setAttribute("onclick", "highlightRow('" + iId + "');");
@@ -56,7 +56,7 @@ function addRow()
     mainDiv.appendChild(deleteContainer);
 
     // Insert main
-    var addRowBtn = document.getElementById("add-row-button");
+    var addRowBtn = document.getElementById("totals-row");
     document.getElementById("calorycalc").insertBefore(mainDiv, addRowBtn);
 }
 
@@ -65,6 +65,7 @@ function macroEl(rowCont, which, id, defText="-")
     var mCont = createContainer(which + "-container-parent macros");
     var mText = document.createElement("b");
     mText.setAttribute("id", id);
+	mText.setAttribute("class", "desc-inline");
     mText.appendChild(document.createTextNode(defText));
     rowCont = treeAdd(rowCont, mCont, mText);
 }
@@ -108,7 +109,7 @@ function createSearchableInput(rowNo, name)
     newInput.setAttribute("id", i);
     newInput.setAttribute("onfocus", "onDropdownClick('" + i + "');");
     newInput.setAttribute("oninput", "dropdownFilter('" + i + "');");
-    newInput.setAttribute("size", "25");
+    newInput.setAttribute("size", "99");
     newInput.setAttribute("onfocusout", "onDropdownFocusOut('" + rowNo + "', '" + name + "');");
     newInput.setAttribute("placeholder", "Ieškoti...");
     newInput.setAttribute("class", "searchable-input");

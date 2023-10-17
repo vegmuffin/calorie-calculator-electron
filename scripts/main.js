@@ -21,6 +21,8 @@ function createWindow()
     win = new BrowserWindow({
         width: 1235, 
         height: 800,
+		minWidth: 800,
+		minHeight: 400,
         backgroundColor: '#dfecde',
         webPreferences: {
             nodeIntegration: true,
@@ -28,7 +30,7 @@ function createWindow()
         },
         x: 125,
         y: 125,
-        resizable: false
+        resizable: true
     });
 
     win.loadURL(url.format({
@@ -185,6 +187,8 @@ function newProductsWindow()
         np_win = new BrowserWindow({
             width: 1000, 
             height: 500,
+			minWidth: 500,
+			minHeight: 400,
             backgroundColor: '#dfecde',
             webPreferences: {
                 nodeIntegration: true,
@@ -192,7 +196,7 @@ function newProductsWindow()
             },
             x: winBounds["x"] + 50,
             y: winBounds["y"] + 50,
-            resizable: false
+            resizable: true
         });
 
         np_win.loadURL(url.format({
@@ -224,6 +228,8 @@ function newDeleteWindow()
         dp_win = new BrowserWindow({
             width: 600,
             height: 550,
+			minWidth: 500,
+			minHeight: 450,
             backgroundColor: '#dfecde',
             webPreferences: {
                 nodeIntegration: true,
@@ -231,7 +237,7 @@ function newDeleteWindow()
             },
             x: winBounds["x"] + 50,
             y: winBounds["y"] + 50,
-            resizable: false
+            resizable: true
         });
 
         dp_win.loadURL(url.format({
@@ -262,7 +268,9 @@ function newUpdateWindow()
         let winBounds = BrowserWindow.getFocusedWindow().getBounds();
         up_win = new BrowserWindow({
             width: 760,
-            height: 275,
+            height: 300,
+			minWidth: 760,
+			minHeight: 300,
             backgroundColor: '#dfecde',
             webPreferences: {
                 nodeIntegration: true,
@@ -270,7 +278,7 @@ function newUpdateWindow()
             },
             x: winBounds["x"] + 50,
             y: winBounds["y"] + 50,
-            resizable: false
+            resizable: true
         });
 
         up_win.loadURL(url.format({
@@ -300,8 +308,8 @@ function newUpdateCatWindow()
     {
         let winBounds = BrowserWindow.getFocusedWindow().getBounds();
         uc_win = new BrowserWindow({
-            width: 550,
-            height: 425,
+            width: 450,
+            height: 350,
             backgroundColor: '#dfecde',
             webPreferences: {
                 nodeIntegration: true,
@@ -340,7 +348,9 @@ function newAddRecipeWindow()
         let winBounds = BrowserWindow.getFocusedWindow().getBounds();
         addr_win = new BrowserWindow({
             width: 800,
-            height: 375,
+			minWidth: 800,
+            height: 400,
+			minHeight: 400,
             backgroundColor: '#dfecde',
             webPreferences: {
                 nodeIntegration: true,
@@ -348,7 +358,7 @@ function newAddRecipeWindow()
             },
             x: winBounds["x"] + 100,
             y: winBounds["y"] + 100,
-            resizable: false,
+            resizable: true,
             parent: win,
             modal: true
         });

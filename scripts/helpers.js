@@ -155,12 +155,13 @@ function createInput(containerClass, id, initialValue)
         if(containerClass == "up-prod-container")
         {
             input.setAttribute("oninput", "onProdInput('" + id + "');");
-            input.setAttribute("size", "25");
+            input.setAttribute("size", "99");
+			input.setAttribute("class", "macro-input")
         }
         else
         {
-            input.setAttribute("class", "intfield");
-            input.setAttribute("size", "7");
+            input.setAttribute("class", "intfield macro-input");
+            input.setAttribute("size", "99");
             input.setAttribute("oninput", "onIntInput('" + id + "');");
         }
     }

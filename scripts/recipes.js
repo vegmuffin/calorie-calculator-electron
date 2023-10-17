@@ -130,30 +130,37 @@ function rcp(rcpContent, recipe)
     rcpAddrowBtn.appendChild(addIm);
     rcpAddrowCont.appendChild(rcpAddrowBtn);
 
-    rcpFooter.appendChild(rcpAddrowCont);
-
+	// TOTALS
+	let totals = createContainer("totals");
+	totals.setAttribute("id", recipe["name"] + "-totals-row");
+	totals.appendChild(rcpAddrowCont);
+	
     // INGREDIENT ROWS
     let ingrs = recipe["ingredients"];
     for(let i = 0; i < ingrs.length; ++i)
     {
-        rcpRow(recipe["name"], ingrs[i], rcpFooter, i, rcpAddrowCont);
+		rcpRow(recipe["name"], ingrs[i], rcpFooter, i, totals);
         if(i == ingrs.length - 1) ingCounters[recipe["name"]] = i;
     }
+	
 
-    // TOTALS
-    let totals = createContainer("totals");
+	let emptyBig = createContainer("totals-empty")
+	let emptySmall = createContainer("totals-empty-left")
     let tTitle = createContainer("totals-title");
     let spn = document.createElement("span");
     spn.appendChild(document.createTextNode("Viso:"));
     tTitle.appendChild(spn);
+	totals.appendChild(emptyBig);
     totals.appendChild(tTitle);
-
+	
     createTotalEl(totals, "totals-carbs-cont", recipe["name"], "carb");
     createTotalEl(totals, "totals-fats-cont", recipe["name"], "fat");
     createTotalEl(totals, "totals-prot-cont", recipe["name"], "prot");
     createTotalEl(totals, "totals-cal-cont", recipe["name"], "cal");
     createTotalEl(totals, "totals-skaid-cont", recipe["name"], "skaid");
     rcpFooter.appendChild(totals);
+	
+	totals.appendChild(emptySmall);
     
     let markCont = createContainer("deletion-mark-container");
     let markCbId = recipe["name"] + "-cb";
@@ -209,7 +216,7 @@ function addRcpRow(recipeName)
 {
     let rcpFooter = document.getElementById(recipeName + "-footer");
     ingCounters[recipeName]++;
-    let iBefore = document.getElementById(recipeName + "-addrow");
+    let iBefore = document.getElementById(recipeName + "-totals-row");
     rcpRow(recipeName, null, rcpFooter, ingCounters[recipeName], iBefore);
 }
 

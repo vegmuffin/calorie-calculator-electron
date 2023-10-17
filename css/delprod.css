@@ -41,8 +41,8 @@
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
     height: 30px;
-    width: 120px;
     vertical-align: middle;
+	text-overflow: ellipsis;
 }
 
 .checkbox-container{

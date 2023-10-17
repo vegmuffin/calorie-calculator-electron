@@ -19,7 +19,6 @@
 }
 
 .newname-input-container{
-    border-right: 2px solid #515656;
     height: inherit;
     vertical-align: middle;
     display: table-cell;
@@ -71,11 +70,4 @@
 
 .done-btn:active{
     background-color: #85CC6F;
-}
-
-emoji-picker{
-    position: absolute;
-    right: 75px;
-    width: 300px;
-    height: 300px;
 }

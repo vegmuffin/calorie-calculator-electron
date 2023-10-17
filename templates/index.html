@@ -30,7 +30,7 @@
 
                 <div class="category-container-parent">
                     <div class="dropdown-container" id="category-container-0">
-                        <input id="category-dropdown-0" onfocus="onDropdownClick('category-dropdown-0')" oninput="dropdownFilter('category-dropdown-0')" size="25" onfocusout="onDropdownFocusOut('0', 'category')"
+                        <input id="category-dropdown-0" onfocus="onDropdownClick('category-dropdown-0')" size="99" oninput="dropdownFilter('category-dropdown-0')" onfocusout="onDropdownFocusOut('0', 'category')"
                         placeholder="Ieškoti..." class="searchable-input">
                         <div class="options" id="category-options-0">
 
@@ -40,7 +40,7 @@
 
                 <div class="product-container-parent">
                     <div class="dropdown-container" id="product-container-0">
-                        <input id="product-dropdown-0" onfocus="onDropdownClick('product-dropdown-0')" oninput="dropdownFilter('product-dropdown-0')" size="25" onfocusout="onDropdownFocusOut('0', 'product')"
+                        <input id="product-dropdown-0" onfocus="onDropdownClick('product-dropdown-0')" size="99" oninput="dropdownFilter('product-dropdown-0')" onfocusout="onDropdownFocusOut('0', 'product')"
                         placeholder="Ieškoti..." disabled="true" class="searchable-input">
                         <div class="options" id="product-options-0">
 
@@ -49,58 +49,65 @@
                 </div>
 
                 <div class="amount-container-parent">
-                    <input class="amount-input" id="amount-0" size="7" disabled="true" oninput="amountChange(0)" onfocus="highlightRow('amount-0');"></input>
+                    <input class="amount-input" id="amount-0" size="99" disabled="true" oninput="amountChange(0)" onfocus="highlightRow('amount-0');"></input>
                 </div>
 
                 <div class="carb-container-parent macros">
-                    <b id="carb-0">-</b>
+                    <b id="carb-0" class="desc-inline">-</b>
                 </div>
 
                 <div class="fat-container-parent macros">
-                    <b id="fat-0">-</b>
+                    <b id="fat-0" class="desc-inline">-</b>
                 </div>
 
                 <div class="prot-container-parent macros">
-                    <b id="prot-0">-</b>
+                    <b id="prot-0" class="desc-inline">-</b>
                 </div>
 
                 <div class="cal-container-parent macros">
-                    <b id="cal-0">-</b>
+                    <b id="cal-0" class="desc-inline">-</b>
                 </div>
 
                 <div class="skaid-container-parent macros">
-                    <b id="skaid-0">-</b>
+                    <b id="skaid-0" class="desc-inline">-</b>
                 </div>
 
                 <div class="delete-row-container">
                 </div>
             </div>
 
-            <div class="add-row-container" id="add-row-button">
-                <button class="add-row" id="calc-add-row" onclick="addRow();">
-                    <img src="../imgs/plus_icon.png" class="addrow-img">
-                </button>
-            </div>
+            <div class="totals" id="totals-row">
+				<div class="add-row-container" id="add-row-button">
+					<button class="add-row" id="calc-add-row" onclick="addRow();">
+						<img src="../imgs/plus_icon.png" class="addrow-img">
+					</button>
+				</div>
 
-            <div class="totals">
+				<div class="totals-empty">
+					&nbsp;
+				</div>
                 <div class="totals-title">
-                    <span>Viso:</span>
+                    <span class="desc-inline">Viso:</span>
                 </div>
                 <div class="totals-carbs-cont">
-                    <span id="totals-carb">0</span>
+                    <span id="totals-carb" class="desc-inline">0</span>
                 </div>
                 <div class="totals-fats-cont">
-                    <span id="totals-fat">0</span>
+                    <span id="totals-fat" class="desc-inline">0</span>
                 </div>
                 <div class="totals-prot-cont">
-                    <span id="totals-prot">0</span>
+                    <span id="totals-prot" class="desc-inline">0</span>
                 </div>
                 <div class="totals-cal-cont">
-                    <span id="totals-cal">0</span>
+                    <span id="totals-cal" class="desc-inline">0</span>
                 </div>
                 <div class="totals-skaid-cont">
-                    <span id="totals-skaid">0</span>
+                    <span id="totals-skaid" class="desc-inline">0</span>
                 </div>
+
+				<div class="totals-empty-left">
+					&nbsp;
+				</div>
             </div>
 
             <div id="addrecipe-container">

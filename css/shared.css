@@ -34,7 +34,7 @@
     text-align: left;
     height: 40px;
     width: 100%;
-    font-size: 12px;
+    font-size: 11px;
     display: none;
     border: none;
     z-index: inherit;
@@ -57,9 +57,10 @@
 }
 
 .dropdown-container{
-    width: 154px;
+    width: 100%;
     display: table-cell;
     position: relative;
+	padding-right: 10px;
 }
 
 .options{
@@ -86,46 +87,27 @@
 
 .weird-labels{
     display: table-cell;
-}
-
-.emoji-container{
-    display: none;
-}
-
-.emo-img{
-    width: 80%;
-    height: 80%;
-    padding-top: 5px;
-}
-
-.emoji-btn{
-    background: transparent;
-    outline: none;
-    box-shadow: none;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    font-size: 20px;
-    padding: 0 0;
-}
-
-.emoji-displayed{
-    display: block;
-}
-
-.emoji-button-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    padding: 10px 10px;
+	padding-right: 10px;
 }
 
 .macros{
     text-align: center;
+	padding-left: -5px;
+	padding-right: -5px;
 }
 
 .description{
     display: flex;
 }
+
+.searchable-input {
+	width: 100%;
+}
+
+.amount-input {
+	width: 90%;
+	display: table-cell;
+    position: relative;
+}
+
+input{box-sizing:border-box} 

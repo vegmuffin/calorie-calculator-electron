@@ -11,7 +11,7 @@
 
     <body onload="populateCategories();">
         <div class="category-container-parent">
-            <label for="category-container-0" class="weird-labels"><b>Pasirinkite kategoriją: &nbsp;</b></label>
+            <label for="category-container-0" class="weird-labels"><b>Kategorija: &nbsp;</b></label>
             <div class="dropdown-container" id="category-container-0">
                 <input id="category-dropdown-0" onfocus="onDropdownClick('category-dropdown-0')" oninput="dropdownFilter('category-dropdown-0')" size="20" onfocusout="onDropdownFocusOut('0', 'category')"
                 placeholder="Ieškoti..." class="searchable-input">
@@ -19,7 +19,6 @@
 
                 </div>
             </div>
-            <b class="cat-emoji" id="emoji-0"></b>
         </div>
         <div class = "np-newcat-container">
             <b><label for = "np-checkbox">Nauja kategorija: </label></b>
@@ -42,32 +41,29 @@
 
         <div class = "np-row" id="np-0">
             <div class = "np-product-container">
-                <input id = "np-product-0" oninput="onProdInput('np-product-0');" onfocus="highlightRow('0');" size="25"></input>
+                <input id = "np-product-0" oninput="onProdInput('np-product-0');" onfocus="highlightRow('0');" size="99" class="macro-input"></input>
             </div>
             
             <div class = "np-carb-container">
-                <input id = "np-carb-0" oninput="onIntInput('np-carb-0');" size="7" disabled="true" onfocus="highlightRow('0');"></input>
+                <input id = "np-carb-0" oninput="onIntInput('np-carb-0');" size="99" disabled="true" onfocus="highlightRow('0');" class="macro-input"></input>
             </div>
             
             <div class = "np-fat-container">
-                <input id = "np-fat-0" oninput="onIntInput('np-fat-0');" size="7" disabled="true" onfocus="highlightRow('0');"></input>
+                <input id = "np-fat-0" oninput="onIntInput('np-fat-0');" size="99" disabled="true" onfocus="highlightRow('0');" class="macro-input"></input>
             </div>
             
             <div class = "np-prot-container">
-                <input id = "np-prot-0" oninput="onIntInput('np-prot-0');" size="7" disabled="true" onfocus="highlightRow('0');"></input>
+                <input id = "np-prot-0" oninput="onIntInput('np-prot-0');" size="99" disabled="true" onfocus="highlightRow('0');" class="macro-input"></input>
             </div>
             
             <div class = "np-kcal-container">
-                <input id = "np-kcal-0" oninput="onIntInput('np-kcal-0');" size="7" disabled="true" onfocus="highlightRow('0');"></input>
+                <input id = "np-kcal-0" oninput="onIntInput('np-kcal-0');" size="99" disabled="true" onfocus="highlightRow('0');" class="macro-input"></input>
             </div>
 
             <div class = "np-skaid-container">
-                <input id = "np-skaid-0" oninput="onIntInput('np-skaid-0');" size="7" disabled="true" onfocus="highlightRow('0');"></input>
+                <input id = "np-skaid-0" oninput="onIntInput('np-skaid-0');" size="99" disabled="true" onfocus="highlightRow('0');" class="macro-input"></input>
             </div>
             
-            <div class = "np-del-container">
-                
-            </div>
         </div>
 
         <div class = "np-buttons-container" id = "np-btns">

@@ -5,9 +5,9 @@
 .category-container-parent {
     padding: 5px 15px;
     font-size: 18px;
-    display: table-cell;
-    min-width: 410px;
-    max-width: 410px;
+    width: 40%;
+	position: relative;
+	display: inline-block;
 }
 
 .np-desc-container {
@@ -15,14 +15,20 @@
     font-size: 18px;
 }
 
+.np-desc {
+	font-size: 2vw;
+}
+
 .np-row{
     padding: 3px 15px;
     height: 50px;
+	width: 90%;
+	display: table;
 }
 
 .np-product-container{
     justify-content: middle;
-    width: 200px;
+    width: 30%;
     display: table-cell;
     border: 1px solid #515656;
     height: 50px;
@@ -34,7 +40,7 @@
 
 .np-kcal-container{
     justify-content: middle;
-    width: 70px;
+    width: 10%;
     display: table-cell;
     border: 1px solid #515656;
     height: 50px;
@@ -44,7 +50,7 @@
 
 .np-skaid-container{
     justify-content: middle;
-    width: 70px;
+    width: 10%;
     display: table-cell;
     border: 1px solid #515656;
     height: 50px;
@@ -56,7 +62,7 @@
 
 .np-carb-container{
     justify-content: middle;
-    width: 70px;
+    width: 10%;
     display: table-cell;
     border: 1px solid #515656;
     height: 50px;
@@ -66,7 +72,7 @@
 
 .np-prot-container{
     justify-content: middle;
-    width: 70px;
+    width: 10%;
     display: table-cell;
     border: 1px solid #515656;
     height: 50px;
@@ -76,7 +82,7 @@
 
 .np-fat-container{
     justify-content: middle;
-    width: 70px;
+    width: 10%;
     display: table-cell;
     border: 1px solid #515656;
     height: 50px;
@@ -86,7 +92,7 @@
 
 .np-del-container{
     justify-content: center;
-    width: 50px;
+    width: 6%;
     display: table-cell;
     height: 50px;
     vertical-align: middle;
@@ -202,81 +208,59 @@
 }
 
 .np-newcat-container{
-    display: table-cell;
+    display: inline-block;
+	vertical-align: top;
     border: 2px solid #515656;
     padding: 5px 15px;
     font-size: 18px;
     border-radius: 4px;
-    width: 470px;
-}
-
-.emoji-button-container-newprod{
-    display: inline-block;
-    width: 100px;
-    padding: 0px 10px;
-}
-
-.emoji-btn-newprod{
-    background: transparent;
-    outline: none;
-    box-shadow: none;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    font-size: 18px;
-    height: 25px;
-    width: 25px;
+    width: 40%;
 }
 
 .icon-container{
     display: inline-block;
 }
 
-emoji-picker{
-    position: absolute;
-    right: 285px;
-    width: 300px;
-    height: 300px;
-}
-
-.cat-emoji{
-    display: table-cell;
-    padding: 0px 17px;
-    font-size: 20px;
-    text-align: left;
-}
-
 .desc-inline{
     font-weight: bold;
-    width: 100%;
     display: inline-block;
-    padding: 0 12px;
+	font-size: 1.5vw;
 }
 
 #desc-prod{
-    width: 210px;
+    width: 34%;
+	padding-left: 25px;
 }
 
 #desc-carbs{
-    width: 70px;
+    width: 11%;
 }
 
 #desc-fats{
-    width: 70px;
+    width: 11%;
+	padding-left: 2px;
 }
 
 #desc-prot{
-    width: 60px;
+    width: 11%;
+	padding-left: 2px;
 }
 
 #desc-cals{
-    width: 70px;
+    width: 11%;
+	padding-left: 2px;
 }
 
 #desc-skaid{
-    width: 50px;
+    width: 11%;
+	padding-left: 2px;
 }
 
 #description{
-    padding: 0 14px;
+	width: 100%;
+	display: table;
+}
+
+.macro-input {
+	width: 100%;
 }

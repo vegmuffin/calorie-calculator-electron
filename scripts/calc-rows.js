@@ -11,6 +11,13 @@ function addRow()
     mainDiv.setAttribute("id", "calory" + curRowStr);
     mainDiv.setAttribute("class", "row");
 
+	// NUMERATION
+	let numer = createContainer("numeration");
+	let textInside = document.createElement("b");
+	textInside.setAttribute("class", "numeration-text");
+	mainDiv = treeAdd(mainDiv, numer, textInside);
+	textInside.innerHTML = (curRow+1).toString() + ".";
+
     // CATEGORY DROPDOWN
     let sd = createSearchableDropdown(curRowStr, "category");
     mainDiv.appendChild(sd);
@@ -218,6 +225,8 @@ function realignElements(deletedRow, recipeName, rowCount) {
 
 				let delRow = recipeName == "" ? "delRow('" + adjustedRow + "')" : "delRcpRow('" + adjustedRow + "', '" + recipeName + "')";
 				element.setAttribute("onclick", delRow);
+			} else if (elementClass == "numeration-text") {
+				element.innerHTML = i.toString() + ".";
 			}
 		}
 		

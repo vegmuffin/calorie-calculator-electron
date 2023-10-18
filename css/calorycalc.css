@@ -2,6 +2,19 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.numeration {
+	width: 4%;
+	display: table-cell;
+	height: 50px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.numeration-text {
+	font-size: 22px;
+	display: inline-block;
+}
+
 /* Style the tab */
 .tab {
   overflow: hidden;
@@ -50,7 +63,7 @@
 
 .category-container-parent{
   justify-content: left;
-  width: 26%;
+  width: 24%;
   display: table-cell;
   border: 1px solid #515656;
   height: 50px;
@@ -63,7 +76,7 @@
 .product-container-parent{
   justify-content: left;
   /*width: 200px;*/
-  width: 26%;
+  width: 24;
   display: table-cell;
   border: 1px solid #515656;
   height: 50px;
@@ -220,12 +233,13 @@
 }
 
 .desc-cat{
-  width: 26%;
+  width: 24%;
   padding-left: 2px;
+  margin-left: 4%;
 }
 
 .desc-prod{
-  width: 26%;
+  width: 24%;
 }
 
 .desc-amount{

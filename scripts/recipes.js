@@ -237,6 +237,14 @@ function rcpRow(recipeName, ingredient, rcpFooter, counter, iBefore)
         let r = createContainer("row");
         r.setAttribute("id", "recipe-" + counterStr);
 
+		// NUMERATION
+		let numer = createContainer("numeration");
+		let textInside = document.createElement("b");
+		textInside.setAttribute("class", "numeration-text");
+		numer.appendChild(textInside);
+		textInside.innerHTML = (counter+1).toString() + ".";
+		r.appendChild(numer);
+
         let cd = createSearchableDropdown(counterStr, "category", recipeName);
         r.appendChild(cd);
         
